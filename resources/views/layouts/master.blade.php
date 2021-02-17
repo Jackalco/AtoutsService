@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Sections to put the title and meta description tags, for SEO purpose -->
         <title>@yield('head-title',env('APP_NAME'))</title>
         <meta name="description" content="@yield('head-meta-description','')">
         @stack('head-meta')
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts.css') }}"/>
+        <script src="https://kit.fontawesome.com/172e84d6d0.js" crossorigin="anonymous"></script>
 
         @stack('script.head')
 

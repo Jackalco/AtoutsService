@@ -1,11 +1,140 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: aqua;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.logo {
+    height: 70px;
+}
+
+.itemNav {
+    height: 75px;
+}
+
+.itemNav:first-child {
+    margin-left: 50px;
+}
+
+.itemNav:last-child {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 25px;
+    background-color: rgb(87, 223, 216);
+    padding-right: 200px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.itemNav:last-child a {
+    height: 40px;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 250px;
+    font-weight: bold;
+    transition-duration: 0.5s;
+    align-self: center;
+    color: white;
+}
+
+.itemNav:last-child a:first-child {
+    background-color: rgb(37, 188, 214);
+    border-radius: 5px 0px 0px 5px;
+    color: white;
+}
+
+.itemNav:last-child a:hover {
+    background-color: rgb(0, 168, 197);
+    font-size: 25px;
+}
+
+footer {
+
+}
+
+footer hr {
+    width: 60%;
+    text-align: center;
+}
+
+.socialContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.socialLink {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.4s;
+    background-color: black;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.socialLink i {
+    font-size: 25px;
+}
+
+.facebook:hover {
+    background-color: #3b5998;
+}
+
+
+.twitter:hover {
+    background-color: #00acee;
+}
+
+.instagram:hover {
+    background-color: #c08d64;
+}
+
+.linkContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.linkItem ul{
+    list-style: none;
+}
+
+.linkItem li {
+    margin-bottom: 10px;
+}
+
+.linkItem a {
+    text-decoration: none;
+    color: black;
+}
+
+.linkItem strong {
+    color: rgb(37, 188, 214);
 }
