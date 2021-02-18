@@ -17,3 +17,4 @@ use App\Mail\Contact;
 */
 
 Route::get('/', 'PagesController@home')->name('home');
+Route::get('/services', 'ServiceController@index')->name('services');

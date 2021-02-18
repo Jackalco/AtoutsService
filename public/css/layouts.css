@@ -8,7 +8,7 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 75px;
     align-items: center;
     margin-bottom: 50px;
@@ -16,7 +16,9 @@ nav {
 }
 
 .logo {
-    height: 70px;
+    height: 120px;
+    bottom: 20px;
+    position: relative;
 }
 
 .itemNav {
@@ -24,7 +26,7 @@ nav {
 }
 
 .itemNav:first-child {
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .itemNav:last-child {
@@ -33,7 +35,6 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    font-size: 25px;
     background-color: rgb(87, 223, 216);
     padding-right: 200px;
     border-radius: 5px 0px 0px 5px;
@@ -41,14 +42,13 @@ nav {
 
 .itemNav:last-child a {
     height: 40px;
-    font-size: 24px;
+    font-size: 23px;
     text-decoration: none;
     text-align: center;
     color: black;
     padding: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 250px;
+    padding-left: 25px;
+    padding-right: 25px;
     font-weight: bold;
     transition-duration: 0.5s;
     align-self: center;
@@ -63,7 +63,7 @@ nav {
 
 .itemNav:last-child a:hover {
     background-color: rgb(0, 168, 197);
-    font-size: 25px;
+    font-size: 24px;
 }
 
 footer {
@@ -114,6 +114,10 @@ footer hr {
 
 .instagram:hover {
     background-color: #c08d64;
+}
+
+.linkedin:hover {
+    background-color: #0e76a8;
 }
 
 .linkContainer {
