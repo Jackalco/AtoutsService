@@ -9,7 +9,29 @@
     padding-top: 200px;
 }
 
-.serviceContainer h1 {
+.artisanContainer {
+    display: flex;
+    flex-direction: column;
+    background-image: url('/images/image4.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 900px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 200px;
+}
+
+.housingContainer {
+    display: flex;
+    flex-direction: column;
+    background-image: url('/images/image3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 900px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 200px;
+}
+
+h1 {
     color: white;
     text-shadow: 1px 1px grey;
     font-size: 50px;
@@ -22,12 +44,27 @@ header {
 }
 
 .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
     color: white;
-    background-color: rgb(21, 121, 8);
     border-radius: 50%;
     margin-right: 20px;
+    font-size: 26px;
+}
+
+.service {
+    background-color: rgb(21, 121, 8);
+}
+
+.artisan {
+    background-color: rgb(187, 3, 3);
+}
+
+.housing {
+    background-color: rgb(218, 106, 1);
 }
 
 .listContainer {
@@ -58,12 +95,12 @@ header {
     align-items: center;
     transition-duration: 0.5s;
     font-size: 40px;
+    padding: 5px;
 }
 
 .categoryItem:hover {
     margin: 10px;
-    padding: 10px;
-    font-size: 45px;
+    padding: 15px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
 

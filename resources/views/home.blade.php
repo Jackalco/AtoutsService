@@ -13,6 +13,17 @@
 @endpush
 
 @section('content')
+    <section class="searchContainer">
+        <div class="searchItem">
+            <i class="fas fa-search"></i>
+            <input class="searchInput" type="text" placeholder="Service...">
+        </div>
+        <div class="searchItem">
+            <i class="fas fa-map-marker-alt"></i>
+            <input class="searchInput" type="text" placeholder="Localisation...">
+        </div>
+        <button class="searchButton">Rechercher</button>
+    </section>
     <section class="needContainer">
         <div class="needItem">Des artisans et des services de proximité pour vous aider</div>
         <div class="needItem">
@@ -26,8 +37,8 @@
         </a>
     </section>
     <section class="cardContainer">
-        <div class="cardItem"><a class="cardLayer" href="">Artisans</a></div>
-        <div class="cardItem"><a class="cardLayer" href="">Logement</a></div>
+        <div class="cardItem"><a class="cardLayer" href="{{ route('artisans') }}">Artisans</a></div>
+        <div class="cardItem"><a class="cardLayer" href="{{ route('housings') }}">Logement</a></div>
     </section>
     <section class="howContainer">
         <h2>Comment ça marche ?</h2>

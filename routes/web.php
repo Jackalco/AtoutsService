@@ -18,3 +18,6 @@ use App\Mail\Contact;
 
 Route::get('/', 'PagesController@home')->name('home');
 Route::get('/services', 'ServiceController@index')->name('services');
+Route::get('/artisans', 'ArtisanController@index')->name('artisans');
+Route::get('/logements', 'HousingController@index')->name('housings');
+Route::get('/test/list', 'ListController@index')->name('list');

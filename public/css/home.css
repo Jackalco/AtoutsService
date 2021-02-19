@@ -1,3 +1,55 @@
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.searchItem {
+    font-size: 20px;
+}
+
+.searchItem:nth-child(1) {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.searchItem:nth-child(2) {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.searchItem i {
+    color: rgb(37, 188, 214);
+}
+
+.searchInput {
+    height: 40px;
+    border: none;
+    outline: none;
+}
+
+.searchButton {
+    background-color: rgb(252, 185, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.searchButton:hover {
+    background-color: rgb(219, 161, 2);
+}
+
 .needContainer {
     display: flex;
     flex-direction: row;

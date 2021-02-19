@@ -13,8 +13,8 @@
             <ul>
                 <li><strong>Nos services</strong></li>
                 <li><a href="{{ route('services') }}">Services</a></li>
-                <li><a href="">Artisans</a></li>
-                <li><a href="">Logement</a></li>
+                <li><a href="{{ route('artisans') }}">Artisans</a></li>
+                <li><a href="{{ route('housings') }}">Logement</a></li>
             </ul>
         </div>
         <div class="linkItem">
