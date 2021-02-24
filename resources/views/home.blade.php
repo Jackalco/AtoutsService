@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-    <section class="searchContainer">
+    <form action="post" class="searchContainer">
         <div class="searchItem">
             <i class="fas fa-search"></i>
             <input class="searchInput" type="text" placeholder="Service...">
@@ -23,7 +23,7 @@
             <input class="searchInput" type="text" placeholder="Localisation...">
         </div>
         <button class="searchButton">Rechercher</button>
-    </section>
+    </form>
     <section class="needContainer">
         <div class="needItem">Des artisans et des services de proximité pour vous aider</div>
         <div class="needItem">

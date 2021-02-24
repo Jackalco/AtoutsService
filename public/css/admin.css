@@ -1,0 +1,131 @@
+h1 {
+    padding-left: 50px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: rgb(37, 188, 214);
+    color: white;
+    width: fit-content;
+    font-size: 2.5em;
+}
+
+h2 {
+    margin-left: 10%;
+}
+
+.adminContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 550px;
+}
+
+.adminItem {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 203, 59);
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 30px;
+}
+
+.adminItem:hover {
+    background-color: rgb(252, 185, 0);
+    color: white;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.formItem {
+
+}
+
+.formLabel {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.formInput {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.buttonAdmin {
+    background-color: rgb(255, 203, 59);
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: 150px;
+}
+
+.buttonAdmin:hover {
+    background-color: rgb(252, 185, 0);
+    color: white;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 125px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+}
+
+.listItem:last-child {
+    border-bottom: none;
+}
+
+.listLogo {
+    flex: 1;
+}
+
+.listInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: inherit;
+}
+
+.listAction {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: inherit;
+}
+
+.error {
+    color: red;
+}
+
+.alert {
+    color: green;
+}
+
+.logo {
+    width: 125px;
+    height: 125px;
+}

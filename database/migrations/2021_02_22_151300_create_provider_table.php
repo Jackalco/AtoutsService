@@ -21,6 +21,7 @@ class CreateProviderTable extends Migration
             $table->string('email');
             $table->integer('image_id');
             $table->string('owner');
+            $table->integer('owner_id');
             $table->timestamps();
         });
     }

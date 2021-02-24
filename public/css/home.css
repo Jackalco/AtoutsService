@@ -31,6 +31,7 @@
 
 .searchInput {
     height: 40px;
+    font-size: 20px;
     border: none;
     outline: none;
 }
@@ -40,6 +41,7 @@
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 20px;
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -82,11 +84,13 @@
 .needItem:nth-child(2) a{
     color: white;
     text-decoration: none;
+    text-align: center;
     padding: 10px;
     background-color: rgb(252, 185, 0);
     border-radius: 2px;
     font-size: 20px;
     transition-duration: 0.4s;
+    width: 80%;
 }
 
 .needItem:nth-child(2) a:hover {
@@ -114,7 +118,7 @@
     text-align: center;
     text-shadow: 1px 1px grey;;
     font-size: 50px;
-    padding-top: 100px;
+    padding-top: 125px;
 }
 
 .serviceLayer:hover {
@@ -243,4 +247,157 @@
 
 .iconItem:nth-child(4) i {
     background-color: rgb(218, 106, 1);
+}
+
+@media only screen and (min-width: 1200px) {
+    .searchContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 30px;
+    }
+    
+    .searchItem {
+        font-size: 20px;
+    }
+    
+    .searchItem:nth-child(1) {
+        padding-right: 10px;
+        padding-left: 10px;
+        border-radius: 5px 0px 0px 5px;
+    }
+ 
+    .searchInput {
+        height: 40px;
+    }
+    
+    .needContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 30px;
+        height: 325px;
+    }
+    
+    .needItem {
+        flex: 1;
+        padding: 10px;
+    }
+    
+    .needItem:first-child {
+        font-size: 35px;
+    }
+    
+    .needItem:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    
+    .needItem:nth-child(2) a{
+        padding: 10px;
+        border-radius: 2px;
+        font-size: 20px;
+        transition-duration: 0.4s;
+        width: 80%;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 15px;
+    }
+    
+    .serviceContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+        height: 325px;
+        background-position-y: 20%;
+    }
+     
+    .serviceLayer {
+        width: 100%;
+        transition-duration: 0.5s;
+        text-align: center;
+        font-size: 50px;
+        padding-top: 100px;
+    }
+    
+    
+    .cardContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 50px;
+        height: 325px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .cardItem {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        background-size: cover;
+    }
+    
+    
+    .cardLayer {
+        transition-duration: 0.5s;
+        font-size: 50px;
+        width: 100%;
+        flex: 1;
+        padding-top: 100px;
+        text-align: center;
+    }
+    
+    
+    .howContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 20px;
+        padding: 30px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 25px;
+        border-radius: 50%;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+
 }

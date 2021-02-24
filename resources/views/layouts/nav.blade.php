@@ -5,8 +5,9 @@
     <div class="itemNav">
         <a href="{{ route('home') }}">Accueil</a>
         <a href="{{ route('services') }}">Services</a>
+        <a href="">Artisans</a>
+        <a href="">Logement</a>
         <a href="">Devenir prestataires</a>
         <a href="">Connexion</a>
-        <a href="">Inscription</a>
     </div>
 </nav>
