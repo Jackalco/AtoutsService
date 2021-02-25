@@ -1,0 +1,68 @@
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.authItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.authInput {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(255, 203, 59);
+    border-radius: 2px;
+}
+
+.authInput:focus {
+    border: 1px solid rgb(37, 188, 214);
+    outline: none;
+}
+
+.authLabel {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.authButton {
+    font-size: 22px;
+    border: none;
+    background-color: rgb(255, 203, 59);
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.authButton:hover {
+    background-color: rgb(252, 185, 0);
+    color: white;
+}
+
+.authLink {
+    margin-top: 20px;
+    align-self: center;
+    text-align: center;
+    text-decoration: none;
+    width: 50%;
+    font-size: 22px;
+    color: white;
+    padding: 5px;
+    background-color: rgb(87, 223, 216);
+    border-radius: 2px;
+}
+
+.authLink:hover {
+    background-color: rgb(0, 168, 197);
+}
+
+.error {
+    color: red;
+}

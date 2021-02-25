@@ -26,11 +26,17 @@ Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 
 Route::get('/test/list', 'ListController@index')->name('list');
 
+Route::get('/espace-membre', 'PagesController@member_area')->name('member-area')->middleware('auth');
+
 Route::get('/admin', 'AdminController@panel')->name('admin');
 Route::get('/admin/categories', 'AdminController@showCategories')->name('admin-categories');
 Route::post('/admin/categories/store', 'AdminController@storeCategory')->name('admin.category.store');
 Route::get('/admin/prestataires', 'AdminController@showProviders')->name('admin-providers');
 Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin-users');
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes(['verify' => true]);
+Route::get('/connexion', 'Auth\LoginController@show')->name('show.login')->middleware('guest');
+Route::get('/deconnexion', 'Auth\LoginController@logout')->name('logout');
+Route::get('/inscription', 'Auth\RegisterController@show')->name('show.register')->middleware('guest');
+
+
