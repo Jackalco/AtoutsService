@@ -141,3 +141,15 @@ footer hr {
 .linkItem strong {
     color: rgb(37, 188, 214);
 }
+
+.alert {
+    
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

@@ -12,7 +12,4 @@ class PagesController extends Controller
         return view('home');
     }
 
-    public function member_area() {
-        return view('member_area')->withUser(Auth::user());
-    }
 }

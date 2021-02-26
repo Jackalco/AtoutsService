@@ -16,16 +16,18 @@
     <h1>Espace membre</h1>
     <div class="memberContainer">
         <h2>Votre profil</h2>
+        <hr>
         <div class="memberItem">
             <div class="memberInfo">Nom</div>
-            <div class="memberInfo">{{$user->name}}</div>
+            <div class="memberFillInfo">{{$user->name}}</div>
         </div>
+        <hr>
         <div class="memberItem">
             <div class="memberInfo">Adresse mail</div>
-            <div class="memberInfo">{{$user->email}}</div>
+            <div class="memberFillInfo">{{$user->email}}</div>
         </div>
         <div class="memberItem">
-
+            <a class="memberButton" href="{{ route('member-area.edit', $user->id) }}">Modifier les informations</a>
         </div>
     </div>
 @endsection

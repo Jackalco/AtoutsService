@@ -26,7 +26,9 @@ Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 
 Route::get('/test/list', 'ListController@index')->name('list');
 
-Route::get('/espace-membre', 'PagesController@member_area')->name('member-area')->middleware('auth');
+Route::get('/espace-membre', 'UserController@show')->name('member-area')->middleware('auth');
+Route::get('/espace-membre/modification', 'UserController@edit')->name('member-area.edit')->middleware('auth');
+Route::patch('/espace-membre/modification/{id}', 'UserController@update')->name('member-area.update')->middleware('auth');
 
 Route::get('/admin', 'AdminController@panel')->name('admin');
 Route::get('/admin/categories', 'AdminController@showCategories')->name('admin-categories');
