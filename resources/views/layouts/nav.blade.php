@@ -5,8 +5,8 @@
     <div class="itemNav">
         <a href="{{ route('home') }}">Accueil</a>
         <a href="{{ route('services') }}">Services</a>
-        <a href="">Artisans</a>
-        <a href="">Logement</a>
+        <a href="{{ route('artisans') }}">Artisans</a>
+        <a href="{{ route('housings') }}">Logement</a>
         <a href="">Devenir prestataires</a>
         @if(!App\Models\User::auth())
             <a href="{{ route('show.login') }}">Connexion</a>
