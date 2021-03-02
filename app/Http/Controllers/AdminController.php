@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\Category;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -13,7 +14,33 @@ class AdminController extends Controller
     }
 
     public function showCategories() {
-        return view('admin/admin_category');
+        $categories = Category::orderBy('name', 'asc')->get();
+
+        return view('admin/admin_category', compact('categories'));
+    }
+
+    public function editCategory($id) {
+        $category = Category::find($id);
+
+        if($category) {
+            return view('admin/admin_category_edit', compact('category'));
+        }
+    }
+
+    public function updateCategory($id) {
+        $categories = Category::orderBy('name', 'asc')->get();
+
+        return view('admin/admin_category', compact('categories'));
+    }
+
+    public function deleteCategory($id) {
+        $category = Category::find($id);
+
+        if($category) {
+            $category->delete();
+        }
+
+        return redirect('admin.category');
     }
 
     public function showProviders() {
@@ -21,7 +48,19 @@ class AdminController extends Controller
     }
 
     public function showUsers() {
-        return view('admin/admin_user');
+        $users = User::orderBy('name', 'asc')->get();
+
+        return view('admin/admin_user', compact('users'));
+    }
+
+    public function deleteUser($id) {
+        $user = User::find($id);
+
+        if($user) {
+            $user->delete();
+        }
+
+        return redirect('/admin/utilisateurs');
     }
 
     public function storeCategory(Request $request) {

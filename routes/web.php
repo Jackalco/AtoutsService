@@ -30,11 +30,18 @@ Route::get('/espace-membre', 'UserController@show')->name('member-area')->middle
 Route::get('/espace-membre/modification', 'UserController@edit')->name('member-area.edit')->middleware('auth');
 Route::patch('/espace-membre/modification/{id}', 'UserController@update')->name('member-area.update')->middleware('auth');
 
-Route::get('/admin', 'AdminController@panel')->name('admin');
-Route::get('/admin/categories', 'AdminController@showCategories')->name('admin-categories');
-Route::post('/admin/categories/store', 'AdminController@storeCategory')->name('admin.category.store');
-Route::get('/admin/prestataires', 'AdminController@showProviders')->name('admin-providers');
-Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin-users');
+Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
+
+Route::get('/admin', 'AdminController@panel')->name('admin')->middleware('auth');
+Route::get('/admin/categories', 'AdminController@showCategories')->name('admin.category')->middleware('auth');
+Route::post('/admin/categories/ajout', 'AdminController@storeCategory')->name('admin.category.store')->middleware('auth');
+Route::patch('/admin/categories/modification/{id}', 'AdminController@editCategory')->name('admin.category.edit')->middleware('auth');
+Route::get('/admin/categories/modification/{id}', 'AdminController@editCategory')->name('admin.category.edit')->middleware('auth');
+Route::post('/admin/categories/modification', 'AdminController@updateCategory')->name('admin.category.update')->middleware('auth');
+Route::delete('/admin/categories/suppression/{id}', 'AdminController@deleteCategory')->name('admin.category.delete')->middleware('auth');
+Route::get('/admin/prestataires', 'AdminController@showProviders')->name('admin.provider')->middleware('auth');
+Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin.user')->middleware('auth');
+Route::delete('/admin/utilisateurs/suppression/{id}', 'AdminController@deleteUser')->name('admin.user.delete')->middleware('auth');
 
 Auth::routes(['verify' => true]);
 Route::get('/connexion', 'Auth\LoginController@show')->name('show.login')->middleware('guest');

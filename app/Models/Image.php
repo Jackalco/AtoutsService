@@ -23,7 +23,7 @@ class Image extends Model
 
         $imageName = time().'.'.$imageExtension;
         $image->storeAs('imagesUploaded', $imageName, 'public');
-        ImagesIntervention::make(public_path('storage/imagesUploaded/'.$imageName))->resize(300, 300)->save();
+        ImagesIntervention::make(public_path('storage/imagesUploaded/'.$imageName))->save();
 
         $storedImage = self::insertGetId([
             'path' => $imageName,

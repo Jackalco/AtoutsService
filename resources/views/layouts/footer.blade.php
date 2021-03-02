@@ -19,8 +19,14 @@
         </div>
         <div class="linkItem">
             <ul>
-                <li><a href="">Devenir prestataires</a></li>
-                <li><a href="">Connexion</a></li>
+                <li><a href="{{ route('become-provider') }}">Devenir prestataires</a></li>
+                @if(!App\Models\User::auth())
+                    <li><a href="{{ route('show.login') }}">Connexion</a></li>
+                @endif
+                @if(App\Models\User::auth())
+                <li><a href="{{ route('member-area') }}">Espace membre</a></li>
+                <li><a href="{{ route('logout') }}">Déconnexion</a></li>
+                @endif
             </ul>
         </div>
         <div class="linkItem">

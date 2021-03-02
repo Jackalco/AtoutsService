@@ -15,8 +15,8 @@
 @section('content')
     <h1>Panneau administrateur</h1>
     <div class="adminContainer">
-        <a class="adminItem" href="{{ route('admin-categories') }}">Gérer les catégories</a>
-        <a class="adminItem" href="{{ route('admin-providers') }}">Gérer les prestataires</a>
-        <a class="adminItem" href="{{ route('admin-users') }}">Gérer les utilisateurs</a>
+        <a class="adminItem" href="{{ route('admin.category') }}">Gérer les catégories</a>
+        <a class="adminItem" href="{{ route('admin.provider') }}">Gérer les prestataires</a>
+        <a class="adminItem" href="{{ route('admin.user') }}">Gérer les utilisateurs</a>
     </div>
 @endsection

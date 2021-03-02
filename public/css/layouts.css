@@ -8,8 +8,6 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: flex-end;
-    height: 75px;
     align-items: center;
     margin-bottom: 50px;
     margin-top: 15px;
@@ -19,12 +17,7 @@ nav {
     position: relative;
 }
 
-.itemNav {
-    height: 75px;
-}
-
 .itemNav:last-child {
-    height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -32,24 +25,29 @@ nav {
     border-radius: 5px 0px 0px 5px;
 }
 
-.itemNav:last-child a {
+.buttonNav {
     text-decoration: none;
     text-align: center;
     color: black;
     font-weight: bold;
     transition-duration: 0.5s;
+    background-color: rgb(87, 223, 216);
     align-self: center;
     color: white;
 }
 
-.itemNav:last-child a:first-child {
+.buttonNav:nth-child(2) {
     background-color: rgb(37, 188, 214);
     border-radius: 5px 0px 0px 5px;
     color: white;
 }
 
-.itemNav:last-child a:hover {
+.buttonNav:hover {
     background-color: rgb(0, 168, 197);
+}
+
+.iconNav {
+    display: none;
 }
 
 footer {
@@ -128,25 +126,29 @@ footer hr {
 }
 
 @media only screen and (min-width: 1200px) {
+    nav {
+        height: fit-content;
+        justify-content: flex-end;
+    }
     
     .logo {
-        height: 120px;
+        height: 115px;
         bottom: 20px;
     }
     
     .itemNav {
-        height: 75px;
+        height: 70px;
     }
     
     .itemNav:first-child {
-        margin-right: 20px;
+        margin-right: 10px;
     }
     
     .itemNav:last-child {
         padding-right: 5%;
     }
     
-    .itemNav:last-child a {
+    .buttonNav {
         height: 40px;
         font-size: 22px;
         padding: 15px;
@@ -171,29 +173,35 @@ footer hr {
 }
 
 @media only screen and (max-width: 1200px) {
+    nav {
+        height: fit-content;
+        justify-content: flex-end;
+    }
+
     .logo {
-        height: 120px;
-        bottom: 20px;
+        height: 110px;
+        bottom: 15px;
     }
     
     .itemNav {
-        height: 75px;
+        height: 65px;
     }
     
     .itemNav:first-child {
-        margin-right: 20px;
+        margin-right: 10px;
     }
     
     .itemNav:last-child {
-        padding-right: 5%;
+        padding-right: 0;
     }
     
-    .itemNav:last-child a {
-        height: 40px;
-        font-size: 22px;
+    .buttonNav {
+        height: 35px;
+        font-size: 18px;
         padding: 15px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: max-content;
     }  
     
     .socialLink {
@@ -212,31 +220,28 @@ footer hr {
     }
 }
 
-@media only screen and (max-width: 900px) {
-    .logo {
-        height: 120px;
-        bottom: 20px;
-    }
-    
+@media only screen and (max-width: 900px) {   
     .itemNav {
-        height: 75px;
+        height: 65px;
     }
     
     .itemNav:first-child {
-        margin-right: 50px;
+        display: none;
     }
     
     .itemNav:last-child {
-        padding-right: 5%;
+        padding-right: 0;
+        flex: 1;
     }
     
-    .itemNav:last-child a {
-        height: 40px;
-        font-size: 23px;
+    .buttonNav {
+        height: 35px;
+        font-size: 18px;
         padding: 15px;
-        padding-left: 25px;
-        padding-right: 25px;
-    }  
+        padding-left: 7px;
+        padding-right: 7px;
+        width: 100%;
+    } 
     
     .socialLink {
         width: 50px;
@@ -255,13 +260,17 @@ footer hr {
 }
 
 @media only screen and (max-width: 768px) {
+    .nav {
+        justify-content: unset;
+        height: fit-content;
+    }
     .logo {
         height: 120px;
         bottom: 20px;
     }
     
     .itemNav {
-        height: 75px;
+        height: auto;
     }
     
     .itemNav:first-child {
@@ -269,16 +278,21 @@ footer hr {
     }
     
     .itemNav:last-child {
-        padding-right: 10%;
+        flex-direction: column;
+        padding-right: 0;
     }
     
-    .itemNav:last-child a {
+    .buttonNav {
         height: 40px;
         font-size: 23px;
         padding: 15px;
         padding-left: 25px;
         padding-right: 25px;
-    } 
+    }
+
+    .iconNav {
+        display: block;
+    }
     
     .socialContainer {
         font-size: 14px;
@@ -305,13 +319,18 @@ footer hr {
 }
 
 @media only screen and (max-width: 500px) {
+    .nav {
+        justify-content: unset;
+        height: fit-content;
+    }
+
     .logo {
         height: 120px;
         bottom: 20px;
     }
     
     .itemNav {
-        height: 75px;
+        height: auto;
     }
     
     .itemNav:first-child {
@@ -319,10 +338,10 @@ footer hr {
     }
     
     .itemNav:last-child {
-        padding-right: 200px;
+        padding-right: 0;
     }
     
-    .itemNav:last-child a {
+    .buttonNav {
         height: 40px;
         font-size: 23px;
         padding: 15px;

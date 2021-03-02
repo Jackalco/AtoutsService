@@ -48,7 +48,7 @@
             <div class="listAction">
                 <a href="">Modifier</a>
                 <form action="post">
-                    <button class="buttonAdmin">Supprimer</button>
+                    <button type="submit" class="buttonAdmin">Supprimer</button>
                 </form>
             </div>
         </div>

@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('head-title')
-    Atouts Services - Gestion catégories
+    Atouts Services - Gestion sous-catégories
 @endsection
 
 @section('head-meta-description')
-    Page gestion des catégories d'Atouts Services
+    Gestion des sous-catégories d'Atouts Services
 @endsection
 
 @push('stylesheet')
@@ -70,38 +70,28 @@
         </form>
     </div>
     <h2>Liste des sous-catégories</h2>
-    <div class="listContainer"> 
-        <div class="listItem">
-            <div class="listLogo">
-                <img class="logo" src="" alt="Logo catégorie">
+    <div class="listContainer">
+        @foreach($categories as $category)
+            <div class="listItem">
+                <div class="listLogo">
+                    <img class="logoCompany" src="{{ asset('storage/imagesUploaded/'.$category->image) }}" alt="Logo catégorie">
+                </div>
+                <div class="listInfo">
+                    <div><strong>Nom :</strong> {{$category->name}}</div>
+                    <div><strong>Catégorie :</strong> {{$category->category}}</div>
+                </div>
+                <div class="listAction">
+                    <form method="get" action="{{ route('admin.category.edit', $category->id) }}">
+                        <button class="buttonAdmin">Modifier</button>
+                    </form>
+                    <form method="post" action="{{ route('admin.category.delete', $category->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="buttonAdmin">Supprimer</button>
+                    </form>
+                    {{$category->image_id}}
+                </div>
             </div>
-            <div class="listInfo">
-                <div><strong>Nom :</strong> </div>
-                <div><strong>Catégorie :</strong> </div>
-            </div>
-            <div class="listAction">
-                <form method="get" action="">
-                    <button class="buttonAdmin">Modifier</button>
-                </form>
-                <form method="post">
-                    <button class="buttonAdmin">Supprimer</button>
-                </form>
-            </div>
-        </div>
-        <div class="listItem">
-            <div class="listLogo">
-                <img src="" alt="Logo entreprise">
-            </div>
-            <div class="listInfo">
-                <div>Nom :</div>
-                <div>Catégorie : </div>
-            </div>
-            <div class="listAction">
-                <a href="">Modifier</a>
-                <form action="post">
-                    <button class="buttonAdmin">Supprimer</button>
-                </form>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection
