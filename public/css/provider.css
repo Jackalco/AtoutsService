@@ -40,6 +40,11 @@
     font-size: 22px;
 }
 
+.logoPanel {
+    font-size: 50px;
+    color: rgb(252, 185, 0);
+}
+
 .introButton {
     text-decoration: none;
     color: white;
@@ -84,7 +89,16 @@
 }
 
 .howLogo {
-    font-size: 50px;
+    font-size: 70px;
+    margin-right: -175px;
+}
+
+.color {
+    color: rgb(40, 108, 255);
+}
+
+.howText {
+    width: 225px;
 }
 
 .howButton {
@@ -99,6 +113,12 @@
     background-color: rgb(231, 172, 8);
 }
 
+h1 {
+    text-align: center;
+    width: 100%;
+    margin-left: -10%;
+}
+
 h2 {
     text-align: center;
 }
@@ -107,4 +127,56 @@ h3 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+header {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formBackground {
+    background-image: url('/images/image5.jpg');
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    background-color: rgb(247, 247, 247);
+}
+
+.formLogo {
+    width: 20%;
+}
+
+.formList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.formItem {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-right: 5%;
+    width: 40%;
+}
+
+.formButton {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(252, 185, 0);
+    border: none;
+}
+
+.formButton:hover {
+    background-color: rgb(231, 172, 8);  
 }

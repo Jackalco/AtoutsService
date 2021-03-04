@@ -70,11 +70,11 @@
         </form>
     </div>
     <h2>Liste des sous-catégories</h2>
-    <div class="listContainer">
-        @foreach($categories as $category)
+    <div class="listContainer">      
+    @foreach($categories as $category)
             <div class="listItem">
                 <div class="listLogo">
-                    <img class="logoCompany" src="{{ asset('storage/imagesUploaded/'.$category->image) }}" alt="Logo catégorie">
+                    <img class="logoCompany" src="{{ asset('storage/imagesUploaded/'.$category->path) }}" alt="Logo catégorie">
                 </div>
                 <div class="listInfo">
                     <div><strong>Nom :</strong> {{$category->name}}</div>
@@ -89,9 +89,9 @@
                         @method('DELETE')
                         <button type="submit" class="buttonAdmin">Supprimer</button>
                     </form>
-                    {{$category->image_id}}
                 </div>
             </div>
         @endforeach
+        
     </div>
 @endsection

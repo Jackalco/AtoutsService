@@ -3,7 +3,6 @@
     flex-direction: column;
     background-image: url('/images/image2.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 900px;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 200px;
@@ -14,7 +13,6 @@
     flex-direction: column;
     background-image: url('/images/image4.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 900px;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 200px;
@@ -25,7 +23,6 @@
     flex-direction: column;
     background-image: url('/images/image3.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 900px;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 200px;
@@ -113,6 +110,76 @@ header {
     color: white;
     padding-top: 125px;
     
+}
+
+@media only screen and (min-width: 1200px) {
+    .serviceContainer {
+        background-size: 100% 800px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 850px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 800px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .serviceContainer {
+        background-size: 100% 750px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 800px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 725px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .serviceContainer {
+        background-size: 100% 700px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 700px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 650px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .serviceContainer {
+        background-size: 100% 550px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 600px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 550px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .serviceContainer {
+        background-size: 100% 425px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 450px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 425px;
+    }
 }
 
 

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
-use App\Mail\Contact;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +31,7 @@ Route::get('/espace-membre/modification', 'UserController@edit')->name('member-a
 Route::patch('/espace-membre/modification/{id}', 'UserController@update')->name('member-area.update')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
+Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider')->middleware('auth');
 
 Route::get('/admin', 'AdminController@panel')->name('admin')->middleware('auth');
 Route::get('/admin/categories', 'AdminController@showCategories')->name('admin.category')->middleware('auth');
