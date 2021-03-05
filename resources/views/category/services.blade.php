@@ -21,14 +21,9 @@
         <div class="listContainer">
             <h2>Choisissez le service qui vous intéresse</h2>
             <div class="categoryContainer">
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
-                <div class="categoryItem"><a class="categoryLink" href=""><strong>Infirmière</strong></a></div>
+            @foreach($categories as $category)
+                <div class="categoryItem" style="background-image : url({{asset('storage/imagesUploaded/'.$category->path)}})"><a class="categoryLink" href=""><strong>{{$category->name}}</strong></a></div>
+            @endforeach
             </div>
         </div>
     </div>

@@ -120,9 +120,6 @@
                         </div>
                     @endif
                 </div>
-                <div>
-                    <a href="{{ route('make.payment') }}" >Pay $224 via Paypal</a>
-                </div>
                 <div class="formItem">
                     <button type="submit" class="formButton">Envoyer</button>
                 </div>
