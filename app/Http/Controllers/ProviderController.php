@@ -13,4 +13,8 @@ class ProviderController extends Controller
     public function showForm() {
         return view('provider/form_provider');
     }
+
+    public function applyForm(Request $request) {
+
+    }
 }

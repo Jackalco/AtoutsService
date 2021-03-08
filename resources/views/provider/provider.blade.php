@@ -48,7 +48,7 @@
             <i class="fas fa-universal-access howLogo color"></i>
             <div class="howText">Travaillez serainement et en toute sécurité !</div>
         </div>
-        <a class="howButton" href="{{ route('form-provider') }}">Remplir le formulaire</a>
+        <a class="howButton" href="{{ route('form-provider.show') }}">Remplir le formulaire</a>
 
     </div>
 @endsection

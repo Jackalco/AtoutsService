@@ -31,14 +31,15 @@ Route::get('/espace-membre/modification', 'UserController@edit')->name('member-a
 Route::patch('/espace-membre/modification/{id}', 'UserController@update')->name('member-area.update')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
-Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider')->middleware('auth');
+Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');
+Route::post('/devenir-prestataire/formulaire', 'ProviderController@applyForm')->name('form-provider.apply')->middleware('auth');
+
 
 Route::get('/admin', 'AdminController@panel')->name('admin')->middleware('auth');
 Route::get('/admin/categories', 'AdminController@showCategories')->name('admin.category')->middleware('auth');
 Route::post('/admin/categories/ajout', 'AdminController@storeCategory')->name('admin.category.store')->middleware('auth');
-Route::patch('/admin/categories/modification/{id}', 'AdminController@editCategory')->name('admin.category.edit')->middleware('auth');
 Route::get('/admin/categories/modification/{id}', 'AdminController@editCategory')->name('admin.category.edit')->middleware('auth');
-Route::post('/admin/categories/modification', 'AdminController@updateCategory')->name('admin.category.update')->middleware('auth');
+Route::patch('/admin/categories/modification/{id}', 'AdminController@updateCategory')->name('admin.category.update')->middleware('auth');
 Route::delete('/admin/categories/suppression/{id}', 'AdminController@deleteCategory')->name('admin.category.delete')->middleware('auth');
 Route::get('/admin/prestataires', 'AdminController@showProviders')->name('admin.provider')->middleware('auth');
 Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin.user')->middleware('auth');

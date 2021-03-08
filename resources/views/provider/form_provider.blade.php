@@ -19,7 +19,8 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Atouts Services" class="formLogo">
                 <h1>FORMULAIRE PRESTATAIRE</h1>
             </header>
-            <form class="formList" enctype="multipart/form-data" method="post" action="">
+            <form class="formList" enctype="multipart/form-data" method="post" action="{{ route('form-provider.apply') }}">
+            @csrf
                 <div class="formItem">
                     <label>Nom</label>
                     <input class="formInput {{ $errors->has('name') ? 'error' : '' }}" type="text" name="name" id="name">

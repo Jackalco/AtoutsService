@@ -30,6 +30,20 @@ class AdminController extends Controller
         return view('admin/admin_category', compact('categories'));
     }
 
+    public function storeCategory(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'category' => 'required',
+            'image' => 'required|mimes:png,jpg',
+        ]);
+
+        $image = Image::storeImage($request->image);
+
+        Category::create($request->only('name', 'category') + ['image_id' => $image]);
+
+        return back()->with('success', 'La sous-catégorie a bien été ajoutée.');
+    }
+
     public function editCategory($id) {
         $category = Category::find($id);
 
@@ -38,10 +52,28 @@ class AdminController extends Controller
         }
     }
 
-    public function updateCategory($id) {
-        $categories = Category::orderBy('name', 'asc')->get();
+    public function updateCategory(Request $request, $id) {
+        $category = Category::find($id);
+        $image = Image::find($category->image_id);
+        
 
-        return view('admin/admin_category', compact('categories'));
+        $this->validate($request, [
+            'name' => 'required',
+            'category' => 'required',
+        ]);
+
+        if($category) {
+            $category->update(
+                ['name' => $request->get('name'), 'category' => $request->get('category')]
+            );
+            if($request->image) {
+                $image->delete();
+                $newImage = Image::storeImage($request->image);
+                $category->update(['image_id' => $newImage]);
+            }   
+        }
+
+        return redirect(route('admin.category'));
     }
 
     public function deleteCategory($id) {
@@ -51,7 +83,7 @@ class AdminController extends Controller
             $category->delete();
         }
 
-        return redirect('admin.category');
+        return redirect(route('admin.category'));
     }
 
     public function showProviders() {
@@ -74,17 +106,5 @@ class AdminController extends Controller
         return redirect('/admin/utilisateurs');
     }
 
-    public function storeCategory(Request $request) {
-        $this->validate($request, [
-            'name' => 'required',
-            'category' => 'required',
-            'image' => 'required|mimes:png,jpg',
-        ]);
-
-        $image = Image::storeImage($request->image);
-
-        Category::create($request->only('name', 'category') + ['image_id' => $image]);
-
-        return back()->with('success', 'La sous-catégorie a bien été ajoutée.');
-    }
+    
 }
