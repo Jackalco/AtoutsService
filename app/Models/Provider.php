@@ -11,12 +11,18 @@ class Provider extends Model
 
     protected $fillable = [
         'name',
-        'city',
         'address',
+        'city',
         'email',
         'phone',
         'owner',
-        'image_id',
-        'owner_id'
+        'owner_id',
+        'structure',
+        'workforce',
+        'activity',
+        'siret',
+        'date',
+        'grade',
+        'logo',
     ];
 }

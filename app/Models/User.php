@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Provider;
 
 class User extends Authenticatable
 {
@@ -42,6 +43,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function __construct($user = NULL)
+    {
+        if ($user != NULL) {
+            $this->id = $user->id;
+            $this->name = $user->name;
+            $this->email = $user->email;
+        }
+    }
+
     public static function auth()
     {
         if(Auth::check()) {
@@ -49,5 +59,11 @@ class User extends Authenticatable
         } else {
             return NULL;
         }
+    }
+
+    public static function own() {
+        $providers = Provider::orderBy('name', 'asc')->get();
+
+
     }
 }

@@ -62,13 +62,11 @@ h2 {
 .listLogoCompany {
     flex: 1;
     display: flex;
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    align-self: flex-start;
 }
 
 .imageLogoCompany {
-    width: 150px;
+    width: 175px;
 }
 
 .listCoordinates {
@@ -81,8 +79,9 @@ h2 {
     background-color: rgb(250, 158, 66);
     height: 125px;
     border-radius: 25px 0 25px 0;
-    padding-left: 30px;
-    font-size: 16px;
+    padding-left: 25px;
+    padding-right: 5px;
+    font-size: 15px;
 }
 
 .listCoordinates i {
@@ -95,8 +94,23 @@ h2 {
 .listImage {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+.listButton {
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    margin-left: -400px;
+    background-color: rgb(255, 203, 59);
+    transition-duration: 0.4s;
+}
+
+.listButton:hover {
+    background-color: rgb(252, 185, 0);
+    color: white;
 }
 
 .imageCompany {

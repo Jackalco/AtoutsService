@@ -19,66 +19,31 @@
         </header>
         <div class="listContainer">
             <h2>Prestataires proposés</h2>
-            <div class="listItem">
-                <div class="listInfo">
-                    <div class="listTitle">
-                        <h3>Cabinet Infirmier des Pins Saint-Brévin</h3>
-                        <hr>
-                        <div class="listOwner">Propriètaire</div>
+            @if($providers != null)
+                @foreach($providers as $provider)
+                    <div class="listItem">
+                        <div class="listInfo">
+                            <div class="listLogoCompany">
+                                <img class="imageLogoCompany" src="{{ asset('storage/imagesUploaded/'.$provider->path) }}" alt="Logo prestataire">
+                            </div>
+                            <div class="listTitle">
+                                <h3>{{$provider->name}}</h3>
+                                <hr>
+                                <div class="listOwner">{{$provider->owner}}</div>
+                            </div>
+                            <div class="listCoordinates">
+                                <div><i class="fas fa-home"></i>{{$provider->address}}, {{$provider->city}}</div>
+                                <div><i class="fas fa-phone"></i>{{$provider->phone}}</div>
+                                <div><i class="fas fa-at"></i>{{$provider->email}}</div>
+                            </div>
+                        </div>
+                        <div class="listImage">
+                            <img class="imageCompany" src="{{ asset('images/image4.jpg') }}" alt="Image entreprise">
+                            <a class="listButton" href="">En savoir plus</a>
+                        </div>
                     </div>
-                    <div class="listLogoCompany">
-                        <img class="imageLogoCompany" src="{{ asset('images/logo.png') }}" alt="Logo prestataire">
-                    </div>
-                    <div class="listCoordinates">
-                        <div><i class="fas fa-home"></i>13 rue de Pornic, 44250, Saint-Brévin-Les-Pins</div>
-                        <div><i class="fas fa-phone"></i>Téléphone</div>
-                        <div><i class="fas fa-at"></i>Adresse mail</div>
-                    </div>
-                </div>
-                <div class="listImage">
-                    <img class="imageCompany" src="{{ asset('images/image4.jpg') }}" alt="Image entreprise">
-                </div>
-            </div>
-            <div class="listItem">
-                <div class="listInfo">
-                    <div class="listTitle">
-                        <h3>Cabinet Infirmier des Pins Saint-Brévin</h3>
-                        <hr>
-                        <div class="listOwner">Propriètaire</div>
-                    </div>
-                    <div class="listLogoCompany">
-                        <img class="imageLogoCompany" src="{{ asset('images/logo.png') }}" alt="Logo prestataire">
-                    </div>
-                    <div class="listCoordinates">
-                        <div><i class="fas fa-home"></i>Adresse</div>
-                        <div><i class="fas fa-phone"></i>Téléphone</div>
-                        <div><i class="fas fa-at"></i>Adresse mail</div>
-                    </div>
-                </div>
-                <div class="listImage">
-                    <img class="imageCompany" src="{{ asset('images/image4.jpg') }}" alt="Image entreprise">
-                </div>
-            </div>
-            <div class="listItem">
-                <div class="listInfo">
-                    <div class="listTitle">
-                        <h3>Cabinet Infirmier des Pins Saint-Brévin</h3>
-                        <hr>
-                        <div class="listOwner">Propriètaire</div>
-                    </div>
-                    <div class="listLogoCompany">
-                        <img class="imageLogoCompany" src="{{ asset('images/logo.png') }}" alt="Logo prestataire">
-                    </div>
-                    <div class="listCoordinates">
-                        <div><i class="fas fa-home"></i>Adresse</div>
-                        <div><i class="fas fa-phone"></i>Téléphone</div>
-                        <div><i class="fas fa-at"></i>Adresse mail</div>
-                    </div>
-                </div>
-                <div class="listImage">
-                    <img class="imageCompany" src="{{ asset('images/image4.jpg') }}" alt="Image entreprise">
-                </div>
-            </div>
+                @endforeach
+            @endif   
         </div>
 
     </div>

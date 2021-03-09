@@ -24,15 +24,16 @@ Route::get('/artisans', 'CategoryController@showArtisans')->name('artisans');
 
 Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 
-Route::get('/test/list', 'ListController@index')->name('list');
+Route::get('/liste/{id}', 'ListController@index')->name('list');
 
 Route::get('/espace-membre', 'UserController@show')->name('member-area')->middleware('auth');
-Route::get('/espace-membre/modification', 'UserController@edit')->name('member-area.edit')->middleware('auth');
-Route::patch('/espace-membre/modification/{id}', 'UserController@update')->name('member-area.update')->middleware('auth');
+Route::get('/espace-membre/modification', 'UserController@editPersonnal')->name('member-area.edit')->middleware('auth');
+Route::patch('/espace-membre/modification/{id}', 'UserController@updatePersonnal')->name('member-area.update')->middleware('auth');
+Route::get('/espace-membre/{id}/prestataires/', 'UserController@showProviders')->name('member-area.providers.show')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');
-Route::post('/devenir-prestataire/formulaire', 'ProviderController@applyForm')->name('form-provider.apply')->middleware('auth');
+Route::post('/devenir-prestataire/formulaire/{id}', 'ProviderController@applyForm')->name('form-provider.apply')->middleware('auth');
 
 
 Route::get('/admin', 'AdminController@panel')->name('admin')->middleware('auth');

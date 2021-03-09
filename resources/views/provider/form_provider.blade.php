@@ -19,7 +19,12 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Atouts Services" class="formLogo">
                 <h1>FORMULAIRE PRESTATAIRE</h1>
             </header>
-            <form class="formList" enctype="multipart/form-data" method="post" action="{{ route('form-provider.apply') }}">
+            @if(Session::has('success'))
+                <div class="alert">
+                    {{Session::get('success')}}
+                </div>
+            @endif
+            <form class="formList" enctype="multipart/form-data" method="post" action="{{ route('form-provider.apply', $user->id) }}">
             @csrf
                 <div class="formItem">
                     <label>Nom</label>
@@ -37,6 +42,16 @@
 
                     @if ($errors->has('address'))
                         <div class="address">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
+                </div>
+                <div class="formItem">
+                    <label>Ville</label>
+                    <input class="formInput {{ $errors->has('city') ? 'error' : '' }}" type="text" name="city" id="city">
+
+                    @if ($errors->has('city'))
+                        <div class="city">
                             Ce champ est obligatoire.
                         </div>
                     @endif
@@ -62,7 +77,7 @@
                     @endif
                 </div>
                 <div class="formItem">
-                    <label>Date de naissance</label>
+                    <label>Date de création</label>
                     <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="date" name="date" id="date">
 
                     @if ($errors->has('date'))
@@ -82,18 +97,13 @@
                     @endif
                 </div>
                 <div class="formItem">
-                    <label>Nom de structure</label>
-                    <input class="formInput {{ $errors->has('company') ? 'error' : '' }}" type="text" name="company" id="company">
-
-                    @if ($errors->has('company'))
-                        <div class="error">
-                            Ce champ est obligatoire.
-                        </div>
-                    @endif
-                </div>
-                <div class="formItem">
                     <label>Activité</label>
-                    <input class="formInput {{ $errors->has('activity') ? 'error' : '' }}" type="text" name="activity" id="activity">
+                    <select class="formInput {{ $errors->has('activity') ? 'error' : '' }}" type="text" name="activity" id="activity">
+                        <option value="">Choississez une activité</option>
+                        @foreach($categories as $category)
+                        <option value="{{$category->name}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
 
                     @if ($errors->has('activity'))
                         <div class="error">
@@ -119,6 +129,26 @@
                         <div class="error">
                             Ce champ est obligatoire.
                         </div>
+                    @endif
+                </div>
+                <div class="formItem">
+                    <label>Propriétaire</label>
+                    <input class="formInput {{ $errors->has('owner') ? 'error' : '' }}" type="text" name="owner" id="owner">
+
+                    @if ($errors->has('owner'))
+                        <div class="error">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
+                </div>
+                <div class="formItem">
+                    <label>Logo</label>
+                    <input type="file" accept=".png, .jpg" class="formInput {{ $errors->has('logo') ? 'error' : '' }}" name="logo" id="logo">
+
+                    @if ($errors->has('logo'))
+                    <div class="error">
+                        Ce champ est obligatoire.
+                    </div>
                     @endif
                 </div>
                 <div class="formItem">

@@ -90,7 +90,7 @@
 
 .howLogo {
     font-size: 70px;
-    margin-right: -175px;
+    margin-right: -100px;
 }
 
 .color {
@@ -179,4 +179,14 @@ header {
 
 .formButton:hover {
     background-color: rgb(231, 172, 8);  
+}
+
+.error {
+    color: red;
+}
+
+.alert {
+    color: green;
+    margin-left: 5%;
+    margin-bottom: 20px;
 }

@@ -17,7 +17,6 @@
     <h2>Ajout d'une sous-catégorie</h2>
     <div class="formContainer">
         <form enctype="multipart/form-data" method="post" action="{{ route('admin.category.store') }}">
-
         @csrf
 
             <div class="formItem">
@@ -56,8 +55,6 @@
                 </div>
                 @endif
             </div>
-
-
 
             <input type="submit" name="send" value="Ajouter" class="buttonAdmin">
 
