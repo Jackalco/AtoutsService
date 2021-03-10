@@ -67,28 +67,33 @@
         </form>
     </div>
     <h2>Liste des sous-catégories</h2>
-    <div class="listContainer">      
-    @foreach($categories as $category)
-        <div class="listItem">
-            <div class="listLogo">
-                <img class="logoCompany" src="{{ asset('storage/imagesUploaded/'.$category->path) }}" alt="Logo catégorie">
-            </div>
-            <div class="listInfo">
-                <div><strong>Nom :</strong> {{$category->name}}</div>
-                <div><strong>Catégorie :</strong> {{$category->category}}</div>
-            </div>
-            <div class="listAction">
-                <form method="get" action="{{ route('admin.category.edit', $category->id) }}">
-                    <button class="buttonAdmin">Modifier</button>
-                </form>
-                <form method="post" action="{{ route('admin.category.delete', $category->id) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="buttonAdmin">Supprimer</button>
-                </form>
-            </div>
-        </div>
-    @endforeach
+    <div class="listContainer">
+    @if(count($categories) == 0)
+    <div>Nope</div>
+    
         
+    @else
+    @foreach($categories as $category)
+            <div class="listItem">
+                <div class="listLogo">
+                    <img class="logoCompany" src="{{ asset('storage/imagesUploaded/'.$category->image->path) }}" alt="Logo catégorie">
+                </div>
+                <div class="listInfo">
+                    <div><strong>Nom :</strong> {{$category->name}}</div>
+                    <div><strong>Catégorie :</strong> {{$category->category}}</div>
+                </div>
+                <div class="listAction">
+                    <form method="get" action="{{ route('admin.category.edit', $category->id) }}">
+                        <button class="buttonAdmin">Modifier</button>
+                    </form>
+                    <form method="post" action="{{ route('admin.category.delete', $category->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="buttonAdmin">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+        @endforeach
+    @endif  
     </div>
 @endsection

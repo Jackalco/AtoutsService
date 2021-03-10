@@ -43,15 +43,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function __construct($user = NULL)
-    {
-        if ($user != NULL) {
-            $this->id = $user->id;
-            $this->name = $user->name;
-            $this->email = $user->email;
-        }
-    }
-
     public static function auth()
     {
         if(Auth::check()) {

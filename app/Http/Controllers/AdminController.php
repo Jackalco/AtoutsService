@@ -14,19 +14,8 @@ class AdminController extends Controller
     }
 
     public function showCategories() {
-        $images = Image::get();
-        $category = Category::orderBy('name', 'asc')->get();
-        $categories[] = null;
-
-        for ($i=0; $i < count($category) ; $i++) { 
-            foreach($images as $image) {
-                if ($image->id == $category[$i]->image_id) {
-                    $categories[$i] = $category[$i];
-                    $categories[$i]['path'] = $image->path;
-                }
-            }
-        }
-
+        $categories = Category::orderBy('name', 'asc')->get();
+        
         return view('admin/admin_category', compact('categories'));
     }
 
@@ -87,6 +76,7 @@ class AdminController extends Controller
     }
 
     public function showProviders() {
+        $providers = Provider::orderBy('name', 'asc')->get();
         return view('admin/admin_provider');
     }
 

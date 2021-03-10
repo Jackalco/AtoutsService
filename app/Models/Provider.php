@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
+use App\Models\User;
 
 class Provider extends Model
 {
@@ -25,4 +27,12 @@ class Provider extends Model
         'grade',
         'logo',
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function owner() {
+        return $this->belongsTo(User::class);
+    }
 }

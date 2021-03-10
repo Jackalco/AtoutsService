@@ -13,18 +13,20 @@
 @endpush
 
 @section('content')
-    <div class="container">
+    <div class="container" style="background-image: url({{asset('storage/imagesUploaded/'.$category->image->path)}})">
         <header>
             <h1>Nom catégorie</h1>
         </header>
         <div class="listContainer">
             <h2>Prestataires proposés</h2>
-            @if($providers != null)
+            @if(count($providers) == 0)
+                <div>Désolé, il semblerait que nous n'avons pas encore de prestataires pour le service que vous désirez.</div>
+            @else
                 @foreach($providers as $provider)
                     <div class="listItem">
                         <div class="listInfo">
                             <div class="listLogoCompany">
-                                <img class="imageLogoCompany" src="{{ asset('storage/imagesUploaded/'.$provider->path) }}" alt="Logo prestataire">
+                                <img class="imageLogoCompany" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}" alt="Logo prestataire">
                             </div>
                             <div class="listTitle">
                                 <h3>{{$provider->name}}</h3>
@@ -44,6 +46,7 @@
                     </div>
                 @endforeach
             @endif   
+            {{$category}}
         </div>
 
     </div>
