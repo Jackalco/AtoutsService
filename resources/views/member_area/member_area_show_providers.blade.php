@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('head-title')
-    Atouts Services - Espace membre modification
+    Atouts Services - Espace membre pour les prestataires
 @endsection
 
 @section('head-meta-description')
-    Modification des informations personelles d'Atouts Services
+    Présentation des différents prestataires possédés par l'utilisateur d'Atouts Services
 @endsection
 
 @push('stylesheet')
@@ -34,6 +34,15 @@
                     <div class="providerItem"><strong>Activité :</strong>{{$provider->activity}}</div>
                     <div class="providerItem"><strong>Numéro de SIRET :</strong>{{$provider->siret}}</div>
                 </div>
+                <form method="get" action="{{ route('member-area.provider.edit', [$user->id, $provider->id]) }}">
+                    <button class="memberSubmitButton">Modifier</button>
+                </form>
+                <form method="post" action="{{ route('member-area.provider.delete', [$user->id, $provider->id]) }}">
+                    @csrf
+                    @method('DELETE')
+
+                    <button class="memberSubmitButton" type="submit">Supprimer</button>
+                </form>
                 <hr>
             @endforeach
         @endif

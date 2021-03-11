@@ -79,6 +79,30 @@
     width: 40%;
 }
 
+.formContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.formItem {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formLabel {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.formInput {
+    font-size: 18px;
+}
+
 h1 {
     margin-left: 10%;
     

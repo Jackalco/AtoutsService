@@ -39,8 +39,7 @@
                                 <div><i class="fas fa-at"></i>{{$provider->email}}</div>
                             </div>
                         </div>
-                        <div class="listImage">
-                            <img class="imageCompany" src="{{ asset('images/image4.jpg') }}" alt="Image entreprise">
+                        <div class="listButtonItem">
                             <a class="listButton" href="">En savoir plus</a>
                         </div>
                     </div>

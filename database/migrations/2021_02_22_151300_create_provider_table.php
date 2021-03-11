@@ -28,6 +28,8 @@ class CreateProviderTable extends Migration
             $table->string('activity');
             $table->string('siret');
             $table->date('date');
+            $table->string('color');
+            $table->string('description');
             $table->float('grade')->nullable();
             $table->timestamps();
         });
