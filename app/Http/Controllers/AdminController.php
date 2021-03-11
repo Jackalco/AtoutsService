@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\Category;
+use App\Models\Provider;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -77,7 +78,18 @@ class AdminController extends Controller
 
     public function showProviders() {
         $providers = Provider::orderBy('name', 'asc')->get();
-        return view('admin/admin_provider');
+
+        return view('admin/admin_provider', compact('providers'));
+    }
+
+    public function deleteProvider($id) {
+        $provider = Provider::find($id);
+
+        if($provider) {
+            $provider->delete();
+        }
+
+        return back()->with('success', 'Le prestataire a bien été supprimé');
     }
 
     public function showUsers() {
@@ -93,7 +105,7 @@ class AdminController extends Controller
             $user->delete();
         }
 
-        return redirect('/admin/utilisateurs');
+        return back()->with('success', 'L\'utilisateur a bien été supprimé');
     }
 
     

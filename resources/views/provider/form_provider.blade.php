@@ -143,9 +143,9 @@
                 </div>
                 <div class="formItem">
                     <label>Logo</label>
-                    <input type="file" accept=".png, .jpg" class="formInput {{ $errors->has('logo') ? 'error' : '' }}" name="logo" id="logo">
+                    <input type="file" accept=".png, .jpg" class="formInput {{ $errors->has('image') ? 'error' : '' }}" name="image" id="image">
 
-                    @if ($errors->has('logo'))
+                    @if ($errors->has('image'))
                     <div class="error">
                         Ce champ est obligatoire.
                     </div>

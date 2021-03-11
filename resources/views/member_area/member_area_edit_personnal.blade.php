@@ -15,6 +15,7 @@
 @section('content')
     <h1>Espace membre</h1>
     <div class="memberContainer">
+        <a href="{{ route('member-area') }}" class="memberBackButton">Retour</a>
         <h2>Votre profil</h2>
         <hr>
         <form class="memberForm" method="post" action="{{ route('member-area.update', $user->id) }}" enctype="multipart/form-data">

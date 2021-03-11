@@ -20,7 +20,7 @@ class CreateProviderTable extends Migration
             $table->string('city');
             $table->string('phone');
             $table->string('email');
-            $table->integer('logo');
+            $table->integer('image_id');
             $table->string('owner');
             $table->integer('owner_id');
             $table->integer('structure');

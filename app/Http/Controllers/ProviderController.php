@@ -34,13 +34,13 @@ class ProviderController extends Controller
             'structure' => 'required',
             'owner' => 'required',
             'activity' => 'required',
-            'logo' => 'required|mimes:png,jpg'
+            'image' => 'required|mimes:png,jpg'
         ]);
 
-        $logo = Image::storeImage($request->logo);
+        $image = Image::storeImage($request->image);
 
         Provider::create(
-            $request->only('name', 'address', 'city', 'phone', 'email', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['logo' => $logo] + ['owner_id' => $user]
+            $request->only('name', 'address', 'city', 'phone', 'email', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['owner_id' => $user]
         );
 
         return back()->with('success', 'Félicitations ! Votre entreprise a bien été ajoutée parmis nos prestataires.');

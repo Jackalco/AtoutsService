@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-    <div class="container" style="background-image: url({{asset('storage/imagesUploaded/'.$category->image->path)}})">
+    <div class="container" style="background-image : url({{asset('storage/imagesUploaded/'.$category->image->path)}})">
         <header>
             <h1>Nom catégorie</h1>
         </header>
@@ -26,7 +26,7 @@
                     <div class="listItem">
                         <div class="listInfo">
                             <div class="listLogoCompany">
-                                <img class="imageLogoCompany" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}" alt="Logo prestataire">
+                                <img class="imageLogoCompany" src="{{asset('storage/imagesUploaded/'.$provider->image->path)}}" alt="Logo prestataire">
                             </div>
                             <div class="listTitle">
                                 <h3>{{$provider->name}}</h3>
@@ -45,8 +45,8 @@
                         </div>
                     </div>
                 @endforeach
-            @endif   
-            {{$category}}
+            @endif
+            
         </div>
 
     </div>

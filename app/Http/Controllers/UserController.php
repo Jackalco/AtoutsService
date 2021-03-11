@@ -36,30 +36,13 @@ class UserController extends Controller
     }
 
     public function showProviders($id) {
-        $providersList = Provider::where('owner_id', $id)->orderBy('name', 'asc')->get();
-        $images = Image::get();
-        $providers[] = null;
-
-        if($providersList != null) {
-            for ($i=0; $i < count($providersList) ; $i++) { 
-                foreach($images as $image) {
-                    if ($image->id == $providersList[$i]->logo) {
-                        $providers[$i] = $providersList[$i];
-                        $providers[$i]['path'] = $image->path;
-                    }
-                }
-            }
-        } else {
-            $providers = null;
-        }
+        $providers = Provider::where('owner_id', $id)->orderBy('name', 'asc')->get();
 
         return view('member_area/member_area_show_providers', compact('providers'));
     }
 
     public function editProvider($id) {
         $provider = Provider::where('id', $id)->orderBy('name', 'asc')->get();
-
-        
 
         return view('member_area/member_area_edit_provider');
     }

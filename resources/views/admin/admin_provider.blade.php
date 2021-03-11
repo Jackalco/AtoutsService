@@ -15,42 +15,36 @@
 @section('content')
 <h1>Gestion des prestataires</h1>
     <h2>Liste des prestataires</h2>
-    <div class="listContainer"> 
-        <div class="listItem">
-            <div class="listLogo">
-                <img class="logo" src="" alt="Logo entreprise">
-            </div>
-            <div class="listInfo">
-                <div><strong>Nom :</strong> </div>
-                <div><strong>Adresse :</strong> </div>
-                <div><strong>Ville :</strong> </div>
-                <div><strong>Email :</strong> </div>
-                <div><strong>Propriètaire :</strong> </div>
-            </div>
-            <div class="listAction">
-                <form method="get" action="">
-                    <button class="buttonAdmin">Modifier</button>
-                </form>
-                <form method="post">
-                    <button class="buttonAdmin">Supprimer</button>
-                </form>
-            </div>
+    <div class="listContainer">
+    @if(Session::has('success'))
+        <div class="alert">
+            {{Session::get('success')}}
         </div>
-        <div class="listItem">
-            <div class="listLogo">
-                <img src="" alt="Logo entreprise">
+    @endif
+    @if(count($providers) == 0)
+    <div>Il n'y a, actuellement, aucune sous-catégorie.</div>  
+    @else
+        @foreach($providers as $provider)
+            <div class="listItem">
+                <div class="listLogo">
+                    <img class="logo" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}" alt="Logo de {{$provider->name}}">
+                </div>
+                <div class="listInfo">
+                    <div><strong>Nom : </strong>{{$provider->name}}</div>
+                    <div><strong>Adresse : </strong>{{$provider->address}}</div>
+                    <div><strong>Ville : </strong>{{$provider->city}}</div>
+                    <div><strong>Email : </strong>{{$provider->email}}</div>
+                    <div><strong>Propriètaire : </strong>{{$provider->owner}}</div>
+                </div>
+                <div class="listAction">
+                    <form method="post" action="{{ route('admin.provider.delete', $provider->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="buttonAdmin">Supprimer</button>
+                    </form>
+                </div>
             </div>
-            <div class="listInfo">
-                <div>Nom :</div>
-                <div>Adresse :</div>
-                <div>Ville : </div>
-            </div>
-            <div class="listAction">
-                <a href="">Modifier</a>
-                <form action="post">
-                    <button type="submit" class="buttonAdmin">Supprimer</button>
-                </form>
-            </div>
-        </div>
+        @endforeach
+    @endif
     </div>
 @endsection

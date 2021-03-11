@@ -16,6 +16,14 @@
     <h1>Gestion des utilisateurs</h1>
     <h2>Liste des utilisateurs</h2>
     <div class="listContainer">
+    @if(Session::has('success'))
+        <div class="alert">
+            {{Session::get('success')}}
+        </div>
+    @endif
+    @if(count($users) == 0)
+        <div>Il n'y aucun utilisateur</div>
+    @else
         @foreach($users as $user)
             <div class="listItem">
                 <div class="listInfo">
@@ -31,5 +39,6 @@
                 </div>
             </div>
         @endforeach
+    @endif
     </div>
 @endsection

@@ -69,7 +69,7 @@
     <h2>Liste des sous-catégories</h2>
     <div class="listContainer">
     @if(count($categories) == 0)
-    <div>Nope</div>
+    <div>Il n'y a, actuellement, aucune sous-catégorie.</div>
     
         
     @else

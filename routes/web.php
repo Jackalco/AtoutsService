@@ -43,6 +43,7 @@ Route::get('/admin/categories/modification/{id}', 'AdminController@editCategory'
 Route::patch('/admin/categories/modification/{id}', 'AdminController@updateCategory')->name('admin.category.update')->middleware('auth');
 Route::delete('/admin/categories/suppression/{id}', 'AdminController@deleteCategory')->name('admin.category.delete')->middleware('auth');
 Route::get('/admin/prestataires', 'AdminController@showProviders')->name('admin.provider')->middleware('auth');
+Route::delete('/admin/prestataires/suppression/{id}', 'AdminController@deleteProvider')->name('admin.provider.delete')->middleware('auth');
 Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin.user')->middleware('auth');
 Route::delete('/admin/utilisateurs/suppression/{id}', 'AdminController@deleteUser')->name('admin.user.delete')->middleware('auth');
 
