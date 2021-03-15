@@ -75,8 +75,32 @@
     background-color: rgb(252, 185, 0);
 }
 
+.providerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(87, 223, 216);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(134, 134, 134) ;
+}
+
 .providerItem {
-    width: 40%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.providerInfo {
+    width: 45%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.providerInfo strong {
+    color: white;
 }
 
 .formContainer {
@@ -84,6 +108,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 20px;
 }
 
 .formItem {
@@ -101,6 +126,22 @@
 
 .formInput {
     font-size: 18px;
+}
+
+.formButton {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(255, 203, 59);
+    border: none;
+    width: fit-content;
+}
+
+.formButton:hover {
+    color: white;
+    background-color: rgb(252, 185, 0);
 }
 
 h1 {
@@ -122,6 +163,14 @@ h3 {
 hr {
     border: 1px solid white;
     width: 80%;
+}
+
+.alert {
+    color: green;
+}
+
+.error {
+    color : red;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -174,6 +223,19 @@ hr {
         padding: 10px;
         margin-left: 150px;
         margin-top: 50px;
+    }
+
+    .providerContainer {
+        min-height: 500px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .providerItem {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     
     h2 {
@@ -238,6 +300,19 @@ hr {
         margin-left: 125px;
         margin-top: 50px;
     }
+
+    .providerContainer {
+        min-height: 500px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .providerItem {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
     
     h2 {
         font-size: 30px;
@@ -300,6 +375,19 @@ hr {
         padding: 8px;
         margin-left: 125px;
         margin-top: 50px;
+    }
+
+    .providerContainer {
+        min-height: 450px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .providerItem {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     
     h2 {
@@ -367,6 +455,20 @@ hr {
         margin-left: 0;
         margin-top: 10px;
     }
+
+    .providerContainer {
+        min-height: 425px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .providerItem {
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
     
     h2 {
         font-size: 26px;
@@ -430,6 +532,19 @@ hr {
         padding: 8px;
         margin-left: 0;
         margin-top: 10px;
+    }
+
+    .providerContainer {
+        min-height: 400px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .providerItem {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     
     h2 {

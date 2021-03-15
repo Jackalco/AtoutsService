@@ -27,6 +27,8 @@ class Provider extends Model
         'date',
         'grade',
         'logo',
+        'description',
+        'color'
     ];
 
     public function category() {

@@ -19,20 +19,18 @@ use Illuminate\Http\Request;
 Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/services', 'CategoryController@showServices')->name('services');
-
 Route::get('/artisans', 'CategoryController@showArtisans')->name('artisans');
-
 Route::get('/logements', 'CategoryController@showHousings')->name('housings');
-
 Route::get('/liste/{id}', 'ListController@index')->name('list');
+Route::get('/prestataire/{id}', 'ProviderController@showProvider')->name('provider.show');
 
 Route::get('/espace-membre', 'UserController@show')->name('member-area')->middleware('auth');
 Route::get('/espace-membre/modification', 'UserController@editPersonnal')->name('member-area.edit')->middleware('auth');
 Route::patch('/espace-membre/modification/{id}', 'UserController@updatePersonnal')->name('member-area.update')->middleware('auth');
 Route::get('/espace-membre/{id}/prestataires/', 'UserController@showProviders')->name('member-area.providers.show')->middleware('auth');
-Route::get('/espace-membre/{id}/prestataires/modification/{provider}', 'UserController@editProvider')->name('member-area.provider.edit')->middleware('auth');
-Route::patch('/espace-membre/{id}/prestataire/modifcation/{provider}', 'UserController@updateProvider')->name('member-area.provider.update')->middleware('auth');
-Route::delete('/espace-membre/{id}/prestataire/suppression/{provider}', 'UserController@deleteProvider')->name('member-area.provider.delete')->middleware('auth');
+Route::get('/espace-membre/{id}/prestataires/modification/{id_provider}', 'UserController@editProvider')->name('member-area.provider.edit')->middleware('auth');
+Route::patch('/espace-membre/{id}/prestataire/modifcation/{id_provider}', 'UserController@updateProvider')->name('member-area.provider.update')->middleware('auth');
+Route::delete('/espace-membre/{id}/prestataire/suppression/{id_provider}', 'UserController@deleteProvider')->name('member-area.provider.delete')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');

@@ -24,7 +24,7 @@
             @else
                 @foreach($providers as $provider)
                     <div class="listItem">
-                        <div class="listInfo">
+                        <div class="listInfo" style="background-color : {{$provider->color}}">
                             <div class="listLogoCompany">
                                 <img class="imageLogoCompany" src="{{asset('storage/imagesUploaded/'.$provider->image->path)}}" alt="Logo prestataire">
                             </div>
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="listButtonItem">
-                            <a class="listButton" href="">En savoir plus</a>
+                            <a class="listButton" href="{{ route('provider.show', $provider->id) }}">En savoir plus</a>
                         </div>
                     </div>
                 @endforeach

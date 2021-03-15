@@ -38,7 +38,6 @@ h2 {
 .listInfo {
     display: flex;
     flex-direction: row;
-    background-color: palevioletred;
     height: 300px;
     align-items: center;
 }

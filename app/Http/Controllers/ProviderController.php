@@ -45,4 +45,10 @@ class ProviderController extends Controller
 
         return back()->with('success', 'Félicitations ! Votre entreprise a bien été ajoutée parmis nos prestataires.');
     }
+
+    public function showProvider($id) {
+        $provider = Provider::find($id);
+
+        return view('provider/show_provider', compact('provider'));
+    }
 }
