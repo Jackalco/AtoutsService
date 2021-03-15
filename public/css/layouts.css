@@ -85,6 +85,16 @@ footer hr {
     background-color: black;
 }
 
+.socialLink i {
+    transition-duration: 0.4s;
+    
+}
+
+.socialLink:hover i {
+    transform: scale(1.25);
+    text-shadow: 3px 3px rgba(27, 27, 27, 0.877);
+}
+
 .facebook:hover {
     background-color: #3b5998;
 }
