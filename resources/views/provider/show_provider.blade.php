@@ -13,5 +13,8 @@
 @endpush
 
 @section('content')
-    {{$provider}}
+    <div class="providerContainer">
+        <div class="providerItem"></div>
+    
+    </div>
 @endsection

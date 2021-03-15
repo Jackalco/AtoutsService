@@ -40,6 +40,7 @@ h2 {
     flex-direction: row;
     height: 300px;
     align-items: center;
+    background-color: rgb(87, 223, 216);
 }
 
 .listTitle {

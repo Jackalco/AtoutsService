@@ -15,7 +15,7 @@
 @section('content')
     <div class="container" style="background-image : url({{asset('storage/imagesUploaded/'.$category->image->path)}})">
         <header>
-            <h1>Nom catégorie</h1>
+            <h1>{{$category->name}}</h1>
         </header>
         <div class="listContainer">
             <h2>Prestataires proposés</h2>

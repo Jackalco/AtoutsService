@@ -48,6 +48,11 @@ nav {
 
 .iconNav {
     display: none;
+    transition-duration: 0.5s;
+}
+
+.iconNav:hover {
+    background-color: rgb(0, 168, 197);
 }
 
 footer {
@@ -272,6 +277,10 @@ footer hr {
     .itemNav {
         height: auto;
     }
+
+    .itemNav .buttonNav {
+        display: none;
+    }
     
     .itemNav:first-child {
         margin-right: 50px;
@@ -280,6 +289,7 @@ footer hr {
     .itemNav:last-child {
         flex-direction: column;
         padding-right: 0;
+        border-radius: 0;
     }
     
     .buttonNav {
@@ -292,6 +302,11 @@ footer hr {
 
     .iconNav {
         display: block;
+        color: white;
+        height: 50px;
+        font-size: 40px;
+        padding-left: 10px;
+        padding-top: 10px;
     }
     
     .socialContainer {
@@ -316,6 +331,23 @@ footer hr {
     .linkItem li {
         margin-bottom: 10px;
     }
+
+    .responsive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(87, 223, 216);
+        width: 100%;
+    }
+
+    .buttonNav:nth-child(2) {
+        background-color: rgb(87, 223, 216);
+    }
+
+    .buttonNav:nth-child(2):hover {
+        background-color: rgb(0, 168, 197);
+    }
+
 }
 
 @media only screen and (max-width: 500px) {

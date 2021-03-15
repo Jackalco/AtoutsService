@@ -26,7 +26,7 @@ class Provider extends Model
         'siret',
         'date',
         'grade',
-        'logo',
+        'image_id',
         'description',
         'color'
     ];

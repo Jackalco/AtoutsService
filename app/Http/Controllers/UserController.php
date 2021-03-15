@@ -69,7 +69,7 @@ class UserController extends Controller
         ]);
 
         if($provider) {
-            if($user->id == $provider->id) {
+            if($user->id == $provider->owner_id) {
                 $provider->update(
                     ['name' => $request->get('name'), 
                     'address' => $request->get('address'),

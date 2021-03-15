@@ -2,7 +2,7 @@
     <div class="itemNav">
         <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
     </div>
-    <div class="itemNav">
+    <div id="navBar" class="itemNav">
         <a href="javascript:void(0);" class="iconNav" onclick="showNavBar()">
             <i class="fa fa-bars"></i>
         </a>
