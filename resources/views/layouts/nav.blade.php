@@ -14,8 +14,12 @@
         @if(!App\Models\User::auth())
             <a class="buttonNav" href="{{ route('show.login') }}">Connexion</a>
         @endif
-        @if(App\Models\User::auth())
+        @if(App\Models\User::auth() && App\Models\User::admin())
+            <a class="buttonNav" href="{{ route('admin') }}">Administration</a>
+        @elseif(App\Models\User::auth())
             <a class="buttonNav" href="{{ route('member-area') }}">Espace membre</a>
+        @endif
+        @if(App\Models\User::auth())
             <a class="buttonNav" href="{{ route('logout') }}">Déconnexion</a>
         @endif
     </div>

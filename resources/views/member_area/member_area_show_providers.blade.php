@@ -23,14 +23,15 @@
                 {{Session::get('success')}}
             </div>
         @endif
+        @if(Session::has('error'))
+            <div class="error">
+                {{Session::get('error')}}
+            </div>
+        @endif
+        
         @if(count($providers) == 0)
             <div>Vous n'avez, actuellement, pas d'entreprise inscrit à Atouts Services.</div>
         @else
-            @if(Session::has('error'))
-                <div class="error">
-                    {{Session::get('error')}}
-                </div>
-            @endif
             @foreach($providers as $provider)
                 <h3>{{$provider->name}}</h3>
                 <div class="providerItem">

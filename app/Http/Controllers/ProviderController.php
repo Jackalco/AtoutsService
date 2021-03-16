@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Provider;
 use App\Models\Image;
 use App\Models\Category;
+use App\Models\Grade;
 use Illuminate\Support\Facades\Auth;
 
 class ProviderController extends Controller
@@ -48,7 +49,21 @@ class ProviderController extends Controller
 
     public function showProvider($id) {
         $provider = Provider::find($id);
+        $grades = Grade::where('provider_id', $provider->id)->get();
 
-        return view('provider/show_provider', compact('provider'));
+        if(count($grades)) {
+            $score = array_sum($grades->score)/count($grades);
+        }
+        else {
+            $score = null;
+        }
+
+        return view('provider/show_provider', compact('provider', 'score'));
+    }
+
+    public function note(Request $request, $user_id, $provider_id) {
+        $user = User::find($user_id);
+        $id_provider = Provider::find($provider_id);
+
     }
 }

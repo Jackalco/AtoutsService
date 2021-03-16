@@ -77,7 +77,7 @@
                     @endif
                 </div>
                 <div class="formItem">
-                    <label>Date de création</label>
+                    <label>Date de création de l'entreprise</label>
                     <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="date" name="date" id="date">
 
                     @if ($errors->has('date'))
@@ -97,9 +97,9 @@
                     @endif
                 </div>
                 <div class="formItem">
-                    <label>Activité</label>
+                    <label>Secteur d'activité</label>
                     <select class="formInput {{ $errors->has('activity') ? 'error' : '' }}" type="text" name="activity" id="activity">
-                        <option value="">Choississez une activité</option>
+                        <option value="">Choississez un secteur d'activité</option>
                         @foreach($categories as $category)
                         <option value="{{$category->name}}">{{$category->name}}</option>
                         @endforeach

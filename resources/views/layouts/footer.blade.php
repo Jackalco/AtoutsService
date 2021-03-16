@@ -23,9 +23,13 @@
                 @if(!App\Models\User::auth())
                     <li><a href="{{ route('show.login') }}">Connexion</a></li>
                 @endif
+                @if(App\Models\User::auth() && App\Models\User::admin())
+                    <li><a href="{{ route('admin') }}">Administration</a></li>
+                @elseif(App\Models\User::auth())
+                    <li><a href="{{ route('member-area') }}">Espace membre</a></li>
+                @endif
                 @if(App\Models\User::auth())
-                <li><a href="{{ route('member-area') }}">Espace membre</a></li>
-                <li><a href="{{ route('logout') }}">Déconnexion</a></li>
+                    <li><a href="{{ route('logout') }}">Déconnexion</a></li>
                 @endif
             </ul>
         </div>

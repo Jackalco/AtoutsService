@@ -43,12 +43,23 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    
+
     public static function auth()
     {
         if(Auth::check()) {
             return true;
         } else {
             return NULL;
+        }
+    }
+
+    public static function admin() {
+        $user = Auth::user();
+        if($user->statusLvl == 2) {
+            return true;
+        } else {
+            return false;
         }
     }
 

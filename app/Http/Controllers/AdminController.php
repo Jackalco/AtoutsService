@@ -78,8 +78,36 @@ class AdminController extends Controller
 
     public function showProviders() {
         $providers = Provider::orderBy('name', 'asc')->get();
+        $categories = Category::orderBy('name', 'asc')->get();
+        $users = User::orderBy('name', 'asc')->get();
 
-        return view('admin/admin_provider', compact('providers'));
+        return view('admin/admin_provider', compact('providers', 'categories', 'users'));
+    }
+
+    public function storeProvider(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|email',
+            'date' => 'required|date',
+            'siret' => 'required',
+            'workforce' => 'required',
+            'structure' => 'required',
+            'owner' => 'required',
+            'activity' => 'required',
+            'image' => 'required|mimes:png,jpg'
+        ]);
+
+        $user = User::find($request->owner);
+        $image = Image::storeImage($request->image);
+
+        Provider::create(
+            $request->only('name', 'address', 'city', 'phone', 'email', 'siret', 'workforce', 'structure', 'activity') + ['image_id' => $image] + ['owner' => $user->name] + ['owner_id' => $user->id]
+        );
+
+        return back()->with('successStore', 'Le prestataire a bien été ajouté.');
     }
 
     public function deleteProvider($id) {
@@ -89,7 +117,7 @@ class AdminController extends Controller
             $provider->delete();
         }
 
-        return back()->with('success', 'Le prestataire a bien été supprimé');
+        return back()->with('successDelete', 'Le prestataire a bien été supprimé');
     }
 
     public function showUsers() {
