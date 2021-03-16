@@ -72,8 +72,23 @@
         @if(!App\Models\User::auth())
             <p>Vous devez être connecté pour pouvoir évaluer ce prestataire.</p>
         @elseif(App\Models\User::auth())
-            <form method action="">
+        {{$user}}
+            <form method="post" action="{{ route('provider.evaluate', [$provider->id, $user->id]) }}">
+                @csrf
+                <select name="score" id="score">
+                    <option value="">Choissisez une note</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
                 <button type="submit">Notez</button>
+                @if(Session::has('success'))
+                    <div class="alert">
+                        {{Session::get('success')}}
+                    </div>
+                @endif
             </form>
         @endif
     </div>

@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\Provider;
 use App\Models\Image;
 use App\Models\Category;
-use App\Models\Grade;
+use App\Models\Score;
 use Illuminate\Support\Facades\Auth;
 
 class ProviderController extends Controller
@@ -49,21 +49,33 @@ class ProviderController extends Controller
 
     public function showProvider($id) {
         $provider = Provider::find($id);
-        $grades = Grade::where('provider_id', $provider->id)->get();
+        $evaluations = Score::where('provider_id', $provider->id)->get();
+        $average = null;
 
-        if(count($grades)) {
-            $score = array_sum($grades->score)/count($grades);
+        if(count($evaluations)) {
+            foreach($evaluations as $evaluation) {
+                $sum =+ $evaluation->score;
+            }
+            $average = array_sum($scores->score)/count($scores);
         }
         else {
-            $score = null;
+            $average = null;
         }
 
-        return view('provider/show_provider', compact('provider', 'score'));
+        return view('provider/show_provider', compact('provider', 'score'))->withUser(Auth::user());
     }
 
-    public function note(Request $request, $user_id, $provider_id) {
+    public function evaluate(Request $request, $provider_id, $user_id) {
         $user = User::find($user_id);
-        $id_provider = Provider::find($provider_id);
+        $provider = Provider::find($provider_id);
+
+        $this->validate($request, [
+            'score' => 'required|regex:/^([1-5]*)$/'
+        ]);
+
+        Score::create($request->only('score') + ['user_id' => $user->id] + ['provider_id' => $provider->id]);
+
+        return back()->with('success', 'Merci, votre évaluation a bien été ajoutée.');
 
     }
 }

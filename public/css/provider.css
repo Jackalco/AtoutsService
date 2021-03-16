@@ -193,7 +193,9 @@ header {
     margin-right: 15%;
     margin-bottom: 2em;
     padding: 1em;
-    background-color: rgb(245, 245, 245);
+    /*background-color: rgb(245, 245, 245);*/
+    background-color: rgb(110, 110, 110);
+    color: white;
     border-radius: 5px;
 }
 

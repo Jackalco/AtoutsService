@@ -23,6 +23,7 @@ Route::get('/artisans', 'CategoryController@showArtisans')->name('artisans');
 Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 Route::get('/liste/{id}', 'ListController@index')->name('list');
 Route::get('/prestataire/{id}', 'ProviderController@showProvider')->name('provider.show');
+Route::post('/prestataire/{id}/notation/{user}', 'ProviderController@evaluate')->name('provider.evaluate')->middleware('auth');
 
 Route::get('/espace-membre', 'MemberAreaController@show')->name('member-area')->middleware('auth');
 Route::get('/espace-membre/modification', 'MemberAreaController@editPersonnal')->name('member-area.edit')->middleware('auth');
