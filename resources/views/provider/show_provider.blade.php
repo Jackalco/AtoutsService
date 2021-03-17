@@ -64,15 +64,14 @@
     </div>
     <div class="providerContainer">
         <h2>Note</h2>
-        @if($score == null)
+        @if($average == null)
             <p>Ce prestataire n'a pas encore reçu de note. Soyez le premier l'évaluer !</p>
         @else
-            <div>{{$score}} / 5</div>
+            <div>{{$average}} / 5</div>
         @endif
         @if(!App\Models\User::auth())
             <p>Vous devez être connecté pour pouvoir évaluer ce prestataire.</p>
         @elseif(App\Models\User::auth())
-        {{$user}}
             <form method="post" action="{{ route('provider.evaluate', [$provider->id, $user->id]) }}">
                 @csrf
                 <select name="score" id="score">

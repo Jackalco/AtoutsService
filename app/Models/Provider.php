@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Image;
+use App\Models\Score;
 
 class Provider extends Model
 {
@@ -40,5 +41,9 @@ class Provider extends Model
     }
     public function image() {
         return $this->belongsTo(Image::class);
+    }
+
+    public function scores() {
+        return $this->hasMany(Score::class);
     }
 }

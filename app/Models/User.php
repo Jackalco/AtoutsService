@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Provider;
+use App\Models\Score;
 
 class User extends Authenticatable
 {
@@ -65,7 +66,9 @@ class User extends Authenticatable
 
     public static function own() {
         $providers = Provider::orderBy('name', 'asc')->get();
+    }
 
-
+    public function scores() {
+        return $this->hasMany(Score::class);
     }
 }

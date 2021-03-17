@@ -51,31 +51,42 @@ class ProviderController extends Controller
         $provider = Provider::find($id);
         $evaluations = Score::where('provider_id', $provider->id)->get();
         $average = null;
+        $sum = null;
 
         if(count($evaluations)) {
             foreach($evaluations as $evaluation) {
-                $sum =+ $evaluation->score;
+                $sum += $evaluation->score;
             }
-            $average = array_sum($scores->score)/count($scores);
+            $temporary_average = $sum/count($evaluations);
+            $average = number_format($temporary_average, 1, ',', ' ');
+
         }
         else {
             $average = null;
         }
 
-        return view('provider/show_provider', compact('provider', 'score'))->withUser(Auth::user());
+        return view('provider/show_provider', compact('provider', 'average'))->withUser(Auth::user());
     }
 
     public function evaluate(Request $request, $provider_id, $user_id) {
         $user = User::find($user_id);
         $provider = Provider::find($provider_id);
+        $score = Score::where('user_id', $user_id)->where('provider_id', $provider_id)->first();
 
         $this->validate($request, [
             'score' => 'required|regex:/^([1-5]*)$/'
         ]);
 
-        Score::create($request->only('score') + ['user_id' => $user->id] + ['provider_id' => $provider->id]);
+        if($score) {
+            $score->update(['score' => $request->get('score')]);
+            return back()->with('success', 'Merci, votre évaluation a bien été mise à jour.');
+        } else {
+            Score::create($request->only('score') + ['user_id' => $user->id] + ['provider_id' => $provider->id]);
+            return back()->with('success', 'Merci, votre évaluation a bien été ajoutée.');
+        }
+        
 
-        return back()->with('success', 'Merci, votre évaluation a bien été ajoutée.');
+        
 
     }
 }
