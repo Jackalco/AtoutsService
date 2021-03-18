@@ -5,10 +5,6 @@
     height: 400px;
 }
 
-.introItem {
-
-}
-
 .introItem:nth-child(1) {
     flex: 2;
     text-align: center;
