@@ -246,3 +246,29 @@ header {
     margin-left: 5%;
     margin-bottom: 20px;
 }
+
+.rateItem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.rateButton {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(37, 188, 214);
+    border: none;
+    border-radius: 2px;
+}
+
+.rateButton:hover {
+    background-color: rgb(0, 168, 197);  
+}
+
+.starIcon {
+    color: rgb(255, 230, 0);
+}

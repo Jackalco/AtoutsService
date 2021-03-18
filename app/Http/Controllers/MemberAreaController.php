@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Image;
 use App\Models\Provider;
 use App\Models\Category;
+use App\Models\History;
 use Illuminate\Support\Facades\Auth;
 
 class MemberAreaController extends Controller
@@ -119,5 +120,24 @@ class MemberAreaController extends Controller
             return back()->with('error', 'Vous n\'avez pas les droits pour supprimer ce prestataire.');
         }
 
+    }
+
+    public function showHistory($id) {
+        $user = User::find($id);
+        $histories = History::where('user_id', $user->id)->orderBy('id', 'desc')->get();
+
+        return view('member_area/member_area_show_history', compact('histories', 'user'));
+    }
+
+    public function deleteHistory($id, $history_id) {
+        $user = User::find($id);
+        $history = History::find($history_id);
+
+        if($history) {
+            if($history->id == $user->id) {
+                $history->delete();
+                return back()->with('success', 'Cet élément a bien été supprimé de votre historique');
+            }
+        }
     }
 }

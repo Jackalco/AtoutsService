@@ -30,7 +30,10 @@
             <a class="memberButton" href="{{ route('member-area.edit', $user->id) }}">Modifier les informations</a>
         </div>
         <div class="memberItem">
-        <a class="memberButton" href="{{ route('member-area.providers.show', $user->id) }}">Voir vos prestataires</a>
+            <a class="memberButton" href="{{ route('member-area.providers.show', $user->id) }}">Voir vos prestataires</a>
+        </div>
+        <div class="memberItem">
+            <a class="memberButton" href="{{ route('member-area.history.show', $user->id) }}">Voir votre historique</a>
         </div>
     </div>
 @endsection

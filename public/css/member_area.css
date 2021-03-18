@@ -136,12 +136,47 @@
     font-size: 20px;
     background-color: rgb(255, 203, 59);
     border: none;
+    border-radius: 2px;
     width: fit-content;
 }
 
 .formButton:hover {
     color: white;
     background-color: rgb(252, 185, 0);
+}
+
+.historyContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(87, 223, 216);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(134, 134, 134) ;
+}
+
+.historyItem {
+    background-color: white;
+    width: 80%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px 15px 15px 75px;
+    border-radius: 0 10px 10px 0;
+}
+
+.historyItem h3 {
+    color: black;
+    text-decoration: none;
+    margin-left: 0;
+}
+
+.historyInfo {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
@@ -247,6 +282,14 @@ hr {
         font-size: 25px;
         margin-left: 150px;
     }
+
+    .historyContainer {
+        min-height: 500px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
     
 }
 
@@ -323,6 +366,14 @@ hr {
         font-size: 25px;
         margin-left: 150px;
     }
+
+    .historyContainer {
+        min-height: 500px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
 }
 
 @media only screen and (max-width: 900px) {
@@ -398,6 +449,14 @@ hr {
     h3 {
         font-size: 25px;
         margin-left: 150px;
+    }
+
+    .historyContainer {
+        min-height: 450px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 }
 
@@ -479,6 +538,14 @@ hr {
         font-size: 21px;
         margin-left: 40px;
     }
+
+    .historyContainer {
+        min-height: 425px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -555,5 +622,13 @@ hr {
     h3 {
         font-size: 20px;
         margin-left: 25px;
+    }
+
+    .historyContainer {
+        min-height: 400px;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 }

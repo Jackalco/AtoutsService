@@ -27,7 +27,7 @@ class CreateProviderTable extends Migration
             $table->integer('workforce');
             $table->string('activity');
             $table->string('siret');
-            $table->string('date')->nullable();
+            $table->string('date');
             $table->string('color')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();

@@ -32,6 +32,8 @@ Route::get('/espace-membre/{id}/prestataires/', 'MemberAreaController@showProvid
 Route::get('/espace-membre/{id}/prestataires/modification/{id_provider}', 'MemberAreaController@editProvider')->name('member-area.provider.edit')->middleware('auth');
 Route::patch('/espace-membre/{id}/prestataire/modifcation/{id_provider}', 'MemberAreaController@updateProvider')->name('member-area.provider.update')->middleware('auth');
 Route::delete('/espace-membre/{id}/prestataire/suppression/{id_provider}', 'MemberAreaController@deleteProvider')->name('member-area.provider.delete')->middleware('auth');
+Route::get('/espace-membre/{id}/historique', 'MemberAreaController@showHistory')->name('member-area.history.show')->middleware('auth');
+Route::delete('/espace-membre/{id}/historique/{history_id}/supression', 'MemberAreaController@deleteHistory')->name('member-area.history.delete')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');

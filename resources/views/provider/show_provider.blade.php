@@ -67,22 +67,39 @@
         @if($average == null)
             <p>Ce prestataire n'a pas encore reçu de note. Soyez le premier l'évaluer !</p>
         @else
-            <div>{{$average}} / 5</div>
+            <div>Ce prestataire a actuellement une note de <strong>{{$average}} / 5</strong>.</div>
         @endif
         @if(!App\Models\User::auth())
             <p>Vous devez être connecté pour pouvoir évaluer ce prestataire.</p>
         @elseif(App\Models\User::auth())
             <form method="post" action="{{ route('provider.evaluate', [$provider->id, $user->id]) }}">
                 @csrf
-                <select name="score" id="score">
-                    <option value="">Choissisez une note</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <button type="submit">Notez</button>
+                <div class="rateItem">
+                    <input type="radio" id="one" name="score" value="1">
+                    <label for="one"><i class="fas fa-star starIcon"></i><i class="far fa-star starIcon"></i><i class="far fa-star starIcon"></i><i class="far fa-star starIcon"></i><i class="far fa-star starIcon"></i></label>
+                </div>
+                <div class="rateItem">
+                    <input type="radio" id="two" name="score" value="2">
+                    <label for="two"><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="far fa-star starIcon"></i><i class="far fa-star starIcon"></i><i class="far fa-star starIcon"></i></label>
+                </div>
+                <div class="rateItem">
+                    <input type="radio" id="three" name="score" value="3">
+                    <label for="three"><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="far fa-star starIcon"></i><i class="far fa-star starIcon"></i></label>
+                </div>
+                <div class="rateItem">
+                    <input type="radio" id="four" name="score" value="4">
+                    <label for="four"><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="far fa-star starIcon"></i></label>
+                </div>
+                <div class="rateItem">
+                    <input type="radio" id="five" name="score" value="5">
+                    <label for="five"><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i><i class="fas fa-star starIcon"></i></label>
+                </div>
+                @if ($errors->has('score'))
+                <div class="error">
+                    Vous n'avez pas choisi une note.
+                </div>
+                @endif
+                <button class="rateButton" type="submit">Notez</button>
                 @if(Session::has('success'))
                     <div class="alert">
                         {{Session::get('success')}}

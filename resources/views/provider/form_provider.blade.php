@@ -78,7 +78,7 @@
                 </div>
                 <div class="formItem">
                     <label>Date de création de l'entreprise</label>
-                    <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="date" name="date" id="date">
+                    <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="month" name="date" id="date">
 
                     @if ($errors->has('date'))
                         <div class="error">

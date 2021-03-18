@@ -8,6 +8,7 @@ use App\Models\Provider;
 use App\Models\Image;
 use App\Models\Category;
 use App\Models\Score;
+use App\Models\History;
 use Illuminate\Support\Facades\Auth;
 
 class ProviderController extends Controller
@@ -41,7 +42,7 @@ class ProviderController extends Controller
         $image = Image::storeImage($request->image);
 
         Provider::create(
-            $request->only('name', 'address', 'city', 'phone', 'email', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['owner_id' => $user]
+            $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['owner_id' => $user]
         );
 
         return back()->with('success', 'Félicitations ! Votre entreprise a bien été ajoutée parmis nos prestataires.');
@@ -52,7 +53,12 @@ class ProviderController extends Controller
         $evaluations = Score::where('provider_id', $provider->id)->get();
         $average = null;
         $sum = null;
+        $user = Auth::user();
 
+        if($user) {
+            History::create(['user_id' => $user->id] + ['provider_id' => $provider->id]);
+        }
+        
         if(count($evaluations)) {
             foreach($evaluations as $evaluation) {
                 $sum += $evaluation->score;
@@ -65,7 +71,7 @@ class ProviderController extends Controller
             $average = null;
         }
 
-        return view('provider/show_provider', compact('provider', 'average'))->withUser(Auth::user());
+        return view('provider/show_provider', compact('provider', 'average', 'user'));
     }
 
     public function evaluate(Request $request, $provider_id, $user_id) {
