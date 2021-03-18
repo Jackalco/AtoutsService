@@ -134,10 +134,12 @@ class MemberAreaController extends Controller
         $history = History::find($history_id);
 
         if($history) {
-            if($history->id == $user->id) {
+            if($history->user_id == $user->id) {
                 $history->delete();
                 return back()->with('success', 'Cet élément a bien été supprimé de votre historique');
             }
         }
+
+        
     }
 }

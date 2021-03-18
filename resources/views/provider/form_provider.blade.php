@@ -152,6 +152,13 @@
                     @endif
                 </div>
                 <div class="formItem">
+                    <div>
+                        <input type="checkbox" name="rules" id="rules" value="checked">
+                        <label for="rules">Vous attestez avoir lu et approuvé <a href="">le réglement d'Atouts Services</a></label>
+                    </div>
+                    
+                </div>
+                <div class="formItem">
                     <button type="submit" class="formButton">Envoyer</button>
                 </div>
 
