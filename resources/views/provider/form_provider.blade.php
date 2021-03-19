@@ -41,7 +41,7 @@
                     <input class="formInput {{ $errors->has('address') ? 'error' : '' }}" type="text" name="address" id="address">
 
                     @if ($errors->has('address'))
-                        <div class="address">
+                        <div class="error">
                             Ce champ est obligatoire.
                         </div>
                     @endif
@@ -51,7 +51,7 @@
                     <input class="formInput {{ $errors->has('city') ? 'error' : '' }}" type="text" name="city" id="city">
 
                     @if ($errors->has('city'))
-                        <div class="city">
+                        <div class="error">
                             Ce champ est obligatoire.
                         </div>
                     @endif
@@ -153,9 +153,14 @@
                 </div>
                 <div class="formItem">
                     <div>
-                        <input type="checkbox" name="rules" id="rules" value="checked">
-                        <label for="rules">Vous attestez avoir lu et approuvé <a href="">le réglement d'Atouts Services</a></label>
+                        <input type="checkbox" class="{{ $errors->has('address') ? 'error' : '' }}" name="rules" id="rules" value="checked">
+                        <label for="rules">Vous attestez avoir lu et approuvé <a href="{{ route('provider-rules') }}">la charte profesionnelle d'Atouts Services</a></label>
                     </div>
+                    @if ($errors->has('rules'))
+                        <div class="error">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
                     
                 </div>
                 <div class="formItem">

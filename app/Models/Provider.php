@@ -46,4 +46,21 @@ class Provider extends Model
     public function scores() {
         return $this->hasMany(Score::class);
     }
+
+    public function average() {
+        $evaluations = Score::where('provider_id', $this->id)->get();
+        $sum = null;
+
+        if(count($evaluations)) {
+            foreach($evaluations as $evaluation) {
+                $sum += $evaluation->score;
+            }
+            $temporary_average = $sum/count($evaluations);
+            return number_format($temporary_average, 1, ',', ' ');
+
+        }
+        else {
+            return null;
+        }
+    }
 }

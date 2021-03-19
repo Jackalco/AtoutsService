@@ -131,3 +131,21 @@ h2 {
     width: 125px;
     height: 125px;
 }
+
+.statsContainer {
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.statsItem {
+    font-size: 20px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.statsItem td {
+    padding: 5px;
+    border: 1px solid rgb(65, 65, 65);
+}

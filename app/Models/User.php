@@ -64,7 +64,7 @@ class User extends Authenticatable
         }
     }
 
-    public static function own() {
+    public function own() {
         $providers = Provider::orderBy('name', 'asc')->get();
     }
 

@@ -7,6 +7,8 @@ use App\Models\Image;
 use App\Models\Category;
 use App\Models\Provider;
 use App\Models\User;
+use App\Models\Search;
+use App\Models\Score;
 
 class AdminController extends Controller
 {
@@ -134,6 +136,48 @@ class AdminController extends Controller
         }
 
         return back()->with('success', 'L\'utilisateur a bien été supprimé');
+    }
+
+    public function showStatsMonth() {
+        $month = date("m");
+        $year = date("Y");
+        $searches = Search::where('year', $year)->where('month', $month)->get();
+        $providers = Provider::get();
+        
+
+        foreach($providers as $provider) {
+            $provider['count'] = 0; 
+            foreach ($searches as $search) {
+                if($search->provider_id == $provider->id) {
+                    $provider['count'] += 1;
+                }
+            }
+        }
+
+        $providersDetails = $providers->sortByDesc('count');
+
+        return view('admin/admin_stats_month', compact('providersDetails'));
+    }
+
+    public function showStatsYear() {
+        $year = date("Y");
+        $searches = Search::where('year', $year)->get();
+        $providers = Provider::get();
+        
+
+        foreach($providers as $provider) {
+            $provider['count'] = 0;
+
+            foreach ($searches as $search) {
+                if($search->provider_id == $provider->id) {
+                    $provider['count'] += 1;
+                }
+            }
+        }
+
+        $providersDetails = $providers->sortByDesc('count');
+
+        return view('admin/admin_stats_year', compact('providersDetails'));
     }
 
     

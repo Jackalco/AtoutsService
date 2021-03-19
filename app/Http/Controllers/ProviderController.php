@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Category;
 use App\Models\Score;
 use App\Models\History;
+use App\Models\Search;
 use Illuminate\Support\Facades\Auth;
 
 class ProviderController extends Controller
@@ -36,7 +37,8 @@ class ProviderController extends Controller
             'structure' => 'required',
             'owner' => 'required',
             'activity' => 'required',
-            'image' => 'required|mimes:png,jpg'
+            'image' => 'required|mimes:png,jpg',
+            'rules' => 'required'
         ]);
 
         $image = Image::storeImage($request->image);
@@ -50,28 +52,18 @@ class ProviderController extends Controller
 
     public function showProvider($id) {
         $provider = Provider::find($id);
-        $evaluations = Score::where('provider_id', $provider->id)->get();
-        $average = null;
-        $sum = null;
         $user = Auth::user();
+        $day = date("d");
+        $month = date("m");
+        $year = date("Y");
+
+        Search::create(['provider_id' => $provider->id] + ['day' => $day] + ['month' => $month] + ['year' => $year]);
 
         if($user) {
             History::create(['user_id' => $user->id] + ['provider_id' => $provider->id]);
         }
-        
-        if(count($evaluations)) {
-            foreach($evaluations as $evaluation) {
-                $sum += $evaluation->score;
-            }
-            $temporary_average = $sum/count($evaluations);
-            $average = number_format($temporary_average, 1, ',', ' ');
 
-        }
-        else {
-            $average = null;
-        }
-
-        return view('provider/show_provider', compact('provider', 'average', 'user'));
+        return view('provider/show_provider', compact('provider', 'user'));
     }
 
     public function evaluate(Request $request, $provider_id, $user_id) {
@@ -90,9 +82,9 @@ class ProviderController extends Controller
             Score::create($request->only('score') + ['user_id' => $user->id] + ['provider_id' => $provider->id]);
             return back()->with('success', 'Merci, votre évaluation a bien été ajoutée.');
         }
-        
+    }
 
-        
-
+    public function rules() {
+        return view('provider/provider_rules');
     }
 }

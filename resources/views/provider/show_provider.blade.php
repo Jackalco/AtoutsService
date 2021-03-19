@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-    <header><h1>{{$provider->name}}</h1> <img class="providerLogo" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}" alt="Logo de {{$provider->name}}"></header>
+    <header><h1 class="titleProvider">{{$provider->name}}</h1> <img class="providerLogo" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}" alt="Logo de {{$provider->name}}"></header>
     <div class="providerContainer">
         <h2>Informations utiles</h2>
         <div class="providerContainerInfo">
@@ -64,10 +64,10 @@
     </div>
     <div class="providerContainer">
         <h2>Note</h2>
-        @if($average == null)
+        @if($provider->average() == null)
             <p>Ce prestataire n'a pas encore reçu de note. Soyez le premier l'évaluer !</p>
         @else
-            <div>Ce prestataire a actuellement une note de <strong>{{$average}} / 5</strong>.</div>
+            <div>Ce prestataire a actuellement une note de <strong>{{$provider->average()}} / 5</strong>.</div>
         @endif
         @if(!App\Models\User::auth())
             <p>Vous devez être connecté pour pouvoir évaluer ce prestataire.</p>
@@ -100,12 +100,12 @@
                 </div>
                 @endif
                 <button class="rateButton" type="submit">Notez</button>
-                @if(Session::has('success'))
-                    <div class="alert">
-                        {{Session::get('success')}}
-                    </div>
-                @endif
             </form>
+            @if(Session::has('success'))
+                <div class="alert">
+                    {{Session::get('success')}}
+                </div>
+            @endif
         @endif
     </div>
 @endsection
