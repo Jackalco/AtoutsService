@@ -39,6 +39,13 @@
 .logoPanel {
     font-size: 50px;
     color: rgb(252, 185, 0);
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    from {transform: translateY(0);}
+    50% {transform: translateY(15px);}
+    to {transform: translateY(0);}
 }
 
 .introButton {
@@ -196,14 +203,21 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    background-color: white;
 }
 
 .providerItem {
     display: flex;
     flex-direction: row;
     flex-basis: 30%;
-    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(245, 245, 245);
+    background-color: white;
+    transition-duration: 0.4s;
+}
+
+.providerItem:hover {
+    transform: scale(1.07);
 }
 
 .providerIcon {

@@ -15,7 +15,7 @@ class CreateTableSearchs extends Migration
     {
         Schema::create('searches', function (Blueprint $table) {
             $table->id();
-            $table->string('provider_id');
+            $table->integer('provider_id');
             $table->integer('day');
             $table->integer('month');
             $table->integer('year');
