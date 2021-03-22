@@ -19,10 +19,10 @@
         </header>
         <div class="listContainer">
             <h2>Prestataires proposés</h2>
-            @if(count($providers) == 0)
+            @if(count($providersOrganized) == 0)
                 <div>Désolé, il semblerait que nous n'avons pas encore de prestataires pour le service que vous désirez.</div>
             @else
-                @foreach($providers as $provider)
+                @foreach($providersOrganized as $provider)
                     <div class="listItem">
                         <div class="listInfo" style="background-color : {{$provider->color}}">
                             <div class="listLogoCompany">

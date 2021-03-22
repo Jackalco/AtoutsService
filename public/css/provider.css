@@ -313,4 +313,37 @@ header {
     font-size: 2.5em;
 }
 
+.commentForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentTextArea {
+    width: 70%;
+}
+
+.commentButton {
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(252, 185, 0);
+    border: none;
+}
+
+.commentButton:hover {
+    background-color: rgb(231, 172, 8);
+}
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentItem {
+
+}
+
 

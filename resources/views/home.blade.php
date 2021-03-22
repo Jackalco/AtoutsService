@@ -10,24 +10,26 @@
 
 @push('stylesheet')
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/EasyAutocomplete/easy-autocomplete.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/EasyAutocomplete/easy-autocomplete.themes.min.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
-    <form action="post" class="searchContainer">
+    <form action="{{ route('search.getsearch') }}" method="post" class="searchContainer">
         <div class="searchItem">
             <i class="fas fa-search"></i>
-            <input class="searchInput" type="text" placeholder="Service...">
+            <input class="searchInput" id="categories" name="category"  type="text" placeholder="Service...">
         </div>
         <div class="searchItem">
             <i class="fas fa-map-marker-alt"></i>
-            <input class="searchInput" type="text" placeholder="Localisation...">
+            <input class="searchInput" id="cities" name="city" type="text" placeholder="Localisation...">
         </div>
-        <button class="searchButton">Rechercher</button>
+        <button type="submit" class="searchButton">Rechercher</button>
     </form>
     <section class="needContainer">
         <div class="needItem">Des artisans et des services de proximité pour vous aider</div>
         <div class="needItem">
-            <a href="#">De quel service avez-vous besoin ?</a>
+            <a href="{{ route('search.show') }}">De quel service avez-vous besoin ?</a>
         </div>
         <div class="needItem"></div>
     </section>
@@ -81,3 +83,10 @@
         </ul>
     </section>
 @endsection
+
+@push('script')
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/EasyAutocomplete/jquery.easy-autocomplete.min.js') }}"></script>
+    <script src="{{ asset('js/searchCategoriesAutoComplete.js') }}"></script>
+    <script src="{{ asset('js/searchCitiesAutoComplete.js') }}"></script>
+@endpush

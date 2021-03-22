@@ -16,12 +16,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', 'PagesController@home')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/services', 'CategoryController@showServices')->name('services');
 Route::get('/artisans', 'CategoryController@showArtisans')->name('artisans');
 Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 Route::get('/liste/{id}', 'ListController@index')->name('list');
+Route::get('/recherche', 'SearchController@show')->name('search.show');
+Route::post('/recherche', 'SearchController@getSearch')->name('search.getsearch');
+Route::get('/recherche/index/{category}+{index}', 'SearchController@index')->name('search.index');
+
 Route::get('/prestataire/{id}', 'ProviderController@showProvider')->name('provider.show');
 Route::post('/prestataire/{id}/notation/{user}', 'ProviderController@evaluate')->name('provider.evaluate')->middleware('auth');
 

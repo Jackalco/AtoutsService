@@ -101,11 +101,30 @@
                 @endif
                 <button class="rateButton" type="submit">Notez</button>
             </form>
-            @if(Session::has('success'))
+            @if(Session::has('successEvaluate'))
                 <div class="alert">
-                    {{Session::get('success')}}
+                    {{Session::get('successEvaluate')}}
                 </div>
             @endif
         @endif
+    </div>
+    <div class="providerContainer">
+        <h2>Commentaires</h2>
+        <div>
+            <h3>Ajouter un commentaire</h3>
+            <form class="commentForm" method="post" action="">
+                <textarea name="" id="" class="commentTextArea"></textarea>
+                <div>
+                    <input type="radio" value=""><i class="far fa-thumbs-up"></i>
+                    <input type="radio" value="f165"><i class="far fa-thumbs-down"></i>
+                </div>
+                <button type="submit" class="commentButton">Ajouter</button>
+            </form>
+            <div class="commentContainer">
+                <div class="commentItem">
+
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

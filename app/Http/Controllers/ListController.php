@@ -11,9 +11,14 @@ class ListController extends Controller
 {
     public function index($id) {
         $category = Category::find($id);
-        $providers = Provider::where('activity', $category->name)->orderBy('name', 'asc')->get();
+        $providers = Provider::where('activity', $category->name)->get();
         
+        foreach($providers as $provider) {
+            $provider['average'] = $provider->average();
+        }
 
-        return view('category/list', compact('providers', 'category'));
+        $providersOrganized = $providers->sortByDesc('average');
+
+        return view('category/list', compact('providersOrganized', 'category'));
     }
 }

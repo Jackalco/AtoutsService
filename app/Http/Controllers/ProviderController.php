@@ -80,7 +80,7 @@ class ProviderController extends Controller
             return back()->with('success', 'Merci, votre évaluation a bien été mise à jour.');
         } else {
             Score::create($request->only('score') + ['user_id' => $user->id] + ['provider_id' => $provider->id]);
-            return back()->with('success', 'Merci, votre évaluation a bien été ajoutée.');
+            return back()->with('successEvaluate', 'Merci, votre évaluation a bien été ajoutée.');
         }
     }
 
