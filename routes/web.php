@@ -22,12 +22,14 @@ Route::get('/services', 'CategoryController@showServices')->name('services');
 Route::get('/artisans', 'CategoryController@showArtisans')->name('artisans');
 Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 Route::get('/liste/{id}', 'ListController@index')->name('list');
+
 Route::get('/recherche', 'SearchController@show')->name('search.show');
 Route::post('/recherche', 'SearchController@getSearch')->name('search.getsearch');
-Route::get('/recherche/index/{category}+{index}', 'SearchController@index')->name('search.index');
+Route::get('/recherche/index/{category}+{city}', 'SearchController@index')->name('search.index');
 
 Route::get('/prestataire/{id}', 'ProviderController@showProvider')->name('provider.show');
 Route::post('/prestataire/{id}/notation/{user}', 'ProviderController@evaluate')->name('provider.evaluate')->middleware('auth');
+Route::post('/prestataire/{id}/commentaire/{user}/ajout', 'CommentController@store')->name('comment.store')->middleware('auth');
 
 Route::get('/espace-membre', 'MemberAreaController@show')->name('member-area')->middleware('auth');
 Route::get('/espace-membre/modification', 'MemberAreaController@editPersonnal')->name('member-area.edit')->middleware('auth');
@@ -43,7 +45,6 @@ Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-prov
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');
 Route::post('/devenir-prestataire/formulaire/{id}', 'ProviderController@applyForm')->name('form-provider.apply')->middleware('auth');
 Route::get('/devenir-prestataire/reglement', 'ProviderController@rules')->name('provider-rules');
-
 
 Route::get('/admin', 'AdminController@panel')->name('admin')->middleware('auth.admin');
 Route::get('/admin/categories', 'AdminController@showCategories')->name('admin.category')->middleware('auth.admin');

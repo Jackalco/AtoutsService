@@ -16,13 +16,28 @@
 
 @section('content')
     <form action="{{ route('search.getsearch') }}" method="post" class="searchContainer">
-        <div class="searchItem">
+        @csrf
+        <div class="searchItem categories">
             <i class="fas fa-search"></i>
-            <input class="searchInput" id="categories" name="category"  type="text" placeholder="Service...">
+            <div class="searchDivInput">
+                <input class="searchInput" id="categories" name="category"  type="text" placeholder="Service..." value="{{old('category')}}">
+                @if ($errors->has('category'))
+                    <div class="error">
+                        Veuillez indiquer un service
+                    </div>
+                @endif
+            </div>      
         </div>
-        <div class="searchItem">
+        <div class="searchItem cities">
             <i class="fas fa-map-marker-alt"></i>
-            <input class="searchInput" id="cities" name="city" type="text" placeholder="Localisation...">
+            <div class="searchDivInput">
+                <input class="searchInput" id="cities" name="city" type="text" placeholder="Localisation..." value="{{old('city')}}">
+                @if ($errors->has('city'))
+                    <div class="error">
+                        Veuillez indiquer un lieu
+                    </div>
+                @endif
+            </div>
         </div>
         <button type="submit" class="searchButton">Rechercher</button>
     </form>

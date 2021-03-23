@@ -110,21 +110,53 @@
     </div>
     <div class="providerContainer">
         <h2>Commentaires</h2>
-        <div>
-            <h3>Ajouter un commentaire</h3>
-            <form class="commentForm" method="post" action="">
-                <textarea name="" id="" class="commentTextArea"></textarea>
-                <div>
-                    <input type="radio" value=""><i class="far fa-thumbs-up"></i>
-                    <input type="radio" value="f165"><i class="far fa-thumbs-down"></i>
+        <div class="commentContainer">
+            @if(!App\Models\User::auth())
+                <div>Vous devez être connecté pour pouvoir ajouter un commentaire sur ce prestataire.</div>
+            @elseif(App\Models\User::auth())
+                <h4>Ajouter un commentaire</h4>
+                @if(Session::has('successComment'))
+                    <div class="alertComment">
+                        {{Session::get('successComment')}}
+                    </div>
+                @endif
+                <form method="post" action="{{ route('comment.store', [$provider->id, $user->id]) }}" class="commentForm">
+                    @csrf
+                    <textarea name="content" id="content" class="commentTextArea" rows="2" placeholder="Votre commentaire...">{{old('content')}}</textarea>
+                    @if($errors->has('content'))
+                        <div class="error">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
+                    <div>Veuillez préciser si votre commentaire est positif ou négatif :</div>
+                    <div class="thumbsContainer">
+                        <input type="radio" name="opinion" id="positive" class="thumbs up" value="positive">
+                        <label for="positive"><i class="far fa-thumbs-up"></i></label>
+                        <input type="radio" name="opinion" id="negative" class="thumbs down" value="negative">
+                        <label for="negative"><i class="far fa-thumbs-down"></i></label>
+                    </div>
+                    @if($errors->has('opinion'))
+                        <div class="error">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
+                    <button type="submit" class="commentButton">Ajouter</button>
+                </form>
+            @endif
+            @if(count($provider->comments) == 0)
+                <div class="commentList">Ce prestataire n'a aucun commentaire. Soyez le premier à en poster un !</div>
+            @else
+                <div class="commentList">
+                    @foreach($provider->comments as $comment)
+                        <div class="commentItem">
+                            <div class="commentUser">De {{$comment->user->name}}</div>
+                            <div class="commentContent">{{$comment->content}}</div>
+                            <div class="commentOpinion"></div>
+                            <div class="commentDate">Le {{$comment->created_at}}</div>
+                        </div>
+                    @endforeach
                 </div>
-                <button type="submit" class="commentButton">Ajouter</button>
-            </form>
-            <div class="commentContainer">
-                <div class="commentItem">
-
-                </div>
-            </div>
+            @endif
         </div>
     </div>
 @endsection

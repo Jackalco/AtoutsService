@@ -7,20 +7,36 @@
     justify-content: center;
 }
 
-.searchItem:nth-child(1) {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+.searchItem {
+    display: flex;
+}
+
+.categories {
+    border-top: 1px solid rgb(115, 115, 115);
+    border-left: 1px solid rgb(115, 115, 115);
+    border-bottom: 1px solid rgb(115, 115, 115);
     border-radius: 5px 0px 0px 5px;
 }
 
-.searchItem:nth-child(2) {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+.cities {
+    border-top: 1px solid rgb(115, 115, 115);
+    border-bottom: 1px solid rgb(115, 115, 115);
 }
 
 .searchItem i {
     color: rgb(37, 188, 214);
+    margin-left: 5px;
+    margin-right: 5px;
+    align-self: center;
+}
+
+.searchItem div input {
+    border: none;
+}
+
+.searchDivInput {
+    display: flex;
+    flex-direction: column;
 }
 
 .searchInput {
@@ -33,9 +49,9 @@
     color: white;
     border: none;
     cursor: pointer;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid rgb(115, 115, 115);
+    border-right: 1px solid rgb(115, 115, 115);
+    border-bottom: 1px solid rgb(115, 115, 115);
     border-radius: 0px 5px 5px 0px;
 }
 
@@ -202,6 +218,12 @@
     background-color: rgb(218, 106, 1);
 }
 
+.error {
+    color: red;
+    font-size: 0.75em;
+    padding-left: 12px;
+}
+
 @media only screen and (min-width: 1200px) {
     .searchContainer {
         margin-left: 10%;
@@ -213,7 +235,7 @@
         font-size: 20px;
     }
     
-    .searchItem:nth-child(1) {
+    .categories {
         padding-right: 10px;
         padding-left: 10px;
     }
@@ -322,7 +344,7 @@
         font-size: 20px;
     }
     
-    .searchItem:nth-child(1) {
+    .categories {
         padding-right: 10px;
         padding-left: 10px;
     }

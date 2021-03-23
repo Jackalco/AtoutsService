@@ -77,7 +77,7 @@ class ProviderController extends Controller
 
         if($score) {
             $score->update(['score' => $request->get('score')]);
-            return back()->with('success', 'Merci, votre évaluation a bien été mise à jour.');
+            return back()->with('successEvaluate', 'Merci, votre évaluation a bien été mise à jour.');
         } else {
             Score::create($request->only('score') + ['user_id' => $user->id] + ['provider_id' => $provider->id]);
             return back()->with('successEvaluate', 'Merci, votre évaluation a bien été ajoutée.');

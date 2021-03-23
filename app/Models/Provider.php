@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\User;
 use App\Models\Image;
 use App\Models\Score;
+use App\Models\Comment;
 
 class Provider extends Model
 {
@@ -62,5 +63,9 @@ class Provider extends Model
         else {
             return null;
         }
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
     }
 }

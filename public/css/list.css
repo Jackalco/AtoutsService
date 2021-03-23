@@ -67,6 +67,7 @@ h2 {
 
 .imageLogoCompany {
     width: 175px;
+    border-radius: 0 0 10px 0;
 }
 
 .listCoordinates {

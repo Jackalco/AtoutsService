@@ -28,7 +28,7 @@
             @csrf
                 <div class="formItem">
                     <label>Nom</label>
-                    <input class="formInput {{ $errors->has('name') ? 'error' : '' }}" type="text" name="name" id="name">
+                    <input class="formInput {{ $errors->has('name') ? 'error' : '' }}" type="text" name="name" id="name" value="{{old('name')}}">
 
                     @if ($errors->has('name'))
                         <div class="error">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="formItem">
                     <label>Adresse</label>
-                    <input class="formInput {{ $errors->has('address') ? 'error' : '' }}" type="text" name="address" id="address">
+                    <input class="formInput {{ $errors->has('address') ? 'error' : '' }}" type="text" name="address" id="address" value="{{old('address')}}">
 
                     @if ($errors->has('address'))
                         <div class="error">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="formItem">
                     <label>Ville</label>
-                    <input class="formInput {{ $errors->has('city') ? 'error' : '' }}" type="text" name="city" id="city">
+                    <input class="formInput {{ $errors->has('city') ? 'error' : '' }}" type="text" name="city" id="city" value="{{old('city')}}">
 
                     @if ($errors->has('city'))
                         <div class="error">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="formItem">
                     <label>Téléphone</label>
-                    <input class="formInput {{ $errors->has('phone') ? 'error' : '' }}" type="text" name="phone" id="phone">
+                    <input class="formInput {{ $errors->has('phone') ? 'error' : '' }}" type="text" name="phone" id="phone" value="{{old('phone')}}">
 
                     @if ($errors->has('phone'))
                         <div class="error">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="formItem">
                     <label>Adresse mail</label>
-                    <input class="formInput {{ $errors->has('email') ? 'error' : '' }}" type="text" name="email" id="email">
+                    <input class="formInput {{ $errors->has('email') ? 'error' : '' }}" type="text" name="email" id="email" value="{{old('email')}}">
 
                     @if ($errors->has('email'))
                         <div class="error">
@@ -78,7 +78,7 @@
                 </div>
                 <div class="formItem">
                     <label>Date de création de l'entreprise</label>
-                    <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="month" name="date" id="date">
+                    <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="month" name="date" id="date" value="{{old('date')}}">
 
                     @if ($errors->has('date'))
                         <div class="error">
@@ -88,7 +88,7 @@
                 </div>
                 <div class="formItem">
                     <label>Numéro de SIRET</label>
-                    <input class="formInput {{ $errors->has('siret') ? 'error' : '' }}" type="text" name="siret" id="siret">
+                    <input class="formInput {{ $errors->has('siret') ? 'error' : '' }}" type="text" name="siret" id="siret" value="{{old('siret')}}">
 
                     @if ($errors->has('siret'))
                         <div class="error">
@@ -113,7 +113,7 @@
                 </div>
                 <div class="formItem">
                     <label>Effectif</label>
-                    <input class="formInput {{ $errors->has('workforce') ? 'error' : '' }}" type="text" name="workforce" id="workforce">
+                    <input class="formInput {{ $errors->has('workforce') ? 'error' : '' }}" type="text" name="workforce" id="workforce" value="{{old('workforce')}}">
 
                     @if ($errors->has('workforce'))
                         <div class="error">
@@ -123,7 +123,7 @@
                 </div>
                 <div class="formItem">
                     <label>Nombre de structure</label>
-                    <input class="formInput {{ $errors->has('structure') ? 'error' : '' }}" type="text" name="structure" id="structure">
+                    <input class="formInput {{ $errors->has('structure') ? 'error' : '' }}" type="text" name="structure" id="structure" value="{{old('structure')}}">
 
                     @if ($errors->has('structure'))
                         <div class="error">
@@ -133,7 +133,7 @@
                 </div>
                 <div class="formItem">
                     <label>Propriétaire</label>
-                    <input class="formInput {{ $errors->has('owner') ? 'error' : '' }}" type="text" name="owner" id="owner">
+                    <input class="formInput {{ $errors->has('owner') ? 'error' : '' }}" type="text" name="owner" id="owner" value="{{old('owner')}}">
 
                     @if ($errors->has('owner'))
                         <div class="error">

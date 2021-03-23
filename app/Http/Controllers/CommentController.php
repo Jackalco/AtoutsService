@@ -11,7 +11,7 @@ class CommentController extends Controller
         $comments = Comment::where('provider_id', $id);
     }
 
-    public function store(Request $request, $user_id, $provider_id) {
+    public function store(Request $request, $provider_id, $user_id) {
         $this->validate($request, [
             'content' => 'required',
             'opinion' => 'required'
@@ -19,6 +19,6 @@ class CommentController extends Controller
 
         Comment::create($request->only('content', 'opinion') + ['provider_id' => $provider_id] + ['user_id' => $user_id]);
 
-        return back()->with('successComment')
+        return back()->with('successComment', 'Votre commentaire a bien été ajouté !');
     }
 }

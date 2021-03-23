@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Provider;
 use App\Models\User;
 
-class Commment extends Model
+class Comment extends Model
 {
     use HasFactory;
 
@@ -19,10 +19,10 @@ class Commment extends Model
     ];
 
     public function provider() {
-        $this->belongsTo(Provider::class);
+        return $this->belongsTo(Provider::class);
     }
 
     public function user() {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -23,6 +23,6 @@ class SearchController extends Controller
     public function index($category, $city) {
         $providers = Provider::where('city', $city)->where('activity', $category)->orderBy('name', 'asc')->get();
 
-        return view('search/search_index', compact('providers'));
+        return view('search/search_index', compact('providers', 'category', 'city'));
     }
 }
