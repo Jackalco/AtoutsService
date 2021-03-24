@@ -1,6 +1,6 @@
 var options = {
     
-    url: "../json/cities.json",
+    url: urlCities,
 
     getValue: "name",
   
@@ -11,5 +11,6 @@ var options = {
     },
 
   };
-  
+
+  console.log(urlCities)
   $("#cities").easyAutocomplete(options);

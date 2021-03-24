@@ -10,16 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $categories = Category::get();
-        $providers = Provider::get();
-        $cities = [];
+        $categories = Category::all();
 
-        foreach($providers as $provider) {
-             if(!in_array($provider->city, $cities)) {
-                 $cities[] = $provider->city;
-             }
-        }
-
-        return view('home', compact('categories', 'cities'));
+        return view('home', compact('categories'));
     }
 }

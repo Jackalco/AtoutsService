@@ -100,8 +100,13 @@
 @endsection
 
 @push('script')
+    <script type="text/javascript">
+        var urlCategories = <?php echo $categories; ?>;
+        var urlCities = '{{ asset('json/cities.json') }}';
+    </script>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/EasyAutocomplete/jquery.easy-autocomplete.min.js') }}"></script>
     <script src="{{ asset('js/searchCategoriesAutoComplete.js') }}"></script>
     <script src="{{ asset('js/searchCitiesAutoComplete.js') }}"></script>
+    
 @endpush
