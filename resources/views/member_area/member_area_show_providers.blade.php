@@ -45,13 +45,13 @@
                     <div class="providerInfo"><strong>Activité :</strong> {{$provider->activity}}</div>
                     <div class="providerInfo"><strong>Numéro de SIRET :</strong> {{$provider->siret}}</div>
                     <form method="get" action="{{ route('member-area.provider.edit', [$user->id, $provider->id]) }}">
-                        <button class="memberSubmitButton">Modifier</button>
+                        <button class="formButton">Modifier</button>
                     </form>
                     <form method="post" action="{{ route('member-area.provider.delete', [$user->id, $provider->id]) }}">
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="memberSubmitButton">Supprimer</button>
+                        <button type="submit" class="formButton">Supprimer</button>
                     </form>
                 </div>
                 

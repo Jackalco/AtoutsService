@@ -26,21 +26,28 @@ h2 {
     border-radius: 5px;
 }
 
+.imageCompany {
+    height: 240px;
+}
+
 .listItem {
     display: flex;
     flex-direction: column;
-    height: 400px;
-    color: white;
+    height: 300px;
+    box-shadow: 0 0 10px rgba(50, 50, 50, 0.644);
+    margin-bottom: 30px;
+    transition-duration: 0.3s;
+    background-color: white;
 }
 
-
+.listItem:hover {
+    transform: scale(1.05);
+}
 
 .listInfo {
     display: flex;
-    flex-direction: row;
-    height: 300px;
+    height: 250px;
     align-items: center;
-    background-color: rgb(87, 223, 216);
 }
 
 .listTitle {
@@ -51,8 +58,7 @@ h2 {
 
 .listTitle hr {
     width: 75%;
-    border: 1px solid white;
-    background-color: white;
+    border: 1px solid;
 }
 
 .listOwner {
@@ -68,6 +74,8 @@ h2 {
 .imageLogoCompany {
     width: 175px;
     border-radius: 0 0 10px 0;
+    border-right: 4px inset black;
+    border-bottom: 4px inset black;
 }
 
 .listCoordinates {
@@ -83,6 +91,11 @@ h2 {
     padding-left: 25px;
     padding-right: 5px;
     font-size: 15px;
+    color: white;
+}
+
+.listCoordinates div {
+    display: flex;
 }
 
 .listCoordinates i {
@@ -90,7 +103,9 @@ h2 {
     padding: 3px;
     border: 1px solid white;
     border-radius: 50%;
+    height: fit-content;
 }
+
 
 .listButtonItem {
     display: flex;
@@ -103,7 +118,6 @@ h2 {
     font-size: 25px;
     padding: 10px;
     margin-top: 10px;
-    margin-right: 10px;
     background-color: rgb(255, 203, 59);
     transition-duration: 0.4s;
 }
@@ -113,6 +127,20 @@ h2 {
     color: white;
 }
 
-.imageCompany {
-    height: 240px;
+@media only screen and (min-width: 1200px) {
+    .listInfo {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .listInfo {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .listInfo {
+        flex-direction: column;
+    }
 }

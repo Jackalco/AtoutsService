@@ -46,7 +46,7 @@
             <i class="far fa-clipboard howLogo"></i>
             <div class="howText">Remplissez le formulaire et envoyez-le-nous !</div>
             <i class="fas fa-universal-access howLogo color"></i>
-            <div class="howText">Travaillez serainement et en toute sécurité !</div>
+            <div class="howText">Travaillez sereinement et en toute sécurité !</div>
         </div>
         <a class="howButton" href="{{ route('form-provider.show') }}">Remplir le formulaire</a>
 

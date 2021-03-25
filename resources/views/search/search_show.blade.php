@@ -43,6 +43,11 @@
             <button type="submit" class="searchButton">Rechercher</button>
         </form>
     </section>
+    <section>
+        <div class="infoContainer">
+            <p>Rechercher un prestataire chez Atouts Services selon votre besoin et selon votre localisation.</p>
+        </div>
+    </section>
 @endsection
 
 @push('script')

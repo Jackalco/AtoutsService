@@ -24,16 +24,16 @@
             @else
                 @foreach($providersOrganized as $provider)
                     <div class="listItem">
-                        <div class="listInfo" style="background-color : {{$provider->color}}">
+                        <div class="listInfo">
                             <div class="listLogoCompany">
-                                <img class="imageLogoCompany" src="{{asset('storage/imagesUploaded/'.$provider->image->path)}}" alt="Logo prestataire">
+                                <img class="imageLogoCompany" src="{{asset('storage/imagesUploaded/'.$provider->image->path)}}" alt="Logo prestataire" style="border-color : {{$provider->color}}">
                             </div>
-                            <div class="listTitle">
+                            <div class="listTitle" style="color : {{$provider->color}}">
                                 <h3>{{$provider->name}}</h3>
-                                <hr>
+                                <hr style="background-color : {{$provider->color}}">
                                 <div class="listOwner">{{$provider->owner}}</div>
                             </div>
-                            <div class="listCoordinates">
+                            <div class="listCoordinates" style="background-color : {{$provider->color}}">
                                 <div><i class="fas fa-home"></i>{{$provider->address}}, {{$provider->city}}</div>
                                 <div><i class="fas fa-phone"></i>{{$provider->phone}}</div>
                                 <div><i class="fas fa-at"></i>{{$provider->email}}</div>

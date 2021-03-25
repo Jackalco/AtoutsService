@@ -2,7 +2,6 @@
     display: flex;
     background-image: url('/images/image5.jpg');
     background-position: center;
-    height: 400px;
 }
 
 .introItem:nth-child(1) {
@@ -18,9 +17,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    align-items: flex-end;
     align-self: center;
-
 }
 
 .introPanel {
@@ -93,15 +90,10 @@
 
 .howLogo {
     font-size: 70px;
-    margin-right: -100px;
 }
 
 .color {
     color: rgb(40, 108, 255);
-}
-
-.howText {
-    width: 225px;
 }
 
 .howButton {
@@ -437,4 +429,93 @@ header {
     font-size: 0.95em;
 }
 
+@media only screen and (min-width: 1200px) {
+    .introContainer {
+        flex-direction: row;
+        height: 400px;
+    }
 
+    .howInfo  {
+        flex-direction: row;
+    }
+
+    .howLogo {
+        margin-right: -50px;
+    }
+
+    .howText {
+        font-size: 1em;
+        width: 225px;
+    }
+
+    .introItem:nth-child(2) {
+        align-items: flex-end;
+    }
+
+    .introPanel {
+        height: 275px;
+        width: 55%;
+        padding: 15px;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .introContainer {
+        flex-direction: row;
+        height: 400px;
+    }
+
+    .howInfo  {
+        flex-direction: row;
+    }
+
+    .howLogo {
+        margin-right: 0px;
+    }
+
+    .howText {
+        font-size: 0.95em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .introItem:nth-child(2) {
+        align-items: flex-end;
+    }
+
+    .introPanel {
+        height: 275px;
+        width: 55%;
+        padding: 15px;
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .introContainer {
+        flex-direction: column;
+        height: 450px;
+    }
+
+    .howInfo  {
+        flex-direction: column;
+    }
+
+    .howText {
+        font-size: 1em;
+    }
+
+    .introItem:nth-child(2) {
+        align-items: center;
+        flex: 2;
+        width: 100%;
+    }
+
+    .introPanel {
+        height: 100%;
+        width: 50%;
+        padding: 15px;
+        font-size: 22px;
+    }
+}

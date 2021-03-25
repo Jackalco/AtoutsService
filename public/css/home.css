@@ -1,8 +1,6 @@
 .searchContainer {
     display: flex;
     flex-direction: row;
-    margin-left: 10%;
-    margin-right: 10%;
     margin-bottom: 30px;
     justify-content: center;
 }
@@ -16,6 +14,8 @@
     border-left: 1px solid rgb(115, 115, 115);
     border-bottom: 1px solid rgb(115, 115, 115);
     border-radius: 5px 0px 0px 5px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .cities {
@@ -42,6 +42,8 @@
 .searchInput {
     border: none;
     outline: none;
+    height: 40px;
+    font-size: 20px;
 }
 
 .searchButton {
@@ -53,6 +55,7 @@
     border-right: 1px solid rgb(115, 115, 115);
     border-bottom: 1px solid rgb(115, 115, 115);
     border-radius: 0px 5px 5px 0px;
+    font-size: 20px;
 }
 
 .searchButton:hover {
@@ -64,6 +67,8 @@
     flex-direction: row;
     background-image: url('/images/image1.jpg');
     background-size: cover;
+    margin-bottom: 30px;
+    height: 325px;
 }
 
 .needItem {
@@ -97,6 +102,8 @@
     background-size: cover;
     background-position-y: 20%;
     display: flex;
+    margin-bottom: 20px;
+    height: 325px;
 }
 
 .serviceLayer {
@@ -106,6 +113,8 @@
     transition-duration: 0.5s;
     text-align: center;
     text-shadow: 1px 1px grey;
+    padding-top: 100px;
+    font-size: 50px;
 }
 
 .serviceLayer:hover {
@@ -115,6 +124,8 @@
 .cardContainer {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
+    height: 325px;
 }
 
 .cardItem {
@@ -145,6 +156,7 @@
     padding-top: 100px;
     text-align: center;
     width: 100%;
+    padding-top: 100px;
 }
 
 .cardLayer:hover {
@@ -156,6 +168,7 @@
     flex-direction: column;
     align-items: center;
     background-color: rgb(240, 240, 240);
+    margin-bottom: 20px;
 }
 
 .howContainer li {
@@ -178,6 +191,7 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(240, 240, 240);
+    margin-bottom: 20px;
 }
 
 .discoverContainer h2 {
@@ -199,6 +213,7 @@
 
 .iconItem i{
     color: white;
+    border-radius: 50%;
 }
 
 
@@ -224,36 +239,24 @@
     padding-left: 12px;
 }
 
+.easy-autocomplete {
+    width:85% !important;
+}
+
+.easy-autocomplete input {
+    width: 100%;
+    padding: 6px 8px !important;
+}
+
 @media only screen and (min-width: 1200px) {
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 30px;
-    }
-    
-    .searchItem {
-        font-size: 20px;
-    }
-    
-    .categories {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
- 
-    .searchInput {
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .searchButton {
-        font-size: 20px;
     }
     
     .needContainer {
         margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: 30px;
-        height: 325px;
+        margin-right: 10%;       
     }
     
     .needItem:first-child {
@@ -273,33 +276,23 @@
     .serviceContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 20px;
-        height: 325px;
     }
-     
-    .serviceLayer {
-        font-size: 50px;
-        padding-top: 100px;
-    }
-    
     
     .cardContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 50px;
-        height: 325px;
+        
     }  
     
     .cardLayer {
         font-size: 50px;
-        padding-top: 100px;
+        
     }
     
     
     .howContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 20px;
     }
     
     .howContainer li {
@@ -315,7 +308,6 @@
     .discoverContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 20px;
         padding: 30px;
     }
     
@@ -326,7 +318,6 @@
     
     .iconItem i{
         font-size: 25px;
-        border-radius: 50%;
         padding: 10px;
         margin-left: 10px;
         margin-right: 10px;
@@ -337,32 +328,11 @@
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 30px;
-    }
-    
-    .searchItem {
-        font-size: 20px;
-    }
-    
-    .categories {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
- 
-    .searchInput {
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .searchButton {
-        font-size: 20px;
     }
     
     .needContainer {
         margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: 30px;
-        height: 325px;
+        margin-right: 10%;       
     }
     
     .needItem:first-child {
@@ -382,33 +352,21 @@
     .serviceContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 20px;
-        height: 325px;
-    }
-     
-    .serviceLayer {
-        font-size: 50px;
-        padding-top: 100px;
-    }
-    
+    }  
     
     .cardContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 50px;
-        height: 325px;
+        
     }  
     
     .cardLayer {
         font-size: 50px;
-        padding-top: 100px;
     }
-    
     
     .howContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 20px;
     }
     
     .howContainer li {
@@ -424,7 +382,6 @@
     .discoverContainer {
         margin-left: 10%;
         margin-right: 10%;
-        margin-bottom: 20px;
         padding: 30px;
     }
     
@@ -435,13 +392,233 @@
     
     .iconItem i{
         font-size: 25px;
-        border-radius: 50%;
         padding: 10px;
         margin-left: 10px;
         margin-right: 10px;
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
+    .searchContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .needContainer {
+        margin-left: 10%;
+        margin-right: 10%;       
+    }
+    
+    .needItem:first-child {
+        font-size: 32px;
+    }
+    
+    .needItem:nth-child(2) a{
+        padding: 8px;
+        font-size: 18px;
+        width: 80%;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 12px;
+    }
+    
+    .serviceContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 
+    .cardContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        
+    }  
+    
+    .cardLayer {
+        font-size: 47px;  
+    }
+    
+    
+    .howContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 28px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 24px;
+        padding: 10px;
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .searchContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .needContainer {
+        margin-left: 5%;
+        margin-right: 5%;       
+    }
+    
+    .needItem:first-child {
+        font-size: 30px;
+    }
+    
+    .needItem:nth-child(2) a{
+        padding: 6px;
+        font-size: 16px;
+        width: auto;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 10px;
+    }
+    
+    .serviceContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .cardContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }  
+    
+    .cardLayer {
+        font-size: 45px;
+    }
+    
+    
+    .howContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 26px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 24px;
+        padding: 10px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .searchContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .needContainer {
+        margin-left: 5%;
+        margin-right: 5%;       
+    }
+    
+    .needItem:first-child {
+        font-size: 28px;
+    }
+    
+    .needItem:nth-child(2) a{
+        padding: 5px;
+        font-size: 14px;
+        width: auto;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 10px;
+    }
+    
+    .serviceContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }  
+    
+    .cardContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }  
+    
+    .cardLayer {
+        font-size: 45px;   
+    }
+    
+    
+    .howContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 25px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 22px;
+        padding: 8px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
 }

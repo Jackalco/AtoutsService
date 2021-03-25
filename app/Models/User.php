@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Provider;
 use App\Models\Score;
+use App\Notifications\MailResetPasswordToken;
 
 class User extends Authenticatable
 {
@@ -70,5 +71,9 @@ class User extends Authenticatable
 
     public function scores() {
         return $this->hasMany(Score::class);
+    }
+
+    public function sendPasswordResetNotification($token) {
+        $this->notify(new MailResetPasswordToken($token));
     }
 }

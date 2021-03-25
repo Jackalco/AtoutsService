@@ -15,7 +15,7 @@
 @section('content')
     <h1>Statistiques de l'année</h1>
     <div class="statsContainer">
-        <a href="{{ route('admin.stats.month') }}" class="buttonAdmin">Statistiques du mois</a>
+        <a href="{{ route('admin.stats.month') }}" class="buttonAdmin">Voir statistiques du mois</a>
             <table class="statsItem">
                 <tr>
                     <td><strong>Nom du prestataire</strong></td>

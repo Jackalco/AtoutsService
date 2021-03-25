@@ -133,11 +133,12 @@
     color: black;
     cursor: pointer;
     padding: 10px;
+    margin-top: 10px;
     font-size: 20px;
     background-color: rgb(255, 203, 59);
     border: none;
     border-radius: 2px;
-    width: fit-content;
+    width: max-content;
 }
 
 .formButton:hover {
@@ -151,12 +152,15 @@
     background-color: rgb(87, 223, 216);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgb(134, 134, 134) ;
+    min-height: 500px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 .historyItem {
     background-color: white;
-    width: 80%;
-    height: 150px;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -173,10 +177,8 @@
 
 .historyInfo {
     display: flex;
-    flex-direction: row;
     width: 80%;
     justify-content: space-between;
-    align-items: center;
 }
 
 h1 {
@@ -283,14 +285,21 @@ hr {
         margin-left: 150px;
     }
 
-    .historyContainer {
-        min-height: 500px;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 75px;
-        padding-bottom: 75px;
+    .historyItem {
+        height: 150px;
+        width: 80%;
     }
-    
+
+    .historyInfo {
+        flex-direction: row;
+        align-items: center;
+        font-size: 1em;
+    }
+
+    .historyInfo .formButton {
+        margin-left: 5px;
+    }
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -367,12 +376,21 @@ hr {
         margin-left: 150px;
     }
 
-    .historyContainer {
-        min-height: 500px;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 75px;
-        padding-bottom: 75px;
+    .historyItem {
+        height: 150px;
+        width: 80%;
+    }
+
+    .historyInfo {
+        flex-direction: row;
+        align-items: center;
+        font-size: 1em;
+    }
+
+    .historyInfo .formButton {
+        margin-left: 7px;
+        padding: 8px !important;
+        font-size: 18px !important;
     }
 }
 
@@ -451,12 +469,25 @@ hr {
         margin-left: 150px;
     }
 
-    .historyContainer {
-        min-height: 450px;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 75px;
-        padding-bottom: 75px;
+    .historyItem {
+        height: 150px;
+        width: 80%;
+    }
+
+    .historyInfo {
+        flex-direction: row;
+        align-items: center;
+        font-size: 0.90em;
+    }
+
+    .historyInfo div {
+        margin-right: 5px;
+    }
+
+    .historyInfo .formButton {
+        margin-left: 7px;
+        padding: 5px !important;
+        font-size: 15px !important;
     }
 }
 
@@ -539,12 +570,21 @@ hr {
         margin-left: 40px;
     }
 
-    .historyContainer {
-        min-height: 425px;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 75px;
-        padding-bottom: 75px;
+    .historyItem {
+        height: 200px;
+        width: 60%;
+    }
+
+    .historyInfo {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.95em;
+    }
+
+    .historyInfo .formButton {
+        margin-left: 0;
+        padding: 5px !important;
+        font-size: 15px !important;
     }
 }
 
@@ -624,11 +664,20 @@ hr {
         margin-left: 25px;
     }
 
-    .historyContainer {
-        min-height: 400px;
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 75px;
-        padding-bottom: 75px;
+    .historyItem {
+        height: 200px;
+        width: 60%;
+    }
+
+    .historyInfo {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.95em;
+    }
+
+    .historyInfo .formButton {
+        margin-left: 0;
+        padding: 5px !important;
+        font-size: 15px !important;
     }
 }
