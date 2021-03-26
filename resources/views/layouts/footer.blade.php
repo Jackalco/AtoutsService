@@ -2,10 +2,10 @@
     <hr>
     <div class="socialContainer">
         <strong>Retrouvez nous sur les réseaux sociaux</strong>
-        <a href="#" class="socialLink facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="socialLink twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="socialLink instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="socialLink linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/AtoutsServices.Atousages" class="socialLink facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="socialLink twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="socialLink instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="socialLink linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <hr>
     <div class="linkContainer">
@@ -36,8 +36,8 @@
         <div class="linkItem">
             <ul>
                 <li><strong>Informations légales</strong></li>
-                <li><a href="">Politique de confidentialité</a></li>
-                <li><a href="">Mentions légales</a></li>
+                <li><a href="{{ route('privacy_policy') }}">Politique de confidentialité</a></li>
+                <li><a href="{{ route('legal_mention') }}">Mentions légales</a></li>
                 <li>© Atouts services à tout âges 2021</li>
             </ul>
         </div>

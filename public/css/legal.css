@@ -1,0 +1,45 @@
+h1 {
+    padding-left: 15%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-right: 20px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: rgb(37, 188, 214);
+    color: white;
+    width: fit-content;
+    font-size: 2.5em;
+}
+
+.legalContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.legalItem {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+@media only screen and (min-width: 1200px) {
+    .legalContainer {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .legalContainer {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .legalContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

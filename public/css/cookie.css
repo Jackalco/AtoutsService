@@ -1,0 +1,22 @@
+.cookieContainer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: rgba(87, 223, 216, 0.85);
+}
+
+.cookieMessage {
+    color: white;
+}
+
+.cookieButton {
+    border: none;
+    cursor: pointer;
+}
+
+.cookieButton:hover {
+    background-color: rgb(220, 220, 220);
+}

@@ -7,6 +7,7 @@
         <meta name="description" content="@yield('head-meta-description','')">
         @stack('head-meta')
         <link rel="stylesheet" type="text/css" href="{{ asset('css/layouts.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/cookie.css') }}"/>
         <script src="https://kit.fontawesome.com/172e84d6d0.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/navbar.js') }}"></script>
 
@@ -20,6 +21,9 @@
     <main>
 
                 @yield('content')
+                @include('cookieConsent::index')
+
+</div>
 
     </main>
     @include('layouts.footer')

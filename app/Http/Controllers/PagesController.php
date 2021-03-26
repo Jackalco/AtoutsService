@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
-    public function home() {
-        return view('home');
+    public function legal_mention() {
+        return view('legal_mention');
+    }
+
+    public function privacy_policy() {
+        return view('privacy_policy');
     }
 
 }

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     background-repeat: no-repeat;
-    background-size: 100% 900px;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 200px;
@@ -33,7 +32,6 @@ h2 {
 .listItem {
     display: flex;
     flex-direction: column;
-    height: 300px;
     box-shadow: 0 0 10px rgba(50, 50, 50, 0.644);
     margin-bottom: 30px;
     transition-duration: 0.3s;
@@ -128,19 +126,60 @@ h2 {
 }
 
 @media only screen and (min-width: 1200px) {
+    .container {
+        background-size: 100% 900px;
+    }
+
     .listInfo {
         flex-direction: row;
+    }
+
+    .listItem {
+        height: 300px;
     }
 }
 
 @media only screen and (max-width: 1200px) {
+    .container {
+        background-size: 100% 750px;
+    }
+
     .listInfo {
         flex-direction: row;
+    }
+
+    .listItem {
+        height: 300px;
     }
 }
 
 @media only screen and (max-width: 900px) {
+    .container {
+        background-size: 100% 700px;
+    }
+
     .listInfo {
         flex-direction: column;
+        height: 300px;
+    }
+
+    .listItem {
+        height: 360px;
+    }
+
+    .listLogoCompany {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        background-size: 100% 550px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        background-size: 100% 425px;
     }
 }

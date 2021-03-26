@@ -22,6 +22,8 @@ Route::get('/services', 'CategoryController@showServices')->name('services');
 Route::get('/artisans', 'CategoryController@showArtisans')->name('artisans');
 Route::get('/logements', 'CategoryController@showHousings')->name('housings');
 Route::get('/liste/{id}', 'ListController@index')->name('list');
+Route::get('/mentions-legales', 'PagesController@legal_mention')->name('legal_mention');
+Route::get('/politique-confidentialite', 'PagesController@privacy_policy')->name('privacy_policy');
 
 Route::get('/recherche', 'SearchController@show')->name('search.show');
 Route::post('/recherche', 'SearchController@getSearch')->name('search.getsearch');
