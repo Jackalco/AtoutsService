@@ -41,6 +41,24 @@
         </div>
         <button type="submit" class="searchButton">Rechercher</button>
     </form>
+    <section class="slideshowContainer">
+        <h2>N'hésitez pas à consulter nos prestataires mis en avant !</h2>
+        <div class="slideContainer">
+            @foreach($providers as $key=>$provider)
+            <div class="slideItem fade">
+                <div class="numbertext">{{$key+1}} / 3</div>
+                <img class="slideImage" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}">
+                <a class="slideLayer" href="{{ route('provider.show', $provider->id) }}">
+                    <div class="slideTitle">{{$provider->name}}</div>
+                    <div class="slideText">{{$provider->activity}} sur {{$provider->city}}</div>
+                </a>
+            </div>
+            @endforeach
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </section>
     <section class="needContainer">
         <div class="needItem">Des artisans et des services de proximité pour vous aider</div>
         <div class="needItem">
@@ -108,5 +126,5 @@
     <script src="{{ asset('js/EasyAutocomplete/jquery.easy-autocomplete.min.js') }}"></script>
     <script src="{{ asset('js/searchCategoriesAutoComplete.js') }}"></script>
     <script src="{{ asset('js/searchCitiesAutoComplete.js') }}"></script>
-    
+    <script src="{{ asset('js/slide.js') }}"></script>
 @endpush

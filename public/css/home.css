@@ -62,6 +62,145 @@
     background-color: rgb(219, 161, 2);
 }
 
+.slideshowContainer {
+    margin-bottom: 20px;
+    margin-right: 32.5%;
+    margin-left: 32.5%;
+}
+
+.slideshowContainer h2{
+    text-align: center;  
+}
+
+.slideContainer {
+    width: 100%;
+    position: relative;
+}
+  
+.slideItem {
+    display: none;
+    height: 400px;
+}
+
+.slideItem h3 {
+    text-align: center;
+}
+
+.slideLayer {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    transition-duration: 0.3s;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.25);
+}
+
+.slideLayer:hover {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.slideContent {
+    display: flex;
+}
+
+.slideImage {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.slideTitle {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.slideText {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+  
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(37, 188, 214);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 3;
+}
+  
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+.prev:hover, .next:hover {
+    background-color: rgb(37, 188, 214, 0.8);
+    color: white;
+}
+  
+.slideLink {
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    text-align: center;
+    display: none;
+}
+
+.slideLink a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    background-color: rgb(252, 185, 0);
+}
+  
+.numbertext {
+    color: white;
+    background-color: rgb(37, 188, 214);
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    border-radius: 0 0 5px 0;
+    z-index: 3;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
 .needContainer {
     display: flex;
     flex-direction: row;
