@@ -1,0 +1,41 @@
+.paymentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    height: 500px;
+}
+
+.paymentItem {
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+
+input {
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.paymentName {
+    width: 100%;
+}
+
+.paymentButton {
+    width: 100%;
+    font-size: 22px;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.paymentButton:focus {
+    outline: none;
+}

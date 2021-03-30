@@ -43,11 +43,16 @@ class ProviderController extends Controller
 
         $image = Image::storeImage($request->image);
 
-        Provider::create(
+        $provider = Provider::create(
             $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['owner_id' => $user]
         );
 
-        return back()->with('success', 'Félicitations ! Votre entreprise a bien été ajoutée parmis nos prestataires.');
+        return redirect(route('form-provider.payment', $provider->id));
+    }
+
+    public function showPayment($id) {
+        $provider = Provider::find($id);
+        return view('provider/payment_provider', compact('provider'));
     }
 
     public function showProvider($id) {

@@ -142,7 +142,7 @@
                     @endif
                 </div>
                 <div class="formItem">
-                    <label>Logo</label>
+                    <label>Logo (.png, .jpg)</label>
                     <input type="file" accept=".png, .jpg" class="formInput {{ $errors->has('image') ? 'error' : '' }}" name="image" id="image">
 
                     @if ($errors->has('image'))
@@ -166,7 +166,6 @@
                 <div class="formItem">
                     <button type="submit" class="formButton">Envoyer</button>
                 </div>
-
             </form>
         </div>
     </div>

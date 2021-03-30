@@ -46,7 +46,7 @@
         <div class="slideContainer">
             @foreach($providers as $key=>$provider)
             <div class="slideItem fade">
-                <div class="numbertext">{{$key+1}} / 3</div>
+                <div class="numbertext">{{$key+1}} / {{count($providers)}}</div>
                 <img class="slideImage" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}">
                 <a class="slideLayer" href="{{ route('provider.show', $provider->id) }}">
                     <div class="slideTitle">{{$provider->name}}</div>
