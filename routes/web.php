@@ -42,6 +42,7 @@ Route::patch('/espace-membre/{id}/prestataire/modifcation/{id_provider}', 'Membe
 Route::delete('/espace-membre/{id}/prestataire/suppression/{id_provider}', 'MemberAreaController@deleteProvider')->name('member-area.provider.delete')->middleware('auth');
 Route::get('/espace-membre/{id}/historique', 'MemberAreaController@showHistory')->name('member-area.history.show')->middleware('auth');
 Route::delete('/espace-membre/{id}/historique/supression/{history_id}', 'MemberAreaController@deleteHistory')->name('member-area.history.delete')->middleware('auth');
+Route::get('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'MemberAreaController@showPromote')->name('member-area.provider.promote')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');
@@ -63,7 +64,7 @@ Route::delete('/admin/utilisateurs/suppression/{id}', 'AdminController@deleteUse
 Route::get('/admin/statistiques/mois', 'AdminController@showStatsMonth')->name('admin.stats.month')->middleware('auth.admin');
 Route::get('/admin/statistiques/annee', 'AdminController@showStatsYear')->name('admin.stats.year')->middleware('auth.admin');
 
-Route::post('/payement', 'PaymentController@makePayment')->name('payment')->middleware('auth');
+Route::post('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'PaymentController@promote')->name('payment')->middleware('auth');
 
 Auth::routes(['verify' => true]);
 Route::get('/connexion', 'Auth\LoginController@show')->name('show.login')->middleware('guest');

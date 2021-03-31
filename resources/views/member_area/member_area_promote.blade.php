@@ -1,15 +1,15 @@
 @extends('layouts.master')
 
 @section('head-title')
-    Atouts Services - Payement
+    Atouts Services - Espace membre pour les prestataires
 @endsection
 
 @section('head-meta-description')
-    Payement prestataire Atouts Services
+    Modification d'un prestataire d'Atouts Services par l'utilisateur propriétaire 
 @endsection
 
 @push('stylesheet')
-    <link href="{{ asset('css/provider.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/member_area.css') }}" rel="stylesheet">
     <link href="{{ asset('css/payment.css') }}" rel="stylesheet">
 @endpush
 
@@ -19,9 +19,17 @@
             <p>{{ Session::get('success') }}</p>
         </div>
     @endif
-        <form role="form" action="{{ route('payment') }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+        <form role="form" action="{{ route('payment', [$user->id, $provider->id]) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
             @csrf
-            
+
+            <div class="chooseContainer">
+                <input type="radio" id="week" name="price" value="9999">
+                <label for="week">Une semaine (99,99€)</label>
+                <input type="radio" id="coupleWeek" name="price" value="19999">
+                <label for="coupleWeek">2 semaines (199,99€)</label>
+                <input type="radio" id="month" name="price" value="39999">
+                <label for="month">Un mois (399,99€)</label>
+            </div>
     
             <div class='paymentItem'>
                 <input class='paymentName' type='text' placeholder="Nom du titulaire">
@@ -43,11 +51,12 @@
             </div>
                             
         </form>
+        <div>{{$date}}</div>
 @endsection
 
 @push('script')
     <script src="{{ asset('js/client.js') }}"></script>
-    <script src="{{ asset('jquery-3.6.0.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
         $(function() {

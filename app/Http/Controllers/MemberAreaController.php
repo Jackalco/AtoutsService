@@ -122,6 +122,19 @@ class MemberAreaController extends Controller
 
     }
 
+    public function  showPromote($id, $id_provider) {
+        $user = User::find($id);
+        $provider = Provider::find($id_provider);
+        $today = strtotime(date("Y/m/d"));
+        $date = date("Y-m-d", strtotime("+7 days", $today));
+
+        if($user->id == $provider->owner_id) {
+            return view('member_area/member_area_promote', compact('user', 'provider', 'date'));
+        } else {
+            return redirect(route('home'));
+        }
+    }
+
     public function showHistory($id) {
         $user = User::find($id);
         $histories = History::where('user_id', $user->id)->orderBy('id', 'desc')->get();

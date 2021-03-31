@@ -44,7 +44,7 @@
                     <div class="providerInfo"><strong>Effectif :</strong> {{$provider->workforce}}</div>
                     <div class="providerInfo"><strong>Activité :</strong> {{$provider->activity}}</div>
                     <div class="providerInfo"><strong>Numéro de SIRET :</strong> {{$provider->siret}}</div>
-                    <form method="get" action="">
+                    <form method="get" action="{{ route('member-area.provider.promote', [$user->id, $provider->id]) }}">
                         <button class="formButton">Promouvoir</button>
                     </form>
                     <form method="get" action="{{ route('member-area.provider.edit', [$user->id, $provider->id]) }}">
