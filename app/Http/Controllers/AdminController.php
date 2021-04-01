@@ -9,6 +9,7 @@ use App\Models\Provider;
 use App\Models\User;
 use App\Models\Search;
 use App\Models\Score;
+use App\Models\Price;
 
 class AdminController extends Controller
 {
@@ -178,6 +179,24 @@ class AdminController extends Controller
         $providersDetails = $providers->sortByDesc('count');
 
         return view('admin/admin_stats_year', compact('providersDetails'));
+    }
+
+    public function showPrices() {
+        $year = Price::where('name', 'Abonnement')->get();
+        $week = Price::where('name', 'Une semaine')->get();
+        $twoweek = Price::where('name', 'Deux semaines')->get();
+        $month = Price::where('name', 'Un mois')->get();
+        return view('admin/admin_price', compact('year', 'week', 'twoweek', 'month'));
+    }
+
+    public function updatePrice(Request $request, $id) {
+        $this->validate($request, [
+            'price' => 'required'
+        ]);
+
+        $price = Price::find($id);
+        $price->update(['price' => $request->get('price')]);
+        return back()->with('success', 'Le prix a bien été modifié');
     }
 
     

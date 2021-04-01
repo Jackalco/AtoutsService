@@ -8,6 +8,7 @@ use App\Models\Image;
 use App\Models\Provider;
 use App\Models\Category;
 use App\Models\History;
+use App\Models\Price;
 use Illuminate\Support\Facades\Auth;
 
 class MemberAreaController extends Controller
@@ -125,11 +126,12 @@ class MemberAreaController extends Controller
     public function  showPromote($id, $id_provider) {
         $user = User::find($id);
         $provider = Provider::find($id_provider);
-        $today = strtotime(date("Y/m/d"));
-        $date = date("Y-m-d", strtotime("+7 days", $today));
+        $week = Price::where('name', 'Une semaine')->get();
+        $twoweek = Price::where('name', 'Deux semaines')->get();
+        $month = Price::where('name', 'Un mois')->get();
 
         if($user->id == $provider->owner_id) {
-            return view('member_area/member_area_promote', compact('user', 'provider', 'date'));
+            return view('member_area/member_area_promote', compact('user', 'provider', 'week', 'twoweek', 'month'));
         } else {
             return redirect(route('home'));
         }

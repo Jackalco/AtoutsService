@@ -13,11 +13,39 @@
     width: 100%;
 }
 
-input {
+.firstPart {
+    border-top: 1px solid rgb(87, 223, 216);
+    border-left: 1px solid rgb(87, 223, 216);
+    border-right: 1px solid rgb(87, 223, 216);
+    border-radius: 8px 8px 0 0;
+}
+
+.secondPart {
+    border-left: 1px solid rgb(87, 223, 216);
+    border-right: 1px solid rgb(87, 223, 216);
+}
+
+.thirdPart {
+    border-bottom: 1px solid rgb(87, 223, 216);
+    border-left: 1px solid rgb(87, 223, 216);
+    border-right: 1px solid rgb(87, 223, 216);
+    background-color: rgb(87, 223, 216);
+    border-radius: 0 0 8px 8px;
+}
+
+.thirdPart:hover {
+    background-color: rgb(0, 168, 197);
+    border-color: rgb(0, 168, 197);
+}
+
+.paymentInput {
     font-size: 20px;
     border: none;
     padding: 5px;
+    color: rgb(80, 80, 80);
+    background-color: transparent;
 }
+
 
 input:focus {
     outline: none;
@@ -25,6 +53,11 @@ input:focus {
 
 .paymentName {
     width: 100%;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    color: rgb(80, 80, 80);
+    background-color: transparent;
 }
 
 .paymentButton {
@@ -44,4 +77,46 @@ input:focus {
 
 .paymentButton:focus {
     outline: none;
+}
+
+.paymentInfo {
+    color: rgb(80, 80, 80);
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.chooseContainer {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.chooseInput {
+    display: none;
+}
+
+.chooseInput + .chooseLabel {
+    padding: 5px 10px;
+    font-size: 17px;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    border: 1px solid white;
+    flex: 1;
+    text-align: center;
+    color: white;
+    background-color: rgb(87, 223, 216);
+    transition-duration: 0.4s;
+}
+
+.chooseInput:hover + .chooseLabel {
+    background-color: rgb(0, 168, 197);
+}
+
+.chooseInput:checked + .chooseLabel {
+    background-color: rgb(0, 168, 197);
+}
+
+.error {
+    text-align: center;
+    margin-bottom: 10px;
 }

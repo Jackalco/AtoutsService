@@ -199,7 +199,6 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: white;
 }
 
 .providerItem {

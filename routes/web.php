@@ -63,6 +63,8 @@ Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin.user
 Route::delete('/admin/utilisateurs/suppression/{id}', 'AdminController@deleteUser')->name('admin.user.delete')->middleware('auth.admin');
 Route::get('/admin/statistiques/mois', 'AdminController@showStatsMonth')->name('admin.stats.month')->middleware('auth.admin');
 Route::get('/admin/statistiques/annee', 'AdminController@showStatsYear')->name('admin.stats.year')->middleware('auth.admin');
+Route::get('/admin/prix', 'AdminController@showPrices')->name('admin.prices')->middleware('auth.admin');
+Route::patch('/admin/prix/{id}', 'AdminController@updatePrice')->name('admin.price.update')->middleware('auth.admin');
 
 Route::post('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'PaymentController@promote')->name('payment')->middleware('auth');
 

@@ -41,16 +41,17 @@
         </div>
         <button type="submit" class="searchButton">Rechercher</button>
     </form>
+    @if(count($promotes) > 0)
     <section class="slideshowContainer">
         <h2>N'hésitez pas à consulter nos prestataires mis en avant !</h2>
         <div class="slideContainer">
-            @foreach($providers as $key=>$provider)
+            @foreach($promotes as $key=>$promote)
             <div class="slideItem fade">
-                <div class="numbertext">{{$key+1}} / {{count($providers)}}</div>
-                <img class="slideImage" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}">
-                <a class="slideLayer" href="{{ route('provider.show', $provider->id) }}">
-                    <div class="slideTitle">{{$provider->name}}</div>
-                    <div class="slideText">{{$provider->activity}} sur {{$provider->city}}</div>
+                <div class="numbertext">{{$key+1}} / {{count($promotes)}}</div>
+                <img class="slideImage" src="{{ asset('storage/imagesUploaded/'.$promote->provider->image->path) }}">
+                <a class="slideLayer" href="{{ route('provider.show', $promote->provider->id) }}">
+                    <div class="slideTitle">{{$promote->provider->name}}</div>
+                    <div class="slideText">{{$promote->provider->activity}} sur {{$promote->provider->city}}</div>
                 </a>
             </div>
             @endforeach
@@ -59,6 +60,7 @@
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </section>
+    @endif
     <section class="needContainer">
         <div class="needItem">Des artisans et des services de proximité pour vous aider</div>
         <div class="needItem">

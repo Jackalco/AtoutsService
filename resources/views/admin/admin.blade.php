@@ -18,6 +18,7 @@
         <a class="adminItem" href="{{ route('admin.category') }}">Gérer les catégories</a>
         <a class="adminItem" href="{{ route('admin.provider') }}">Gérer les prestataires</a>
         <a class="adminItem" href="{{ route('admin.user') }}">Gérer les utilisateurs</a>
+        <a class="adminItem" href="{{ route('admin.prices') }}">Gérer les prix</a>
         <a class="adminItem" href="{{ route('admin.stats.month') }}">Voir statistiques</a>
     </div>
 @endsection
