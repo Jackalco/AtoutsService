@@ -23,6 +23,11 @@ h2 {
     flex-direction: column;
     background-color: white;
     border-radius: 5px;
+    min-height: 200px;
+}
+
+.noProviders {
+    text-align: center;
 }
 
 .imageCompany {

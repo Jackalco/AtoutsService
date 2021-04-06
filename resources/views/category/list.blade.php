@@ -20,7 +20,7 @@
         <div class="listContainer">
             <h2>Prestataires proposés</h2>
             @if(count($providersOrganized) == 0)
-                <div>Désolé, il semblerait que nous n'avons pas encore de prestataires pour le service que vous désirez.</div>
+                <div class="noProviders">Désolé, il semblerait que nous n'avons pas encore de prestataires pour le service que vous désirez.</div>
             @else
                 @foreach($providersOrganized as $provider)
                     <div class="listItem">
