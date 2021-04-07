@@ -27,7 +27,7 @@
             <form class="formList" enctype="multipart/form-data" method="post" action="{{ route('form-provider.apply', $user->id) }}">
             @csrf
                 <div class="formItem">
-                    <label>Nom</label>
+                    <label>Nom de l'entreprise</label>
                     <input class="formInput {{ $errors->has('name') ? 'error' : '' }}" type="text" name="name" id="name" value="{{old('name')}}">
 
                     @if ($errors->has('name'))
@@ -113,7 +113,7 @@
                 </div>
                 <div class="formItem">
                     <label>Effectif</label>
-                    <input class="formInput {{ $errors->has('workforce') ? 'error' : '' }}" type="text" name="workforce" id="workforce" value="{{old('workforce')}}">
+                    <input class="formInput {{ $errors->has('workforce') ? 'error' : '' }}" type="number" name="workforce" id="workforce" value="{{old('workforce')}}">
 
                     @if ($errors->has('workforce'))
                         <div class="error">
@@ -123,7 +123,7 @@
                 </div>
                 <div class="formItem">
                     <label>Nombre de structure</label>
-                    <input class="formInput {{ $errors->has('structure') ? 'error' : '' }}" type="text" name="structure" id="structure" value="{{old('structure')}}">
+                    <input class="formInput {{ $errors->has('structure') ? 'error' : '' }}" type="number" name="structure" id="structure" value="{{old('structure')}}">
 
                     @if ($errors->has('structure'))
                         <div class="error">
