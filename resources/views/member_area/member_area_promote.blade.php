@@ -19,7 +19,7 @@
             <p>{{ Session::get('success') }}</p>
         </div>
     @endif
-        <form role="form" action="{{ route('payment', [$user->id, $provider->id]) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+        <form role="form" action="{{ route('promote', [$user->id, $provider->id]) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
             @csrf
 
             <div class="chooseContainer">

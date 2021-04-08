@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Provider;
 use App\Models\Score;
 use App\Notifications\MailResetPasswordToken;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, Billable;
 
     /**
      * The attributes that are mass assignable.

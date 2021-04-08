@@ -42,12 +42,12 @@ Route::patch('/espace-membre/{id}/prestataire/modifcation/{id_provider}', 'Membe
 Route::delete('/espace-membre/{id}/prestataire/suppression/{id_provider}', 'MemberAreaController@deleteProvider')->name('member-area.provider.delete')->middleware('auth');
 Route::get('/espace-membre/{id}/historique', 'MemberAreaController@showHistory')->name('member-area.history.show')->middleware('auth');
 Route::delete('/espace-membre/{id}/historique/supression/{history_id}', 'MemberAreaController@deleteHistory')->name('member-area.history.delete')->middleware('auth');
-Route::get('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'MemberAreaController@showPromote')->name('member-area.provider.promote')->middleware('auth');
+Route::get('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'MemberAreaController@showPromotePayment')->name('member-area.provider.promote')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');
 Route::post('/devenir-prestataire/formulaire/{id}', 'ProviderController@applyForm')->name('form-provider.apply')->middleware('auth');
-Route::get('devenir-prestataire/formulaire/payement/{id}', 'ProviderController@showPayment')->name('form-provider.payment')->middleware('auth');
+Route::get('devenir-prestataire/formulaire/payement/{id}', 'ProviderController@showSubscriptionPayment')->name('form-provider.payment')->middleware('auth');
 Route::get('/devenir-prestataire/reglement', 'ProviderController@rules')->name('provider-rules');
 
 Route::get('/admin', 'AdminController@panel')->name('admin')->middleware('auth.admin');
@@ -66,7 +66,8 @@ Route::get('/admin/statistiques/annee', 'AdminController@showStatsYear')->name('
 Route::get('/admin/prix', 'AdminController@showPrices')->name('admin.prices')->middleware('auth.admin');
 Route::patch('/admin/prix/{id}', 'AdminController@updatePrice')->name('admin.price.update')->middleware('auth.admin');
 
-Route::post('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'PaymentController@promote')->name('payment')->middleware('auth');
+Route::post('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'PaymentController@promote')->name('promote')->middleware('auth');
+Route::post('devenir-prestataire/formulaire/payement/{id}', 'PaymentController@subscription')->name('subscription')->middleware('auth');
 
 Auth::routes(['verify' => true]);
 Route::get('/connexion', 'Auth\LoginController@show')->name('show.login')->middleware('guest');

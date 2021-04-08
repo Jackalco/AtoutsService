@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Stripe;
 use Session;
 use App\Models\User;
 use App\Models\Provider;
 use App\Models\Price;
 use App\Models\Promote;
+use Laravel\Cashier\Cashier;
 
 class PaymentController extends Controller
 {
@@ -44,5 +46,13 @@ class PaymentController extends Controller
         }
 
         return redirect(route('member-area.providers.show', $user->id))->with('success', 'Payment réussi, ce prestataire sera maintenant visible dans le bandeau publicitaire !');
+    }
+
+    public function subscription(Request $request, $id) {
+        $user = Auth::user();
+        $provider = Provider::find($id);
+        $request->user()->newSubscription('default', 'price_1Idsf0ETsftEQAZzAz1k6p6B')->create($request->stripeToken, ["email" => $user->email, 'customer' => $request->stripeToken]);
+        $today = strtotime(date("Y/m/d"));
+        $provider->update(['end-date' => date("Y-m-d", strtotime("+1 year", $today))]);
     }
 }

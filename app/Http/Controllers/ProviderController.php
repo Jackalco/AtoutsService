@@ -50,7 +50,7 @@ class ProviderController extends Controller
         return redirect(route('form-provider.payment', $provider->id));
     }
 
-    public function showPayment($id) {
+    public function showSubscriptionPayment($id) {
         $provider = Provider::find($id);
         return view('provider/payment_provider', compact('provider'));
     }

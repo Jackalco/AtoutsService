@@ -123,7 +123,7 @@ class MemberAreaController extends Controller
 
     }
 
-    public function  showPromote($id, $id_provider) {
+    public function  showPromotePayment($id, $id_provider) {
         $user = User::find($id);
         $provider = Provider::find($id_provider);
         $week = Price::where('name', 'Une semaine')->get();
