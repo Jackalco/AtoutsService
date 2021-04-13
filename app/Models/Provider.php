@@ -30,7 +30,8 @@ class Provider extends Model
         'grade',
         'image_id',
         'description',
-        'color'
+        'color',
+        'end-date'
     ];
 
     public function category() {

@@ -19,7 +19,7 @@
             }
 
             function hideCookieDialog() {
-                const dialogs = document.getElementsByClassName('js-cookie-consent');
+                const dialogs = document.getElementsByClassName('cookieContainer');
 
                 for (let i = 0; i < dialogs.length; ++i) {
                     dialogs[i].style.display = 'none';
@@ -40,7 +40,7 @@
                 hideCookieDialog();
             }
 
-            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+            const buttons = document.getElementsByClassName('cookieButton');
 
             for (let i = 0; i < buttons.length; ++i) {
                 buttons[i].addEventListener('click', consentWithCookies);

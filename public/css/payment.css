@@ -1,3 +1,7 @@
+main {
+    margin-bottom: 20px;
+}
+
 .paymentContainer {
     display: flex;
     flex-direction: column;
@@ -114,6 +118,24 @@ input:focus {
 
 .chooseInput:checked + .chooseLabel {
     background-color: rgb(0, 168, 197);
+}
+
+.linkButton {
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 100px;
+    font-size: 20px;
+    background-color: rgb(252, 185, 0);
+    border: none;
+}
+
+.linkButton:hover {
+    background-color: rgb(231, 172, 8);
 }
 
 .error {

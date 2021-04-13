@@ -45,14 +45,23 @@ class PaymentController extends Controller
                 break;
         }
 
-        return redirect(route('member-area.providers.show', $user->id))->with('success', 'Payment réussi, ce prestataire sera maintenant visible dans le bandeau publicitaire !');
+        return redirect(route('member-area.providers.show'))->with('success', 'Payment réussi, ce prestataire sera maintenant visible dans le bandeau publicitaire !');
     }
 
     public function subscription(Request $request, $id) {
         $user = Auth::user();
         $provider = Provider::find($id);
-        $request->user()->newSubscription('default', 'price_1Idsf0ETsftEQAZzAz1k6p6B')->create($request->stripeToken, ["email" => $user->email, 'customer' => $request->stripeToken]);
-        $today = strtotime(date("Y/m/d"));
-        $provider->update(['end-date' => date("Y-m-d", strtotime("+1 year", $today))]);
+        $priceSubscription = Price::where('name', 'Abonnement')->limit(1)->get();
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe\Charge::create([
+            "amount" => $priceSubscription[0]->price*100,
+            "currency" => "eur",
+            "source" => $request->stripeToken,
+            "description" => "Abonnement d'un an du prestataire ".$provider->name,
+        ]);
+        $date = date('Y-m-d', strtotime('+1 year'));
+        $provider->update(['end-date' => $date]);
+
+        return redirect(route('member-area.providers.show'))->with('success', 'Payment réussi, ce prestataire sera maintenant visible sur Atouts Services !');
     }
 }

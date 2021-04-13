@@ -38,16 +38,16 @@ class MemberAreaController extends Controller
         return redirect(route('member-area'));
     }
 
-    public function showProviders($id) {
-        $user = User::find($id);
-        $providers = Provider::where('owner_id', $id)->orderBy('name', 'asc')->get();
+    public function showProviders() {
+        $user = Auth::user();
+        $providers = Provider::where('owner_id', $user->id)->orderBy('name', 'asc')->get();
 
         return view('member_area/member_area_show_providers', compact('providers', 'user'));
     }
 
-    public function editProvider($id, $id_provider) {
+    public function editProvider($id_provider) {
         $categories = Category::orderBy('name', 'asc')->get();
-        $user = User::find($id);
+        $user = Auth::user();;
         $provider = Provider::find($id_provider);
 
         return view('member_area/member_area_edit_provider', compact('provider', 'user', 'categories')); 
@@ -123,8 +123,8 @@ class MemberAreaController extends Controller
 
     }
 
-    public function  showPromotePayment($id, $id_provider) {
-        $user = User::find($id);
+    public function  showPromotePayment($id_provider) {
+        $user = Auth::user();
         $provider = Provider::find($id_provider);
         $week = Price::where('name', 'Une semaine')->get();
         $twoweek = Price::where('name', 'Deux semaines')->get();
@@ -137,8 +137,8 @@ class MemberAreaController extends Controller
         }
     }
 
-    public function showHistory($id) {
-        $user = User::find($id);
+    public function showHistory() {
+        $user = Auth::user();
         $histories = History::where('user_id', $user->id)->orderBy('id', 'desc')->get();
 
         return view('member_area/member_area_show_history', compact('histories', 'user'));

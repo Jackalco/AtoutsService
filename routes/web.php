@@ -36,13 +36,13 @@ Route::post('/prestataire/{id}/commentaire/{user}/ajout', 'CommentController@sto
 Route::get('/espace-membre', 'MemberAreaController@show')->name('member-area')->middleware('auth');
 Route::get('/espace-membre/modification', 'MemberAreaController@editPersonnal')->name('member-area.edit')->middleware('auth');
 Route::patch('/espace-membre/modification/{id}', 'MemberAreaController@updatePersonnal')->name('member-area.update')->middleware('auth');
-Route::get('/espace-membre/{id}/prestataires/', 'MemberAreaController@showProviders')->name('member-area.providers.show')->middleware('auth');
-Route::get('/espace-membre/{id}/prestataires/modification/{id_provider}', 'MemberAreaController@editProvider')->name('member-area.provider.edit')->middleware('auth');
+Route::get('/espace-membre/prestataires/', 'MemberAreaController@showProviders')->name('member-area.providers.show')->middleware('auth');
+Route::get('/espace-membre/prestataires/modification/{id_provider}', 'MemberAreaController@editProvider')->name('member-area.provider.edit')->middleware('auth');
 Route::patch('/espace-membre/{id}/prestataire/modifcation/{id_provider}', 'MemberAreaController@updateProvider')->name('member-area.provider.update')->middleware('auth');
 Route::delete('/espace-membre/{id}/prestataire/suppression/{id_provider}', 'MemberAreaController@deleteProvider')->name('member-area.provider.delete')->middleware('auth');
-Route::get('/espace-membre/{id}/historique', 'MemberAreaController@showHistory')->name('member-area.history.show')->middleware('auth');
+Route::get('/espace-membre/historique', 'MemberAreaController@showHistory')->name('member-area.history.show')->middleware('auth');
 Route::delete('/espace-membre/{id}/historique/supression/{history_id}', 'MemberAreaController@deleteHistory')->name('member-area.history.delete')->middleware('auth');
-Route::get('/espace-membre/{id}/prestataire/{id_provider}/promouvoir', 'MemberAreaController@showPromotePayment')->name('member-area.provider.promote')->middleware('auth');
+Route::get('/espace-membre/prestataire/{id_provider}/promouvoir', 'MemberAreaController@showPromotePayment')->name('member-area.provider.promote')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');

@@ -22,7 +22,7 @@ class CommentController extends Controller
 
         $negativeComments = Comment::where('provider_id', $provider_id)->where('opinion', 'negative')->get();
 
-        if(count($negativeComments) >= 10) {
+        if(count($negativeComments) % 10 == 0 && count($negativeComments) != 0) {
             $provider = Provider::find($provider_id);
             \Mail::send('mail/warning_admin', array(
                 'provider' => $provider,

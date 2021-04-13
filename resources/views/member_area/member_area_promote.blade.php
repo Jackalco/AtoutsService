@@ -14,6 +14,7 @@
 @endpush
 
 @section('content')
+    <h1>Promouvoir un prestataire</h1>
     @if (Session::has('success'))
         <div class="alert alert-success text-center">
             <p>{{ Session::get('success') }}</p>
@@ -55,6 +56,7 @@
             </div>
                             
         </form>
+        <a class="linkButton" href="{{ route('member-area.providers.show', $user->id) }}">Retour</a>
 @endsection
 
 @push('script')

@@ -24,7 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+            \Mail::send('mail/warning_user', function($message){
+                $message->from('vincent.jacques1311@gmail.com');
+                $message->to('vincent.jacques1311@gmail.com', 'Administrateur')->subject('Alerte user');
+            });
+        })->everyMinute();
     }
 
     /**

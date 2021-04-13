@@ -11,7 +11,8 @@ class ListController extends Controller
 {
     public function index($id) {
         $category = Category::find($id);
-        $providers = Provider::where('activity', $category->name)->get();
+        $today = now();
+        $providers = Provider::where('activity', $category->name)->where('end-date', '>=', $today)->get();
         
         foreach($providers as $provider) {
             $provider['average'] = $provider->average();

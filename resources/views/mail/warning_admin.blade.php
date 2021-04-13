@@ -2,6 +2,6 @@
 
 Le prestataire {{$provider->name}} a reçu {{$numberComments}} commentaires négatifs. <br>
 
-Lien vers la page du prestataire : <a href="{{ route('provider.show', $provider->id) }}">Lien prestataire</a><br>
+Lien vers la page du prestataire : <a href="{{ route('provider.show', $provider->id) }}">Lien prestataire</a><br><br>
 
 Bonne journée.

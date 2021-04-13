@@ -14,6 +14,7 @@
 @endpush
 
 @section('content')
+    <h1>Abonnement annuel</h1>
     @if (Session::has('success'))
         <div class="alert alert-success text-center">
             <p>{{ Session::get('success') }}</p>
@@ -21,12 +22,6 @@
     @endif
     <form role="form" action="{{ route('subscription', $provider->id) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
             @csrf
-
-            @if ($errors->has('price'))
-                <div class="error">
-                    Ce champ est obligatoire.
-                </div>
-             @endif
     
             <div class='paymentItem firstPart'>
                 <input class='paymentName' type='text' placeholder="Nom du titulaire">
@@ -47,11 +42,12 @@
             </div>
                             
         </form>
+        <a class="linkButton" href="{{ route('home') }}">Payer l'abonnement plus tard</a>
 @endsection
 
 @push('script')
     <script src="{{ asset('js/client.js') }}"></script>
-    <script src="{{ asset('jquery-3.6.0.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
         $(function() {
