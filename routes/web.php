@@ -43,6 +43,7 @@ Route::delete('/espace-membre/{id}/prestataire/suppression/{id_provider}', 'Memb
 Route::get('/espace-membre/historique', 'MemberAreaController@showHistory')->name('member-area.history.show')->middleware('auth');
 Route::delete('/espace-membre/{id}/historique/supression/{history_id}', 'MemberAreaController@deleteHistory')->name('member-area.history.delete')->middleware('auth');
 Route::get('/espace-membre/prestataire/{id_provider}/promouvoir', 'MemberAreaController@showPromotePayment')->name('member-area.provider.promote')->middleware('auth');
+Route::get('/espace-membre/prestataire/{id_provider}/abonnement', 'MemberAreaController@showSubscriptionPayment')->name('member-area.provider.subscription')->middleware('auth');
 
 Route::get('/devenir-prestataire', 'ProviderController@show')->name('become-provider');
 Route::get('/devenir-prestataire/formulaire', 'ProviderController@showForm')->name('form-provider.show')->middleware('auth');
@@ -59,6 +60,7 @@ Route::delete('/admin/categories/suppression/{id}', 'AdminController@deleteCateg
 Route::get('/admin/prestataires', 'AdminController@showProviders')->name('admin.provider')->middleware('auth.admin');
 Route::post('/admin/prestataires/ajout', 'AdminController@storeProvider')->name('admin.provider.store')->middleware('auth.admin');
 Route::delete('/admin/prestataires/suppression/{id}', 'AdminController@deleteProvider')->name('admin.provider.delete')->middleware('auth.admin');
+Route::patch('/admin/prestataires/abonnement/{id}', 'AdminController@addSubscription')->name('admin.provider.subscription')->middleware('auth.admin');
 Route::get('/admin/utilisateurs', 'AdminController@showUsers')->name('admin.user')->middleware('auth.admin');
 Route::delete('/admin/utilisateurs/suppression/{id}', 'AdminController@deleteUser')->name('admin.user.delete')->middleware('auth.admin');
 Route::get('/admin/statistiques/mois', 'AdminController@showStatsMonth')->name('admin.stats.month')->middleware('auth.admin');

@@ -12,7 +12,7 @@ class Promote extends Model
 
     protected $fillable = [
         'provider_id',
-        'end-date'
+        'end_date'
     ];
 
     public function provider() {

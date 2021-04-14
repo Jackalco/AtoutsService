@@ -52,23 +52,38 @@ class ProviderController extends Controller
 
     public function showSubscriptionPayment($id) {
         $provider = Provider::find($id);
-        return view('provider/payment_provider', compact('provider'));
+        $today = now();
+        $user = Auth::user();
+
+        if($provider->owner_id == $user->id) {
+            return view('provider/payment_provider', compact('provider', 'today'));
+        } else {
+            return redirect(route('home'));
+        }
+        
     }
 
     public function showProvider($id) {
         $provider = Provider::find($id);
         $user = Auth::user();
+        $today = now();
         $day = date("d");
         $month = date("m");
         $year = date("Y");
 
-        Search::create(['provider_id' => $provider->id] + ['day' => $day] + ['month' => $month] + ['year' => $year]);
+        if($provider->end_date > $today) {
+            Search::create(['provider_id' => $provider->id] + ['day' => $day] + ['month' => $month] + ['year' => $year]);
 
-        if($user) {
-            History::create(['user_id' => $user->id] + ['provider_id' => $provider->id]);
+            if($user) {
+                History::create(['user_id' => $user->id] + ['provider_id' => $provider->id]);
+            }
+
+            return view('provider/show_provider', compact('provider', 'user'));
+        } else {
+            return view('errors/404');
         }
 
-        return view('provider/show_provider', compact('provider', 'user'));
+        
     }
 
     public function evaluate(Request $request, $provider_id, $user_id) {

@@ -30,7 +30,7 @@ class CreateProviderTable extends Migration
             $table->string('date');
             $table->string('color')->nullable();
             $table->string('description')->nullable();
-            $table->string('end-date')->nullable();
+            $table->string('end_date')->nullable();
             $table->timestamps();
         });
     }

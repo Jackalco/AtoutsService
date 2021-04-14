@@ -82,9 +82,10 @@ class AdminController extends Controller
     public function showProviders() {
         $providers = Provider::orderBy('name', 'asc')->get();
         $categories = Category::orderBy('name', 'asc')->get();
-        $users = User::orderBy('name', 'asc')->get();
+        $users = User::where('statusLvl', 1)->orderBy('name', 'asc')->get();
+        $today = now();
 
-        return view('admin/admin_provider', compact('providers', 'categories', 'users'));
+        return view('admin/admin_provider', compact('providers', 'categories', 'users', 'today'));
     }
 
     public function storeProvider(Request $request) {
@@ -104,10 +105,11 @@ class AdminController extends Controller
         ]);
 
         $user = User::find($request->owner);
+        $date = date('Y-m-d', strtotime('+1 year'));
         $image = Image::storeImage($request->image);
 
         Provider::create(
-            $request->only('name', 'address', 'city', 'phone', 'email', 'siret', 'workforce', 'structure', 'activity') + ['image_id' => $image] + ['owner' => $user->name] + ['owner_id' => $user->id]
+            $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'activity') + ['image_id' => $image] + ['owner' => $user->name] + ['owner_id' => $user->id] + ['end_date' => $date]
         );
 
         return back()->with('successStore', 'Le prestataire a bien été ajouté.');
@@ -123,8 +125,17 @@ class AdminController extends Controller
         return back()->with('successDelete', 'Le prestataire a bien été supprimé');
     }
 
+    public function addSubscription($id) {
+        $provider = Provider::find($id);
+        $date = date('Y-m-d', strtotime('+1 year'));
+
+        $provider->update(['end_date' => $date]);
+
+        return back()->with('successDelete', 'Le prestataire est abonné jusqu\'au '.$date);
+    }
+
     public function showUsers() {
-        $users = User::orderBy('name', 'asc')->get();
+        $users = User::where('statusLvl', 1)->orderBy('name', 'asc')->get();
 
         return view('admin/admin_user', compact('users'));
     }

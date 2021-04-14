@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $today = now();
-        $promotes = Promote::where('end-date', '>=', $today)->get();
+        $promotes = Promote::where('end_date', '>=', $today)->inRandomOrder()->limit(5)->get();
 
         return view('home', compact('categories', 'promotes'));
     }

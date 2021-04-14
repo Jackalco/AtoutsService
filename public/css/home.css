@@ -380,6 +380,7 @@
 
 .easy-autocomplete {
     width:85% !important;
+    z-index: 99!important;
 }
 
 .easy-autocomplete input {

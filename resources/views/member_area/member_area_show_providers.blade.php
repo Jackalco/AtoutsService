@@ -44,9 +44,15 @@
                     <div class="providerInfo"><strong>Effectif :</strong> {{$provider->workforce}}</div>
                     <div class="providerInfo"><strong>Activité :</strong> {{$provider->activity}}</div>
                     <div class="providerInfo"><strong>Numéro de SIRET :</strong> {{$provider->siret}}</div>
-                    <form method="get" action="{{ route('member-area.provider.promote', $provider->id) }}">
-                        <button class="formButton">Promouvoir</button>
-                    </form>
+                    @if($provider->end_date < $today || $provider->end_date == null)
+                        <form method="get" action="{{ route('member-area.provider.subscription', $provider->id) }}">
+                            <button class="formButton">S'abonner</button>
+                        </form>
+                    @else
+                        <form method="get" action="{{ route('member-area.provider.promote', $provider->id) }}">
+                            <button class="formButton">Promouvoir</button>
+                        </form>
+                    @endif
                     <form method="get" action="{{ route('member-area.provider.edit', $provider->id) }}">
                         <button class="formButton">Modifier</button>
                     </form>

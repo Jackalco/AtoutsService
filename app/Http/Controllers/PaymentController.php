@@ -35,13 +35,13 @@ class PaymentController extends Controller
 
         switch($request->price) {
             case $request->price == $week[0]->price:
-                Promote::create(['provider_id' => $provider->id, 'end-date' => date("Y-m-d", strtotime("+7 days", $today))]);
+                Promote::create(['provider_id' => $provider->id, 'end_date' => date("d-m-Y", strtotime("+7 days", $today))]);
                 break;
             case $request->price == $twoweek[0]->price:
-                Promote::create(['provider_id' => $provider->id, 'end-date' => date("Y-m-d", strtotime("+15 days", $today))]);
+                Promote::create(['provider_id' => $provider->id, 'end_date' => date("d-m-Y", strtotime("+15 days", $today))]);
                 break;
             case $request->price == $month[0]->price:
-                Promote::create(['provider_id' => $provider->id, 'end-date' => date("Y-m-d", strtotime("+1 month", $today))]);
+                Promote::create(['provider_id' => $provider->id, 'end_date' => date("d-m-Y", strtotime("+1 month", $today))]);
                 break;
         }
 
@@ -59,8 +59,8 @@ class PaymentController extends Controller
             "source" => $request->stripeToken,
             "description" => "Abonnement d'un an du prestataire ".$provider->name,
         ]);
-        $date = date('Y-m-d', strtotime('+1 year'));
-        $provider->update(['end-date' => $date]);
+        $date = date('d-m-Y', strtotime('+1 year'));
+        $provider->update(['end_date' => $date]);
 
         return redirect(route('member-area.providers.show'))->with('success', 'Payment réussi, ce prestataire sera maintenant visible sur Atouts Services !');
     }

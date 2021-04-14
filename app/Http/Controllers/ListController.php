@@ -12,7 +12,7 @@ class ListController extends Controller
     public function index($id) {
         $category = Category::find($id);
         $today = now();
-        $providers = Provider::where('activity', $category->name)->where('end-date', '>=', $today)->get();
+        $providers = Provider::where('activity', $category->name)->where('end_date', '>=', $today)->get();
         
         foreach($providers as $provider) {
             $provider['average'] = $provider->average();

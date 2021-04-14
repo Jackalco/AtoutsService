@@ -37,13 +37,13 @@
                 </div>
                                 
             </form>
-            <a class="linkButton" href="{{ route('home') }}">Payer l'abonnement plus tard</a>
     @else
         <div class="paymentContainer">
             <div class="paymentInfo">Ce prestataire a déjà souscrit à un abonnement.</div>
             <div class="paymentInfo">Date de renouvellement : {{$provider->end_date}}</div>
         </div>  
     @endif
+    <a class="linkButton" href="{{ route('member-area.providers.show') }}">Retour</a>
 @endsection
 
 @push('script')

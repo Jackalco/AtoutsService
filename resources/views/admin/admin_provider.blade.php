@@ -75,7 +75,7 @@
             </div>
             <div class="formItem">
                 <div class="formLabel">Date de création de l'entreprise</div>
-                <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="date" name="date" id="date">
+                <input class="formInput {{ $errors->has('date') ? 'error' : '' }}" type="month" name="date" id="date">
 
                 @if ($errors->has('date'))
                 <div class="error">
@@ -186,6 +186,13 @@
                         @method('DELETE')
                         <button class="buttonAdmin">Supprimer</button>
                     </form>
+                    @if($provider->end_date < $today || $provider->end_date == null)
+                        <form method="post" action="{{ route('admin.provider.subscription', $provider->id) }}">
+                            @csrf
+                            @method('PATCH')
+                            <button class="buttonAdmin">Ajouter un an d'abonnement</button>
+                        </form>
+                    @endif
                 </div>
             </div>
         @endforeach

@@ -24,7 +24,8 @@ class SearchController extends Controller
     }
 
     public function index($category, $city) {
-        $providers = Provider::where('city', $city)->where('activity', $category)->orderBy('name', 'asc')->get();
+        $today = now();
+        $providers = Provider::where('end_date', '>', $today)->where('city', $city)->where('activity', $category)->orderBy('name', 'asc')->get();
         $categories = Category::all();
 
         return view('search/search_index', compact('providers', 'category', 'city', 'categories'));

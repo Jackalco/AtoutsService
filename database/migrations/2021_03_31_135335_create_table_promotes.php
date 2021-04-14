@@ -16,7 +16,7 @@ class CreateTablePromotes extends Migration
         Schema::create('promotes', function (Blueprint $table) {
             $table->id();
             $table->integer('provider_id');
-            $table->string('end-date');
+            $table->string('end_date');
             $table->timestamps();
         });
     }

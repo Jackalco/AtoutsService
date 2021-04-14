@@ -31,7 +31,7 @@ class Provider extends Model
         'image_id',
         'description',
         'color',
-        'end-date'
+        'end_date'
     ];
 
     public function category() {

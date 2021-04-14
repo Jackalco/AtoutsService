@@ -20,7 +20,7 @@
     @else
         <h1>Modification des informations de votre entreprise</h1>
         <div class="memberContainer">
-            <a href="{{ route('member-area.providers.show', $user->id) }}" class="memberBackButton">Retour</a>
+            <a href="{{ route('member-area.providers.show') }}" class="memberBackButton">Retour</a>
             <form class="formContainer"  method="post" action="{{ route('member-area.provider.update', [$user->id, $provider->id]) }}">
                 @csrf
                 @method('PATCH')

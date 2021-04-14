@@ -15,11 +15,7 @@
 
 @section('content')
     <h1>Promouvoir un prestataire</h1>
-    @if (Session::has('success'))
-        <div class="alert alert-success text-center">
-            <p>{{ Session::get('success') }}</p>
-        </div>
-    @endif
+    @if(count($promote) == 0)
         <form role="form" action="{{ route('promote', [$user->id, $provider->id]) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
             @csrf
 
@@ -56,6 +52,12 @@
             </div>
                             
         </form>
+    @else
+        <div class="paymentContainer">
+            <div class="paymentInfo">Ce prestataire apparait déjà sur le bandeau publicitaire.</div>
+            <div class="paymentInfo">Date de fin : {{$promote[0]->end_date}}</div>
+        </div>
+    @endif
         <a class="linkButton" href="{{ route('member-area.providers.show', $user->id) }}">Retour</a>
 @endsection
 
