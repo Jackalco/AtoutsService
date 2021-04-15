@@ -109,7 +109,7 @@ class AdminController extends Controller
         $image = Image::storeImage($request->image);
 
         Provider::create(
-            $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'activity') + ['image_id' => $image] + ['owner' => $user->name] + ['owner_id' => $user->id] + ['end_date' => $date]
+            $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'activity') + ['image_id' => $image] + ['owner' => $user->name] + ['user_id' => $user->id] + ['end_date' => $date]
         );
 
         return back()->with('successStore', 'Le prestataire a bien été ajouté.');

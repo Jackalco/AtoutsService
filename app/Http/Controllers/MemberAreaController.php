@@ -42,7 +42,7 @@ class MemberAreaController extends Controller
     public function showProviders() {
         $user = Auth::user();
         $today = now();
-        $providers = Provider::where('owner_id', $user->id)->orderBy('name', 'asc')->get();
+        $providers = Provider::where('user_id', $user->id)->orderBy('name', 'asc')->get();
 
         return view('member_area/member_area_show_providers', compact('providers', 'user', 'today'));
     }
@@ -73,7 +73,7 @@ class MemberAreaController extends Controller
         ]);
 
         if($provider) {
-            if($user->id == $provider->owner_id) {
+            if($user->id == $provider->user_id) {
                 $provider->update(
                     ['name' => $request->get('name'), 
                     'address' => $request->get('address'),
@@ -116,7 +116,7 @@ class MemberAreaController extends Controller
         $user = User::find($id);
         $provider = Provider::find($id_provider);
 
-        if($user->id == $provider->owner_id) {
+        if($user->id == $provider->user_id) {
             $provider->delete();
             return back()->with('success', 'Ce prestataire a bien été supprimé !');
         } else {
@@ -134,7 +134,7 @@ class MemberAreaController extends Controller
         $today = now();
         $promote = Promote::where('provider_id', $provider->id)->where('end_date', '>', $today)->orderBy('end_date', 'desc')->limit(1)->get();
 
-        if($user->id == $provider->owner_id) {
+        if($user->id == $provider->user_id) {
             return view('member_area/member_area_promote', compact('user', 'provider', 'week', 'twoweek', 'month', 'promote'));
         } else {
             return redirect(route('home'));
@@ -146,7 +146,7 @@ class MemberAreaController extends Controller
         $provider = Provider::find($id_provider);
         $today = now();
 
-        if($user->id == $provider->owner_id) {
+        if($user->id == $provider->user_id) {
             return view('member_area/member_area_subscription', compact('provider', 'today'));
         } else {
             return redirect(route('home'));

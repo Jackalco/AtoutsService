@@ -44,7 +44,7 @@ class ProviderController extends Controller
         $image = Image::storeImage($request->image);
 
         $provider = Provider::create(
-            $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['owner_id' => $user]
+            $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['user_id' => $user]
         );
 
         return redirect(route('form-provider.payment', $provider->id));

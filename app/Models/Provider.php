@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Image;
@@ -12,7 +13,7 @@ use App\Models\Comment;
 
 class Provider extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
         'name',
@@ -21,7 +22,7 @@ class Provider extends Model
         'email',
         'phone',
         'owner',
-        'owner_id',
+        'user_id',
         'structure',
         'workforce',
         'activity',
@@ -38,7 +39,7 @@ class Provider extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function owner() {
+    public function user() {
         return $this->belongsTo(User::class);
     }
     public function image() {
@@ -69,4 +70,5 @@ class Provider extends Model
     public function comments() {
         return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
     }
+
 }

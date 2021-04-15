@@ -22,7 +22,7 @@ class CreateProviderTable extends Migration
             $table->string('email');
             $table->integer('image_id');
             $table->string('owner');
-            $table->integer('owner_id');
+            $table->integer('user_id');
             $table->integer('structure');
             $table->integer('workforce');
             $table->string('activity');
