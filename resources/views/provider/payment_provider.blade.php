@@ -42,7 +42,8 @@
         <div class="paymentContainer">
             <div class="paymentInfo">Ce prestataire a déjà souscrit à un abonnement.</div>
             <div class="paymentInfo">Date de renouvellement : {{$provider->end_date}}</div>
-        </div>  
+        </div> 
+        <a class="linkButton" href="{{ route('home') }}">Retour à l'accueil</a>
     @endif
 @endsection
 

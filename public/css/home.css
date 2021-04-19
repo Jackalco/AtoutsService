@@ -64,8 +64,6 @@
 
 .slideshowContainer {
     margin-bottom: 20px;
-    margin-right: 32.5%;
-    margin-left: 32.5%;
 }
 
 .slideshowContainer h2{
@@ -393,6 +391,11 @@
         margin-left: 10%;
         margin-right: 10%;
     }
+
+    .slideshowContainer {
+        margin-right: 32.5%;
+        margin-left: 32.5%;
+    }
     
     .needContainer {
         margin-left: 10%;
@@ -429,7 +432,7 @@
         
     }
     
-    
+
     .howContainer {
         margin-left: 10%;
         margin-right: 10%;
@@ -468,6 +471,11 @@
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    .slideshowContainer {
+        margin-right: 30%;
+        margin-left: 30%;
     }
     
     .needContainer {
@@ -542,6 +550,11 @@
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
+    }
+
+    .slideshowContainer {
+        margin-right: 25%;
+        margin-left: 25%;
     }
     
     .needContainer {
@@ -618,6 +631,11 @@
         margin-left: 5%;
         margin-right: 5%;
     }
+
+    .slideshowContainer {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
     
     .needContainer {
         margin-left: 5%;
@@ -692,6 +710,11 @@
     .searchContainer {
         margin-left: 5%;
         margin-right: 5%;
+    }
+
+    .slideshowContainer {
+        margin-right: 12.5%;
+        margin-left: 12.5%;
     }
     
     .needContainer {

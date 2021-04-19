@@ -55,7 +55,7 @@ class ProviderController extends Controller
         $today = now();
         $user = Auth::user();
 
-        if($provider->owner_id == $user->id) {
+        if($provider->user_id == $user->id) {
             return view('provider/payment_provider', compact('provider', 'today'));
         } else {
             return redirect(route('home'));
