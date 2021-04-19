@@ -31,7 +31,7 @@
 
                     @error('email')
                         <span class="error" role="alert">
-                            <strong>L'adresse mail est incorrect.</strong>
+                            <strong>{{ $message }}</strong>
                         </span>
                     @enderror
 
