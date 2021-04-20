@@ -174,11 +174,14 @@
                     <img class="logo" src="{{ asset('storage/imagesUploaded/'.$provider->image->path) }}" alt="Logo de {{$provider->name}}">
                 </div>
                 <div class="listInfo">
-                    <div><strong>Nom : </strong>{{$provider->name}}</div>
-                    <div><strong>Adresse : </strong>{{$provider->address}}</div>
-                    <div><strong>Ville : </strong>{{$provider->city}}</div>
-                    <div><strong>Email : </strong>{{$provider->email}}</div>
-                    <div><strong>Propriètaire : </strong>{{$provider->owner}}</div>
+                    <div><strong>Nom :</strong> {{$provider->name}}</div>
+                    <div><strong>Adresse :</strong> {{$provider->address}}</div>
+                    <div><strong>Ville :</strong> {{$provider->city}}</div>
+                    <div><strong>Email :</strong> {{$provider->email}}</div>
+                    <div><strong>Propriètaire :</strong> {{$provider->owner}}</div>
+                    @if($provider->end_date > $today)
+                        <div><strong>Fin de l'abonnement :</strong> {{$provider->end_date}}</div>
+                    @endif
                 </div>
                 <div class="listAction">
                     <form method="post" action="{{ route('admin.provider.delete', $provider->id) }}">

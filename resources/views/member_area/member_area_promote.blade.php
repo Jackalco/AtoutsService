@@ -9,7 +9,6 @@
 @endsection
 
 @push('stylesheet')
-    <link href="{{ asset('css/member_area.css') }}" rel="stylesheet">
     <link href="{{ asset('css/payment.css') }}" rel="stylesheet">
 @endpush
 

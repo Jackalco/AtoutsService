@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Score;
 use App\Models\History;
 use App\Models\Search;
+use Mail;
 use Illuminate\Support\Facades\Auth;
 
 class ProviderController extends Controller
@@ -46,6 +47,19 @@ class ProviderController extends Controller
         $provider = Provider::create(
             $request->only('name', 'address', 'city', 'phone', 'email', 'date', 'siret', 'workforce', 'structure', 'owner', 'activity') + ['image_id' => $image] + ['user_id' => $user]
         );
+
+        Mail::send('mail/congrat_provider', array(
+            'provider' => $provider,
+        ), function($message) use ($provider){
+            $message->from(env('MAIL_FROM_ADDRESS'));
+            $message->to($provider->email)->subject('Création d\'un prestataire');
+        });
+        Mail::send('mail/new_provider', array(
+            'provider' => $provider,
+        ), function($message) use ($provider){
+            $message->from(env('MAIL_FROM_ADDRESS'));
+            $message->to('vincent.jacques1311@gmail.com', 'Administrateur')->subject('Création du prestataire '.$provider->name);
+        });
 
         return redirect(route('form-provider.payment', $provider->id));
     }

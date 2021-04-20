@@ -13,59 +13,61 @@
 @endpush
 
 @section('content')
-    <h1>Espace membre</h1>
-    <div class="providerContainer">
-        <a href="{{ route('member-area') }}" class="memberBackButton">Retour</a>
-        <h2>Vos prestataires</h2>
-        <hr>
-        @if(Session::has('success'))
-            <div class="alert">
-                {{Session::get('success')}}
-            </div>
-        @endif
-        @if(Session::has('error'))
-            <div class="error">
-                {{Session::get('error')}}
-            </div>
-        @endif
-        
-        @if(count($providers) == 0)
-            <div>Vous n'avez, actuellement, pas d'entreprise inscrit à Atouts Services.</div>
-        @else
-            @foreach($providers as $provider)
-                <h3>{{$provider->name}}</h3>
-                <div class="providerItem">
-                    <div class="providerInfo"><strong>Adresse :</strong> {{$provider->address}}</div>
-                    <div class="providerInfo"><strong>Ville :</strong> {{$provider->city}}</div>
-                    <div class="providerInfo"><strong>Téléphone :</strong> {{$provider->phone}}</div>
-                    <div class="providerInfo"><strong>Adresse mail :</strong> {{$provider->email}}</div>
-                    <div class="providerInfo"><strong>Propriétaire :</strong> {{$provider->owner}}</div>
-                    <div class="providerInfo"><strong>Nombre de structures :</strong> {{$provider->structure}}</div>
-                    <div class="providerInfo"><strong>Effectif :</strong> {{$provider->workforce}}</div>
-                    <div class="providerInfo"><strong>Activité :</strong> {{$provider->activity}}</div>
-                    <div class="providerInfo"><strong>Numéro de SIRET :</strong> {{$provider->siret}}</div>
-                    @if($provider->end_date < $today || $provider->end_date == null)
-                        <form method="get" action="{{ route('member-area.provider.subscription', $provider->id) }}">
-                            <button class="formButton">S'abonner</button>
-                        </form>
-                    @else
-                        <form method="get" action="{{ route('member-area.provider.promote', $provider->id) }}">
-                            <button class="formButton">Promouvoir</button>
-                        </form>
-                    @endif
-                    <form method="get" action="{{ route('member-area.provider.edit', $provider->id) }}">
-                        <button class="formButton">Modifier</button>
-                    </form>
-                    <form method="post" action="{{ route('member-area.provider.delete', [$user->id, $provider->id]) }}">
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="formButton">Supprimer</button>
-                    </form>
+    <div class="imageContainer">
+        <h1>BIENVENUE DANS VOTRE ESPACE ATOUTS SERVICES A TOUS AGES</h1>
+        <div class="providerContainer">
+            <a href="{{ route('member-area') }}" class="memberBackButton">Retour</a>
+            <h2>Vos prestataires</h2>
+            <hr>
+            @if(Session::has('success'))
+                <div class="alert">
+                    {{Session::get('success')}}
                 </div>
-                
-                <hr>
-            @endforeach
-        @endif
+            @endif
+            @if(Session::has('error'))
+                <div class="error">
+                    {{Session::get('error')}}
+                </div>
+            @endif
+            
+            @if(count($providers) == 0)
+                <div>Vous n'avez, actuellement, pas d'entreprise inscrit à Atouts Services.</div>
+            @else
+                @foreach($providers as $provider)
+                    <h3>{{$provider->name}}</h3>
+                    <div class="providerItem">
+                        <div class="providerInfo"><strong>Adresse :</strong> {{$provider->address}}</div>
+                        <div class="providerInfo"><strong>Ville :</strong> {{$provider->city}}</div>
+                        <div class="providerInfo"><strong>Téléphone :</strong> {{$provider->phone}}</div>
+                        <div class="providerInfo"><strong>Adresse mail :</strong> {{$provider->email}}</div>
+                        <div class="providerInfo"><strong>Propriétaire :</strong> {{$provider->owner}}</div>
+                        <div class="providerInfo"><strong>Nombre de structures :</strong> {{$provider->structure}}</div>
+                        <div class="providerInfo"><strong>Effectif :</strong> {{$provider->workforce}}</div>
+                        <div class="providerInfo"><strong>Activité :</strong> {{$provider->activity}}</div>
+                        <div class="providerInfo"><strong>Numéro de SIRET :</strong> {{$provider->siret}}</div>
+                        @if($provider->end_date < $today || $provider->end_date == null)
+                            <form method="get" action="{{ route('member-area.provider.subscription', $provider->id) }}">
+                                <button class="formButton">S'abonner</button>
+                            </form>
+                        @else
+                            <form method="get" action="{{ route('member-area.provider.promote', $provider->id) }}">
+                                <button class="formButton">Promouvoir</button>
+                            </form>
+                        @endif
+                        <form method="get" action="{{ route('member-area.provider.edit', $provider->id) }}">
+                            <button class="formButton">Modifier</button>
+                        </form>
+                        <form method="post" action="{{ route('member-area.provider.delete', [$user->id, $provider->id]) }}">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="formButton">Supprimer</button>
+                        </form>
+                    </div>
+                    
+                    <hr>
+                @endforeach
+            @endif
+        </div>
     </div>
 @endsection

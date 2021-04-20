@@ -13,39 +13,41 @@
 @endpush
 
 @section('content')
-    <h1>Espace membre</h1>
-    <div class="memberContainer">
-        <a href="{{ route('member-area') }}" class="memberBackButton">Retour</a>
-        <h2>Votre profil</h2>
-        <hr>
-        <form class="memberForm" method="post" action="{{ route('member-area.update', $user->id) }}" enctype="multipart/form-data">
-
-            @csrf
-            @method('PATCH')
-
-            <div class="memberItem">
-                <div class="memberInfo">Nom</div>
-                <input class="memberInput {{ $errors->has('name') ? 'error' : '' }}" type="text" name="name" id="name" value="{{old('name')?? $user->name}}">
-
-                @if ($errors->has('name'))
-                    <div class="memberError">
-                        Ce champ est obligatoire.
-                    </div>
-                @endif
-            </div>
+    <div class="imageContainer">
+        <h1>BIENVENUE DANS VOTRE ESPACE ATOUTS SERVICES A TOUS AGES</h1>
+        <div class="memberContainer">
+            <a href="{{ route('member-area') }}" class="memberBackButton">Retour</a>
+            <h2>Votre profil</h2>
             <hr>
-            <div class="memberItem">
-                <div class="memberInfo">Adresse mail</div>
-                <input class="memberInput {{ $errors->has('email') ? 'error' : '' }}" type="text" name="email" id="email" value="{{old('email')?? $user->email}}">
-                @if ($errors->has('email'))
-                    <div class="memberError">
-                        Ce champ est obligatoire.
-                    </div>
-                @endif
-            </div>
-            <div class="memberItem">
-                <input type="submit" name="update" value="Modifier" class="memberSubmitButton">
-            </div>
-        </form>    
+            <form class="memberForm" method="post" action="{{ route('member-area.update', $user->id) }}" enctype="multipart/form-data">
+
+                @csrf
+                @method('PATCH')
+
+                <div class="memberItem">
+                    <div class="memberInfo">Nom</div>
+                    <input class="memberInput {{ $errors->has('name') ? 'error' : '' }}" type="text" name="name" id="name" value="{{old('name')?? $user->name}}">
+
+                    @if ($errors->has('name'))
+                        <div class="memberError">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
+                </div>
+                <hr>
+                <div class="memberItem">
+                    <div class="memberInfo">Adresse mail</div>
+                    <input class="memberInput {{ $errors->has('email') ? 'error' : '' }}" type="text" name="email" id="email" value="{{old('email')?? $user->email}}">
+                    @if ($errors->has('email'))
+                        <div class="memberError">
+                            Ce champ est obligatoire.
+                        </div>
+                    @endif
+                </div>
+                <div class="memberItem">
+                    <input type="submit" name="update" value="Modifier" class="memberSubmitButton">
+                </div>
+            </form>    
+        </div>
     </div>
 @endsection
