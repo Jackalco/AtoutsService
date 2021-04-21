@@ -20,12 +20,20 @@
                 <tr>
                     <td><strong>Nom du prestataire</strong></td>
                     <td><strong>Nombre de vues</strong></td>
+                    <td><strong>Fin de l'abonnement</strong></td>
                     <td><strong>Note</strong></td>
                 </tr>
                 @foreach($providersDetails as $provider)
                 <tr>
                     <td>{{$provider->name}}</td>
                     <td>Vues : {{$provider->count}}</td>
+                    <td>
+                        @if($provider->end_date > $today)
+                            {{$provider->end_date}}
+                        @else
+                            Non abonné
+                        @endif
+                    </td>
                     <td>
                         @if($provider->average() == null)
                             Pas de note

@@ -63,7 +63,7 @@
 
 .memberInput {
     border-radius: 5px;
-    border: none;
+    border: 1px solid rgb(255, 203, 59);
     outline: none;
 }
 
@@ -186,9 +186,12 @@
 }
 
 h1 {
-    text-align: center;
     background-color: rgb(37, 188, 214);
     color: white;
+    width: fit-content;
+    margin-left: 10%;
+    padding: 7px 12px;
+    border: 10px solid rgb(255, 203, 59);
 }
 
 h2 {
@@ -215,6 +218,10 @@ main hr {
 }
 
 @media only screen and (min-width: 1200px) {
+    h1 {
+        font-size: 2em;
+    }
+
     .memberContainer {
         min-height: 500px;
         margin-left: 10%;
@@ -307,6 +314,10 @@ main hr {
 }
 
 @media only screen and (max-width: 1200px) {
+    h1 {
+        font-size: 1.75em;
+    }
+
     .memberContainer {
         min-height: 500px;
         margin-left: 10%;
@@ -399,6 +410,10 @@ main hr {
 }
 
 @media only screen and (max-width: 900px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
     .memberContainer {
         min-height: 450px;
         margin-left: 10%;

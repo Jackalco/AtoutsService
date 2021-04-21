@@ -151,6 +151,11 @@ input:focus {
     margin-bottom: 10px;
 }
 
+.infoPayment {
+    margin-left: 10%;
+    color: rgb(80, 80, 80);
+}
+
 @media only screen and (min-width: 1200px) {
     .paymentContainer {
         margin-left: 35%;

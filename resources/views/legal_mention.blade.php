@@ -21,7 +21,7 @@
             <div><strong>Adresse :</strong> 257 bis Avenue de Mindin, 44250 Saint-Brevin-les-Pins</div>
             <div><strong>Numéro de SIREN :</strong> 82176895900016</div>
             <div><strong>Société :</strong> Association</div>
-            <div><strong>Email :</strong></div>
+            <div><strong>Email :</strong> admin@atoutsservicesatousages.fr</div>
             <div><strong>Téléphone :</strong></div>
             <div><strong>Webmaster :</strong> Vincent JACQUES</div>
             <div><strong>Hébergeur :</strong> <a href="https://www.o2switch.fr/" target="_blank">O2switch</a> – 224 BD GUSTAVE FLAUBERT 63000 CLERMONT FERRAND 04 44 44 60 40</div>

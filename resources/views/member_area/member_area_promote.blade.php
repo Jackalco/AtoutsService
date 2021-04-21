@@ -15,6 +15,7 @@
 @section('content')
     <h1>Promouvoir un prestataire</h1>
     @if(count($promote) == 0)
+        <div class="infoPayment"><strong>Promouvoir ce prestataire permettra à ce dernier d'être visible sur notre bandeau publicitaire.</strong></div>
         <form role="form" action="{{ route('promote', [$user->id, $provider->id]) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
             @csrf
 

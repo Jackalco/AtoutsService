@@ -155,6 +155,7 @@ class AdminController extends Controller
         $year = date("Y");
         $searches = Search::where('year', $year)->where('month', $month)->get();
         $providers = Provider::get();
+        $today = now();
         
 
         foreach($providers as $provider) {
@@ -168,13 +169,14 @@ class AdminController extends Controller
 
         $providersDetails = $providers->sortByDesc('count');
 
-        return view('admin/admin_stats_month', compact('providersDetails'));
+        return view('admin/admin_stats_month', compact('providersDetails', 'today'));
     }
 
     public function showStatsYear() {
         $year = date("Y");
         $searches = Search::where('year', $year)->get();
         $providers = Provider::get();
+        $today = now();
         
 
         foreach($providers as $provider) {
@@ -189,7 +191,7 @@ class AdminController extends Controller
 
         $providersDetails = $providers->sortByDesc('count');
 
-        return view('admin/admin_stats_year', compact('providersDetails'));
+        return view('admin/admin_stats_year', compact('providersDetails', 'today'));
     }
 
     public function showPrices() {
