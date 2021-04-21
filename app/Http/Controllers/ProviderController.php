@@ -58,7 +58,7 @@ class ProviderController extends Controller
             'provider' => $provider,
         ), function($message) use ($provider){
             $message->from(env('MAIL_FROM_ADDRESS'));
-            $message->to('vincent.jacques1311@gmail.com', 'Administrateur')->subject('Création du prestataire '.$provider->name);
+            $message->to('admin@atoutsservicesatousages.fr', 'Administrateur')->subject('Création du prestataire '.$provider->name);
         });
 
         return redirect(route('form-provider.payment', $provider->id));

@@ -29,7 +29,7 @@ class CommentController extends Controller
                 'numberComments' => count($negativeComments)
             ), function($message) use ($provider){
                 $message->from(env('MAIL_FROM_ADDRESS'));
-                $message->to('vincent.jacques1311@gmail.com', 'Administrateur')->subject('Alerte prestataire '.$provider->name);
+                $message->to('admin@atoutsservicesatousages.fr', 'Administrateur')->subject('Alerte prestataire '.$provider->name);
             });
         }
 
