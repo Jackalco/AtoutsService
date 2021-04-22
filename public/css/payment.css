@@ -196,3 +196,28 @@ input:focus {
         width: 500px;
     }
 }
+
+@media only screen and (max-device-width: 900px) {
+    .paymentContainer {
+        margin-left: 20%;
+        height: 500px;
+        width: 500px;
+    }
+}
+
+@media only all and (max-device-width: 768px) {
+    .paymentContainer {
+        margin-left: 5%;
+        height: 500px;
+        width: 500px;
+    }
+}
+
+
+@media only screen and (max-device-width: 500px) {
+    .paymentContainer {
+        margin-left: 5%;
+        height: 500px;
+        width: 500px;
+    }
+}

@@ -188,3 +188,34 @@ h2 {
         background-size: 100% 425px;
     }
 }
+
+@media only screen and (max-device-width: 900px) {
+    .container {
+        background-size: 100% 700px;
+    }
+
+    .listInfo {
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .listItem {
+        height: 360px;
+    }
+
+    .listLogoCompany {
+        display: none;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .container {
+        background-size: 100% 550px;
+    }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .container {
+        background-size: 100% 425px;
+    }
+}

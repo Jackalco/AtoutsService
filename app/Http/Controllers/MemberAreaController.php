@@ -145,9 +145,10 @@ class MemberAreaController extends Controller
         $user = Auth::user();
         $provider = Provider::find($id_provider);
         $today = now();
+        $price = Price::where('name', 'Abonnement')->limit(1)->get();
 
         if($user->id == $provider->user_id) {
-            return view('member_area/member_area_subscription', compact('provider', 'today'));
+            return view('member_area/member_area_subscription', compact('provider', 'today', 'price'));
         } else {
             return redirect(route('home'));
         }

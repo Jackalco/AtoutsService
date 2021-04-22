@@ -179,4 +179,46 @@ header {
     }
 }
 
+@media only screen and (max-device-width: 900px) {
+    .serviceContainer {
+        background-size: 100% 700px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 700px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 650px;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .serviceContainer {
+        background-size: 100% 550px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 600px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 550px;
+    }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .serviceContainer {
+        background-size: 100% 425px;
+    }
+    
+    .artisanContainer {
+        background-size: 100% 450px;
+    }
+    
+    .housingContainer {
+        background-size: 100% 425px;
+    }
+}
+
 

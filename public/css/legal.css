@@ -43,3 +43,18 @@ h1 {
         margin-right: 10%;
     }
 }
+
+@media only screen and (max-device-width: 1200px) {
+    .legalContainer {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+
+@media only screen and (max-device-width: 768px) {
+    .legalContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

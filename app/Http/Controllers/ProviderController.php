@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Score;
 use App\Models\History;
 use App\Models\Search;
+use App\Models\Price;
 use Mail;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,9 +69,10 @@ class ProviderController extends Controller
         $provider = Provider::find($id);
         $today = now();
         $user = Auth::user();
+        $price = Price::where('name', 'Abonnement')->limit(1)->get();
 
         if($provider->user_id == $user->id) {
-            return view('provider/payment_provider', compact('provider', 'today'));
+            return view('provider/payment_provider', compact('provider', 'today', 'price'));
         } else {
             return redirect(route('home'));
         }

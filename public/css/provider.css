@@ -518,3 +518,31 @@ header {
         font-size: 22px;
     }
 }
+
+@media only screen and (max-device-width: 900px) {
+    .introContainer {
+        flex-direction: column;
+        height: 450px;
+    }
+
+    .howInfo  {
+        flex-direction: column;
+    }
+
+    .howText {
+        font-size: 1em;
+    }
+
+    .introItem:nth-child(2) {
+        align-items: center;
+        flex: 2;
+        width: 100%;
+    }
+
+    .introPanel {
+        height: 100%;
+        width: 50%;
+        padding: 15px;
+        font-size: 22px;
+    }
+}

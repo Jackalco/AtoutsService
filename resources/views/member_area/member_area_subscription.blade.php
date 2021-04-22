@@ -13,7 +13,7 @@
 @endpush
 
 @section('content')
-    <h1>Abonnement annuel</h1>
+    <h1>Abonnement annuel ({{$price[0]->price}}€)</h1>
     @if($provider->end_date < $today)
         <div class="infoPayment"><strong>Souscrire à un abonnement annuel permettra à ce prestataire d'être visible sur notre site.</strong></div>
         <form role="form" action="{{ route('subscription', $provider->id) }}" method="post" class="paymentContainer validation" data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">

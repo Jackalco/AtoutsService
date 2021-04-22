@@ -785,3 +785,243 @@
         margin-right: 8px;
     }
 }
+
+@media only screen and (max-device-width: 900px) {
+    .searchContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .slideshowContainer {
+        margin-right: 25%;
+        margin-left: 25%;
+    }
+    
+    .needContainer {
+        margin-left: 10%;
+        margin-right: 10%;       
+    }
+    
+    .needItem:first-child {
+        font-size: 32px;
+    }
+    
+    .needItem:nth-child(2) a{
+        padding: 8px;
+        font-size: 18px;
+        width: 80%;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 12px;
+    }
+    
+    .serviceContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .cardContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        
+    }  
+    
+    .cardLayer {
+        font-size: 47px;  
+    }
+    
+    
+    .howContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 28px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 24px;
+        padding: 10px;
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .searchContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .slideshowContainer {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    
+    .needContainer {
+        margin-left: 5%;
+        margin-right: 5%;       
+    }
+    
+    .needItem:first-child {
+        font-size: 30px;
+    }
+    
+    .needItem:nth-child(2) a{
+        padding: 6px;
+        font-size: 16px;
+        width: auto;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 10px;
+    }
+    
+    .serviceContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .cardContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }  
+    
+    .cardLayer {
+        font-size: 45px;
+    }
+    
+    
+    .howContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 26px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 24px;
+        padding: 10px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .searchContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .slideshowContainer {
+        margin-right: 12.5%;
+        margin-left: 12.5%;
+    }
+    
+    .needContainer {
+        margin-left: 5%;
+        margin-right: 5%;       
+    }
+    
+    .needItem:first-child {
+        font-size: 28px;
+    }
+    
+    .needItem:nth-child(2) a{
+        padding: 5px;
+        font-size: 14px;
+        width: auto;
+    }
+    
+    .needItem:nth-child(2) a:hover {
+        padding: 10px;
+    }
+    
+    .serviceContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }  
+    
+    .cardContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }  
+    
+    .cardLayer {
+        font-size: 45px;   
+    }
+    
+    
+    .howContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    .howContainer li {
+        margin-bottom: 15px;
+    }
+    
+    .howContainer .circle{
+        padding: 5px;
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    
+    .discoverContainer {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 25px;
+    }
+    
+    .discoverContainer h2 {
+        font-size: 23px;
+    }
+    
+    
+    .iconItem i{
+        font-size: 22px;
+        padding: 8px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}
