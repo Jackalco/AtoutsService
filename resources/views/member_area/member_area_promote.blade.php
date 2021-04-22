@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-meta-description')
-    Modification d'un prestataire d'Atouts Services par l'utilisateur propriétaire 
+    Promotion d'un prestataire le permettant d'apparaitre sur le bandeau publicitaire.
 @endsection
 
 @push('stylesheet')

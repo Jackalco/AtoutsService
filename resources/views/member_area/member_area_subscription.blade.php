@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-meta-description')
-    Payement prestataire Atouts Services
+    Payement pour abonnement d'un prestataire Atouts Services
 @endsection
 
 @push('stylesheet')

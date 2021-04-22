@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-meta-description')
-    Gestion des sous-catégories d'Atouts Services
+    Gestion des prix d'Atouts Services
 @endsection
 
 @push('stylesheet')

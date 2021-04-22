@@ -4,8 +4,8 @@
         <strong>Retrouvez nous sur les réseaux sociaux</strong>
         <a href="https://www.facebook.com/AtoutsServices.Atousages" class="socialLink facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="socialLink twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="socialLink instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="socialLink linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/atoutsservicesatousages/tagged/?hl=fr" class="socialLink instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/atouts-services-a-tous-ages/" class="socialLink linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <hr>
     <div class="linkContainer">

@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-meta-description')
-    Page d'accueil d'Atouts Services
+Atout Services et à tous âges est une association qui oeuvre pour la préservation des petites entreprises, valorisant les entreprises de proximité.
 @endsection
 
 @push('stylesheet')

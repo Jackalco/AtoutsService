@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-meta-description')
-    Page d'accueil d'Atouts Services
+    Page de connexion d'Atouts Services
 @endsection
 
 @push('stylesheet')

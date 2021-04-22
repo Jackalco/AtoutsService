@@ -5,7 +5,7 @@
 @endsection
 
 @section('head-meta-description')
-    Devenez prestatataire chez Atouts Services
+    Résultats de la recherche Atouts Services
 @endsection
 
 @push('stylesheet')

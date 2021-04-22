@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('head-title')
-    Atouts Services - Services
+    Atouts Services - Liste
 @endsection
 
 @section('head-meta-description')
-    Page des services d'Atouts Services
+    Liste des prestataires d'Atouts Services
 @endsection
 
 @push('stylesheet')
