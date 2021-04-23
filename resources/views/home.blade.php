@@ -15,6 +15,7 @@ Atout Services et à tous âges est une association qui oeuvre pour la préserva
 @endpush
 
 @section('content')
+    <img src="{{ asset('images/qualite.png') }}" alt="Engagement qualité" class="qualite">
     <form action="{{ route('search.getsearch') }}" method="post" class="searchContainer">
         @csrf
         <div class="searchItem categories">

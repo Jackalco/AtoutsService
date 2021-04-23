@@ -1,3 +1,7 @@
+.qualite {
+    height: 100px;
+}
+
 .searchContainer {
     display: flex;
     flex-direction: row;
@@ -387,6 +391,10 @@
 }
 
 @media only screen and (min-width: 1200px) {
+    .qualite {
+        margin-left: 10%;
+    }
+    
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
@@ -468,6 +476,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
+    .qualite {
+        margin-left: 10%;
+    }
+
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
@@ -547,6 +559,10 @@
 }
 
 @media only screen and (max-width: 900px) {
+    .qualite {
+        margin-left: 10%;
+    }
+
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
@@ -627,6 +643,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .qualite {
+        margin-left: 5%;
+    }
+
     .searchContainer {
         margin-left: 5%;
         margin-right: 5%;
@@ -787,6 +807,10 @@
 }
 
 @media only screen and (max-device-width: 900px) {
+    .qualite {
+        margin-left: 5%;
+    }
+    
     .searchContainer {
         margin-left: 10%;
         margin-right: 10%;
